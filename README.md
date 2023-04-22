@@ -1,5 +1,16 @@
 # Fedora 38 auf dem Lenovo Yoga 7 16IAH7
 
+## Hardware Informationen
+
+Hardwaremodell      |  Lenovo Yoga 7 16IAH7 82UF  
+Firmware-Version    | J1CN37WW  
+Speicher            | 16,0 GiB
+Prozessor           | 12th Gen Intel® Core™ i7-12700H × 20
+Grafik              |  Intel® Arc™ A370M Graphics (DG2) / Intel® Graphics (ADL GT2)
+Festlattenkapazität | 1,0 TB
+
+---
+
 ## Pre-Installation
 
 ---
