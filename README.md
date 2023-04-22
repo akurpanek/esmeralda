@@ -54,7 +54,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 #flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
 flatpak remote-delete fedora
 ```
-
+<!---
 ### Intel ARC A380M GPU aktivieren
 
 ```
@@ -71,6 +71,7 @@ https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on
 https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread  
 https://wiki.archlinux.org/title/intel_graphics  
 https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/  
+-->
 
 ### Realtek ALC3306 konfigurieren
 
@@ -84,6 +85,7 @@ Folgende Optionen aktivieren
 options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
+
 <!---
 ### Kernel Fehler "xorg-x11-drv-intel" beheben
 
