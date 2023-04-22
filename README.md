@@ -40,3 +40,10 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
 flatpak remote-delete fedora
+```
+
+
+
+# Intel ARC A380M GPU aktivieren
+
+https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread
