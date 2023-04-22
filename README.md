@@ -179,6 +179,9 @@ sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} \
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 ```
+Quellen:
+
+- <https://rpmfusion.org/Howto/Multimedia?highlight=%28%5CbCategoryHowto%5Cb%29>
 
 ### Nützliche Pakete installieren
 
