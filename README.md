@@ -64,7 +64,6 @@ options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 
 ---
 
-[include](File:README-Applications.md)
 ## Applikationen
 
 ### 1Password installieren
