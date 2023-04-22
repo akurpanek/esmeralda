@@ -49,7 +49,7 @@ Quellen:
 
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
-```console
+```shell script
     sudo hostnamectl set-hostname "esmeralda"
 
     # Fractional Scaling aktivieren
