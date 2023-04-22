@@ -31,29 +31,18 @@ Festlattenkapazität | 1,0 TB
 
 ## Post Instllation
 
-### Fractional Scaling aktivieren
-
-Quellen:
-
-- <https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/>  
-
-### Hostnamen anpassen
-
-### DNF konfigurieren
-
-### System aktualisieren
-
-### RPM Fusion aktivieren
-
-### Flathub Repository aktivieren
-
 Quellen:
 
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
+- <https://github.com/devangshekhawat/Fedora-38-Post-Install-Guide>
+
+### Hostnamen anpassen
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
 ```
+
+### Fractional Scaling aktivieren
 
 ```shell
 # Fractional Scaling aktivieren
@@ -64,20 +53,32 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 # Fractional Scaling deaktiviern
 #gsettings set org.gnome.mutter experimental-features "[]"
 ```
+
+Quellen:
+
+- <https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/>  
+
+### DNF konfigurieren
+
+### System aktualisieren
+
 ```shell
 `sudo dnf update --refresh`  
 ```
 
+### RPM Fusion aktivieren
+
 ```shell
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
+
+### Flathub Repository aktivieren
 
 ```shell
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
 flatpak remote-delete fedora
 ```
-
 <!---
 
 ### Intel ARC A380M GPU aktivieren
@@ -142,15 +143,17 @@ Quellen:
 
 ## Software
 
-### Multimedia Pakete
+### Multimedia Pakete installieren
 
 ```shell
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} \
+                 gstreamer1-plugin-openh264 gstreamer1-libav \
+                 --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 ```
 
-### Diverse Pakete
+### Nützliche Pakete installieren
 
 ```shell
 sudo dnf install -y neofetch
