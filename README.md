@@ -219,7 +219,7 @@ Quellen:
 ### AnyDesk Remote-Desktop
 
 ```shell
-cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
+sudo cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
 [anydesk]
 name=AnyDesk Fedora - stable
 baseurl=http://rpm.anydesk.com/fedora/$basearch/
@@ -230,5 +230,5 @@ EOF
 ```
 
 ```shell
-dnf install anydesk
+sudo dnf install anydesk
 ```
