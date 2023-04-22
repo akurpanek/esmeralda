@@ -32,6 +32,7 @@ Festlattenkapazität | 1,0 TB
 ### Fractional Scaling aktivieren
 
 Quellen:
+
 - <https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/>  
 
 ### Hostnamen anpassen
@@ -45,6 +46,7 @@ Quellen:
 ### Flathub Repository aktivieren
 
 Quellen:
+
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
 
@@ -81,6 +83,7 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 Quellen:
+
 - <https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on_fedora_a770_a750/>
 - <https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread>
 - <https://wiki.archlinux.org/title/intel_graphics>
@@ -90,6 +93,7 @@ Quellen:
 ### Realtek ALC3306 konfigurieren
 
 Quellen:
+
 - <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
 
 ```
@@ -138,6 +142,7 @@ sudo dnf install -y neofetch
 ### 1Password installieren
 
 Quellen:
+
 - <https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux>
 
 ### Visual Studio Code
