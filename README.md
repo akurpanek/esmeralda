@@ -2,6 +2,8 @@
 
 ## Hinweise
 
+Quellen:
+
 - <https://www.markdownguide.org/basic-syntax/>
 
 ---
@@ -49,36 +51,38 @@ Quellen:
 
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
-```shell script
+```shell
 sudo hostnamectl set-hostname "esmeralda"
 ```
 
-```shell script
+```shell
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
-```shell script
+```shell
 # Fractional Scaling deaktiviern
 #gsettings set org.gnome.mutter experimental-features "[]"
 ```
-```shell script
+```shell
 `sudo dnf update --refresh`  
 ```
 
-```shell script
+```shell
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-```shell script
+```shell
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
 flatpak remote-delete fedora
 ```
+
 <!---
+
 ### Intel ARC A380M GPU aktivieren
 
-```shell script
+```shell
 sudo lspci -k | grep -EA3 'VGA|3D|Display'
 sudo lspci -nn | grep -EA3 'VGA|3D|Display'
 #sudo grubby --update-kernel=ALL --args="i915.force_probe=<pci ID>"
@@ -94,6 +98,7 @@ Quellen:
 - <https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread>
 - <https://wiki.archlinux.org/title/intel_graphics>
 - <https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/>
+
 -->
 
 ### Realtek ALC3306 konfigurieren
@@ -102,13 +107,13 @@ Quellen:
 
 - <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
 
-```shell script
+```shell
 sudo nano  /etc/modprobe.d/snd.conf
 ```
 
 Folgende Optionen aktivieren
 
-```shell script
+```shell
 options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
@@ -117,16 +122,18 @@ options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 
 ### Kernel Fehler "xorg-x11-drv-intel" beheben
 
-```shell script
+```shell
 journalctl -b -k | grep "split lock"
 ```
 
-```shell script
+```shell
 sudo grubby --update-kernel=ALL --args="split_lock_detect=off"
 cat /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
+
 Quellen:
+
 - <https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001>
 
 -->
@@ -137,7 +144,7 @@ Quellen:
 
 ### Multimedia Pakete
 
-```shell script
+```shell
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
@@ -145,7 +152,7 @@ sudo dnf group upgrade --with-optional Multimedia
 
 ### Diverse Pakete
 
-```shell script
+```shell
 sudo dnf install -y neofetch
 ```
 
@@ -157,18 +164,18 @@ Quellen:
 
 ### Visual Studio Code
 
-```shell script
+```shell
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf check-update
 sudo dnf install code
 ```
 
-```shell script
+```shell
 xdg-mime default code.desktop text/plain
 ```
 
-```shell script
+```shell
 code --install-extension MS-CEINTL.vscode-language-pack-de
 ```
 
