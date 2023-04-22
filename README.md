@@ -76,7 +76,6 @@ https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/
 
 ```
 sudo nano  /etc/modprobe.d/snd.conf
-
 ```
 Folgende Optionen aktivieren
 ```
