@@ -222,7 +222,7 @@ Quellen:
 ### AnyDesk Remote-Desktop
 
 ```shell
-sudo rpm --import [https://packages.microsoft.com/keys/microsoft.asc](https://keys.anydesk.com/repos/RPM-GPG-KEY)
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc](https://keys.anydesk.com/repos/RPM-GPG-KEY
 sudo sh -c 'echo -e "[anydesk]\nname=AnyDesk Fedora - stable\nbaseurl=http://rpm.anydesk.com/fedora/$basearch/\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY" > /etc/yum.repos.d/AnyDesk-Fedora.repo
 ```
 
