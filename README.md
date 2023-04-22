@@ -63,6 +63,8 @@ sudo lspci -nn | grep -EA3 'VGA|3D|Display
 #sudo grubby --update-kernel=ALL --args="i915.force_probe=<pci ID>"
 sudo grubby --update-kernel=ALL --args="i915.force_probe=5693"
 #sudo grubby --update-kernel=ALL --remove-args="i915.force_probe=<pci ID>"
+cat /etc/default/grub
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on_fedora_a770_a750/
@@ -90,6 +92,7 @@ options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
 sudo grubby --update-kernel=ALL --args="split_lock_detect=off"
 cat /etc/default/grub
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001
