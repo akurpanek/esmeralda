@@ -51,10 +51,14 @@ Quellen:
 
 ```shell script
     sudo hostnamectl set-hostname "esmeralda"
+```
 
+```shell script
     # Fractional Scaling aktivieren
     gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
 
+```shell script
     # Fractional Scaling deaktiviern
     #gsettings set org.gnome.mutter experimental-features "[]"
 ```
