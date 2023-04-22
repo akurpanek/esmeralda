@@ -183,13 +183,13 @@ Quellen:
 
 - <https://rpmfusion.org/Howto/Multimedia?highlight=%28%5CbCategoryHowto%5Cb%29>
 
-### Nützliche Pakete installieren
+### Nützliche Pakete
 
 ```shell
 sudo dnf install -y neofetch
 ```
 
-### 1Password installieren
+### 1Password
 
 Quellen:
 
@@ -215,3 +215,20 @@ code --install-extension MS-CEINTL.vscode-language-pack-de
 Quellen:
 
 - <https://code.visualstudio.com/docs/editor/extension-marketplace>
+
+### AnyDesk Remote-Desktop
+
+```shell
+cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
+[anydesk]
+name=AnyDesk Fedora - stable
+baseurl=http://rpm.anydesk.com/fedora/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
+EOF
+```
+
+```shell
+dnf install anydesk
+```
