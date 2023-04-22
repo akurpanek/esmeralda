@@ -34,5 +34,5 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 
 ```
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-delete --if-exists fedora oci+https://registry.fedoraproject.org
+flatpak remote-delete fedora oci+https://registry.fedoraproject.org
 ```
