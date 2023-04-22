@@ -87,6 +87,11 @@ options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 
 `journalctl -b -k | grep "split lock"`
 
+```
+sudo grubby --update-kernel=ALL --args="split_lock_detect=off"
+cat /etc/default/grub
+```
+
 https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001
 
 ---
