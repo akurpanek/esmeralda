@@ -2,6 +2,8 @@
 
 ## Hardware Informationen
 
+|   |   |
+|---|---|
 Hardwaremodell      |  Lenovo Yoga 7 16IAH7 82UF  
 Firmware-Version    | J1CN37WW  
 Speicher            | 16,0 GiB
