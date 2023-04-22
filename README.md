@@ -49,7 +49,7 @@ Quellen:
 
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
-
+```console
     sudo hostnamectl set-hostname "esmeralda"
 
     # Fractional Scaling aktivieren
@@ -57,6 +57,7 @@ Quellen:
 
     # Fractional Scaling deaktiviern
     #gsettings set org.gnome.mutter experimental-features "[]"
+```
 
 `sudo dnf update --refresh`  
 
