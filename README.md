@@ -1,5 +1,11 @@
 # Fedora 38 auf dem Lenovo Yoga 7 16IAH7
 
+## Hinweise
+
+- <https://www.markdownguide.org/basic-syntax/>
+
+---
+
 ## Hardware Informationen
 
 |   |   |
@@ -25,15 +31,21 @@ Festlattenkapazität | 1,0 TB
 
 ### Fractional Scaling aktivieren
 
-https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/
+Quellen:
+- <https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/>  
 
 ### Hostnamen anpassen
+
 ### DNF konfigurieren
+
 ### System aktualisieren
+
 ### RPM Fusion aktivieren
+
 ### Flathub Repository aktivieren
 
-https://itsfoss.com/things-to-do-after-installing-fedora/  
+Quellen:
+- <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
 
 `sudo hostnamectl set-hostname "esmeralda"`  
@@ -41,6 +53,7 @@ https://itsfoss.com/things-to-do-after-installing-fedora/
 ```
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
 # Fractional Scaling deaktiviern
 #gsettings set org.gnome.mutter experimental-features "[]"
 ```
@@ -67,15 +80,17 @@ cat /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
-https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on_fedora_a770_a750/
-https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread  
-https://wiki.archlinux.org/title/intel_graphics  
-https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/  
+Quellen:
+- <https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on_fedora_a770_a750/>
+- <https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread>
+- <https://wiki.archlinux.org/title/intel_graphics>
+- <https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/>
 -->
 
 ### Realtek ALC3306 konfigurieren
 
-https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6
+Quellen:
+- <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
 
 ```
 sudo nano  /etc/modprobe.d/snd.conf
@@ -96,7 +111,8 @@ sudo grubby --update-kernel=ALL --args="split_lock_detect=off"
 cat /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
-https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001
+Quellen:
+- <https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001>
 -->
 
 ---
@@ -121,7 +137,8 @@ sudo dnf install -y neofetch
 
 ### 1Password installieren
 
-https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux
+Quellen:
+- <https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux>
 
 ### Visual Studio Code
 
@@ -142,3 +159,6 @@ xdg-mime default code.desktop text/plain
 ```
 code --install-extension MS-CEINTL.vscode-language-pack-de
 ```
+Quellen:
+
+- <https://code.visualstudio.com/docs/editor/extension-marketplace>
