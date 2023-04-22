@@ -189,6 +189,13 @@ Quellen:
 sudo dnf install -y neofetch
 ```
 
+### Tor Browser
+
+```shell
+sudo dnf install torbrowser-launcher
+torbrowser-launcher
+```
+
 ### 1Password
 
 Quellen:
