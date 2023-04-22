@@ -228,5 +228,12 @@ sudo sh -c 'echo -e "[anydesk]\nname=AnyDesk Fedora - stable\nbaseurl=http://rpm
 
 ```shell
 sudo dnf check-update
-sudo dnf install anydesk
+#sudo dnf install anydesk
 ```
+```shell
+sudo dnf install https://download.anydesk.com/linux/anydesk-6.2.1-1.el8.x86_64.rpm
+```
+
+
+Quellen:
+- <https://forums.fedoraforum.org/showthread.php?328899-anydesk-6-2-on-Fedora-(missing-libgtkglext-x11-1_0-0)&p=1867513#post1867513>
