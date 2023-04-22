@@ -14,7 +14,7 @@
 
 https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/
 
-## Hostnamen anpassen
+### Hostnamen anpassen
 ### DNF konfigurieren
 ### System aktualisieren
 ### RPM Fusion aktivieren
@@ -42,13 +42,13 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak remote-delete fedora
 ```
 
-# Intel ARC A380M GPU aktivieren
+### Intel ARC A380M GPU aktivieren
 
 https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread  
 https://wiki.archlinux.org/title/intel_graphics  
 https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/  
 
-# Realtek ALC3306 konfigurieren
+### Realtek ALC3306 konfigurieren
 
 https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6
 
@@ -62,6 +62,9 @@ options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
 
+---
+
+[include](File:README-Applications.md)
 ## Applikationen
 
 ### 1Password installieren
