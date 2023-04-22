@@ -16,6 +16,12 @@ https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/
 
 ### DNF konfigurieren
 ### System aktualisieren
+### RPM Fusion aktivieren
 
 https://itsfoss.com/things-to-do-after-installing-fedora/  
-`sudo dnf update --refresh
+
+`sudo dnf update --refresh  
+
+`sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`  
+
+
