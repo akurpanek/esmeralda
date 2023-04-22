@@ -84,7 +84,7 @@ Folgende Optionen aktivieren
 options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
-
+<!---
 ### Kernel Fehler "xorg-x11-drv-intel" beheben
 
 `journalctl -b -k | grep "split lock"`
@@ -94,8 +94,8 @@ sudo grubby --update-kernel=ALL --args="split_lock_detect=off"
 cat /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
-
 https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001
+-->
 
 ---
 
