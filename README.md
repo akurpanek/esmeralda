@@ -67,6 +67,10 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
                  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
+```shell
+sudo dnf groupupdate core
+```
+
 ### System aktualisieren
 
 ```shell
