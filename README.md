@@ -57,6 +57,15 @@ flatpak remote-delete fedora
 
 ### Intel ARC A380M GPU aktivieren
 
+```
+sudo lspci -k | grep -EA3 'VGA|3D|Display'
+sudo lspci -nn | grep -EA3 'VGA|3D|Display
+#sudo grubby --update-kernel=ALL --args="i915.force_probe=<pci ID>"
+sudo grubby --update-kernel=ALL --args="i915.force_probe=5693"
+#sudo grubby --update-kernel=ALL --remove-args="i915.force_probe=<pci ID>"
+```
+
+https://www.reddit.com/r/Fedora/comments/10je7as/how_to_get_intel_arc_working_on_fedora_a770_a750/
 https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread  
 https://wiki.archlinux.org/title/intel_graphics  
 https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/  
@@ -74,6 +83,12 @@ Folgende Optionen aktivieren
 options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
+
+### Kernel Fehler "xorg-x11-drv-intel" beheben
+
+`journalctl -b -k | grep "split lock"`
+
+https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-system-error&p=1868001
 
 ---
 
