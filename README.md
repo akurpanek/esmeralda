@@ -50,3 +50,9 @@ https://forums.fedoraforum.org/showthread.php?329171-Intel-Arc-GPU-thread
 https://wiki.archlinux.org/title/intel_graphics  
 https://www.reddit.com/r/Fedora/comments/zg0v2v/fedora_37_not_loading_i915arc_770m_gpu_on_boot/  
 
+## Applikationen
+
+### 1Password installieren
+
+https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux
+
