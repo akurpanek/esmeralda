@@ -134,3 +134,7 @@ dnf check-update
 
 sudo dnf install code
 ```
+```
+xdg-mime default code.desktop text/plain
+```
+
