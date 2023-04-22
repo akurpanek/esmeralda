@@ -50,15 +50,13 @@ Quellen:
 - <https://itsfoss.com/things-to-do-after-installing-fedora/>  
 
 
-`sudo hostnamectl set-hostname "esmeralda"`  
+    sudo hostnamectl set-hostname "esmeralda"
 
-```
-# Fractional Scaling aktivieren
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+    # Fractional Scaling aktivieren
+    gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-# Fractional Scaling deaktiviern
-#gsettings set org.gnome.mutter experimental-features "[]"
-```
+    # Fractional Scaling deaktiviern
+    #gsettings set org.gnome.mutter experimental-features "[]"
 
 `sudo dnf update --refresh`  
 
