@@ -107,13 +107,15 @@ https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-syst
 
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+
 sudo dnf install lame\* --exclude=lame-devel
+
 sudo dnf group upgrade --with-optional Multimedia
 ```
 
 ### Diverse Pakete
 
-``
+```
 sudo dnf install -y neofetch
 ```
 
