@@ -1,4 +1,4 @@
-# esmeralda-fedora38
+# Fedora 38 auf dem Lenovo Yoga 7 16IAH7
 
 ## Pre-Installation
 
