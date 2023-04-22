@@ -134,7 +134,11 @@ dnf check-update
 
 sudo dnf install code
 ```
+
 ```
 xdg-mime default code.desktop text/plain
 ```
 
+```
+code --install-extension MS-CEINTL.vscode-language-pack-de
+```
