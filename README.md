@@ -105,10 +105,6 @@ Quellen:
 
 ### Realtek ALC3306 konfigurieren
 
-Quellen:
-
-- <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
-
 ```shell
 sudo nano  /etc/modprobe.d/snd.conf
 ```
@@ -119,6 +115,10 @@ Folgende Optionen aktivieren
 options snd_intel_dspcfg dsp_driver=1
 options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
+
+Quellen:
+
+- <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
 
 <!---
 
