@@ -107,6 +107,16 @@ Quellen:
 
 -->
 
+### H/W Video-Beschleunigung
+
+```shell
+sudo dnf install ffmpeg ffmpeg-libs libva libva-utils
+```
+
+```shell
+sudo dnf install intel-media-driver
+```
+
 ### Akkulaufzeit verbessern
 
 ```shell
