@@ -14,12 +14,16 @@
 
 https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/
 
+## Hostnamen anpassen
 ### DNF konfigurieren
 ### System aktualisieren
 ### RPM Fusion aktivieren
 ### Flathub Repository aktivieren
 
 https://itsfoss.com/things-to-do-after-installing-fedora/  
+
+
+`sudo hostnamectl set-hostname "esmeralda"`  
 
 ```
 # Fractional Scaling aktivieren
