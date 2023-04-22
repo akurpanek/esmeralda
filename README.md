@@ -200,6 +200,9 @@ Quellen:
 ```shell
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+```
+
+```shell
 sudo dnf check-update
 sudo dnf install code
 ```
@@ -219,16 +222,11 @@ Quellen:
 ### AnyDesk Remote-Desktop
 
 ```shell
-sudo cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
-[anydesk]
-name=AnyDesk Fedora - stable
-baseurl=http://rpm.anydesk.com/fedora/$basearch/
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
-EOF
+sudo sh -c 'echo -e "[anydesk]\nname=AnyDesk Fedora - stable\nbaseurl=http://rpm.anydesk.com/fedora/$basearch/\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY" > /etc/yum.repos.d/AnyDesk-Fedora.repo
+sudo dnf check-update
 ```
 
 ```shell
+sudo dnf check-update
 sudo dnf install anydesk
 ```
