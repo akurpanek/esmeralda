@@ -103,6 +103,17 @@ Quellen:
 
 -->
 
+### Akkulaufzeit verbessern
+
+```shell
+sudo dnf install tlp tlp-rdw
+sudo systemctl mask power-profiles-daemon
+```
+```shell
+sudo dnf install powertop
+sudo powertop --auto-tune
+```
+
 ### Realtek ALC3306 konfigurieren
 
 ```shell
