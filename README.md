@@ -24,7 +24,7 @@ https://itsfoss.com/things-to-do-after-installing-fedora/
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 # Fractional Scaling deaktiviern
-gsettings set org.gnome.mutter experimental-features "[]"
+#gsettings set org.gnome.mutter experimental-features "[]"
 ```
 
 `sudo dnf update --refresh`  
