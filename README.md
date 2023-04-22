@@ -59,7 +59,7 @@ flatpak remote-delete fedora
 
 ```
 sudo lspci -k | grep -EA3 'VGA|3D|Display'
-sudo lspci -nn | grep -EA3 'VGA|3D|Display
+sudo lspci -nn | grep -EA3 'VGA|3D|Display'
 #sudo grubby --update-kernel=ALL --args="i915.force_probe=<pci ID>"
 sudo grubby --update-kernel=ALL --args="i915.force_probe=5693"
 #sudo grubby --update-kernel=ALL --remove-args="i915.force_probe=<pci ID>"
@@ -101,7 +101,21 @@ https://forums.fedoraforum.org/showthread.php?330146-kernel-core-unexpected-syst
 
 ---
 
-## Applikationen
+## Software
+
+### Multimedia Pakete
+
+```
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
+```
+
+### Diverse Pakete
+
+``
+sudo dnf install -y neofetch
+```
 
 ### 1Password installieren
 
