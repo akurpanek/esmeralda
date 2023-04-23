@@ -186,7 +186,8 @@ Quellen:
 ### Nützliche Pakete
 
 ```shell
-sudo dnf install -y neofetch
+sudo dnf install -y neofetch \
+                    backintime-qt
 ```
 
 ### Tor Browser
