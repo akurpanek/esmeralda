@@ -190,6 +190,12 @@ sudo dnf install -y neofetch \
                     backintime-qt
 ```
 
+### Nextcloud Desktop Client
+
+```shell
+sudo dnf install nextcloud-client-nautilus
+```
+
 ### Tor Browser
 
 ```shell
