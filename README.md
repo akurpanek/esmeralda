@@ -168,6 +168,34 @@ Quellen:
 
 ---
 
+### Englische Benutzerordner xdg-user-dir einrichten
+
+```shell
+# Benutzerordner umbenennen
+if [ ! -d ~/Pictures ]; then mv ~/Bilder Pictures; fi
+if [ ! -d ~/Music ]; then mv ~/Musik Music; fi
+if [ ! -d ~/Videos ]; then mv ~/Videos Videos; fi
+if [ ! -d ~/Documents ]; then mv ~/Dokumente Documents; fi
+if [ ! -d ~/Public ]; then mv ~/Öffentlich Public; fi
+if [ ! -d ~/Desktop ]; then mv ~/Schreibtisch Desktop; fi
+if [ ! -d ~/Templates ]; then mv ~/Vorlagen Templates; fi
+```
+
+```shell
+# Config-Datei aktualsiieren
+echo 'en_US' > ~/.config/user-dirs.locale
+```
+
+```shell
+# Benutzerordner aktualisieren
+LC_ALL=en_US xdg-user-dirs-update --force
+LC_ALL=en_US xdg-user-dirs-gtk-update --force
+```
+
+Quellen:
+
+- <https://wiki.archlinux.org/title/XDG_user_directories>
+
 ## Software
 
 ### Multimedia Pakete installieren
@@ -194,6 +222,17 @@ sudo dnf install -y neofetch \
 
 ```shell
 sudo dnf install nextcloud-client-nautilus
+```
+
+```shell
+# lokale Benutzerordner in Nextcloud Benutzerordner verlinken
+if [ -d ~/Pictures ]; then if rmdir ~/Pictures; then ln -s ~/Nextcloud/Pictures ~/Pictures; fi; fi
+if [ -d ~/Music ]; then if rmdir ~/Music; then ln -s ~/Nextcloud/Music ~/Music; fi; fi
+if [ -d ~/Videos ]; then if rmdir ~/Videos; then ln -s ~/Nextcloud/Videos ~/Videos; fi; fi
+if [ -d ~/Documents ]; then if rmdir ~/Documents; then ln -s ~/Nextcloud/Documents ~/Documents; fi; fi
+if [ -d ~/Public ]; then if rmdir ~/Public; then ln -s ~/Nextcloud/Public ~/Public; fi; fi
+if [ -d ~/Desktop ]; then if rmdir ~/Desktop; then ln -s ~/Nextcloud/Desktop ~/Desktop; fi; fi
+if [ -d ~/Templates ]; then if rmdir ~/Templates; then ln -s ~/Nextcloud/Templates ~/Templates; fi; fi
 ```
 
 ### Tor Browser
