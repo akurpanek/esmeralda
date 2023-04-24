@@ -129,22 +129,34 @@ sudo dnf install powertop
 sudo powertop --auto-tune
 ```
 
-### Realtek ALC3306 konfigurieren
+### Realtek Audio konfigurieren
 
 ```shell
-sudo nano  /etc/modprobe.d/snd.conf
-```
+sudo dnf install alsa-ucm alsa-firmware
 
-Folgende Optionen aktivieren
-
-```shell
-options snd_intel_dspcfg dsp_driver=1
-options snd_hda_intel model=alc287-yoga9-bass-spk-pin
+cat /etc/modprobe.d/dspfix.conf
+options snd-intel-dspcfg dsp_driver=1
 ```
 
 Quellen:
 
 - <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
+
+### Intel Alder Lake PCH-P High Definition Audio konfigurieren
+
+```shell
+#cat /etc/modprobe.d/snd.conf
+#options snd_hda_intel model=alc287-yoga9-bass-spk-pin
+
+cat /etc/modprobe.d/alsa-base.conf
+options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
+```
+
+Quellen:
+
+- <https://askubuntu.com/questions/1243369/sound-card-not-detected-ubuntu-20-04-sof-audio-pci>
+- <https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture/Troubleshooting#Intel_Cannon_Lake_PCH_cAVS>
+
 
 <!---
 
@@ -215,7 +227,9 @@ Quellen:
 
 ```shell
 sudo dnf install -y neofetch \
+                    inxi \
                     backintime-qt \
+                    grub-customizer \
                     digikam
 ```
 
@@ -290,4 +304,19 @@ sudo dnf install https://download.anydesk.com/linux/anydesk-6.2.1-1.el8.x86_64.r
 
 
 Quellen:
+
 - <https://forums.fedoraforum.org/showthread.php?328899-anydesk-6-2-on-Fedora-(missing-libgtkglext-x11-1_0-0)&p=1867513#post1867513>
+
+### Zoom Desktop Client für Linux
+
+```shell
+sudo rpm --import https://zoom.us/linux/download/pubkey?version=5-12-6
+sudo dnf install https://zoom.us/client/5.14.5.2430/zoom_x86_64.rpm
+```
+```shell
+flatpak install flathub us.zoom.Zoom
+```
+
+Quellen:
+
+- <https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux>
