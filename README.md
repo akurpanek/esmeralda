@@ -215,7 +215,8 @@ Quellen:
 
 ```shell
 sudo dnf install -y neofetch \
-                    backintime-qt
+                    backintime-qt \
+                    digikam
 ```
 
 ### Nextcloud Desktop Client
