@@ -5,6 +5,7 @@
 Quellen:
 
 - <https://www.markdownguide.org/basic-syntax/>
+- <https://www.heise.de/ratgeber/Wie-Sie-Debian-und-Ubuntu-verschluesselt-neben-Windows-installieren-7207059.html>
 
 ---
 
