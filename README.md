@@ -140,6 +140,7 @@ options snd-intel-dspcfg dsp_driver=1
 
 Quellen:
 
+- <https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware>
 - <https://discussion.fedoraproject.org/t/problem-with-sound-on-new-lenovo-laptops/72456/6>
 
 ### Intel Alder Lake PCH-P High Definition Audio konfigurieren
