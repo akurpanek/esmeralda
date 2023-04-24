@@ -144,12 +144,11 @@ Quellen:
 
 ### Intel Alder Lake PCH-P High Definition Audio konfigurieren
 
-```shell
-#cat /etc/modprobe.d/snd.conf
-#options snd_hda_intel model=alc287-yoga9-bass-spk-pin
+Folgende Modulparameter durch erstellen der Datei `/etc/modprobe.d/snd.conf`konfigurieren:
 
-cat /etc/modprobe.d/alsa-base.conf
-options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
+```shell
+options snd_intel_dspcfg dsp_driver=1
+options snd_hda_intel model=alc287-yoga9-bass-spk-pin
 ```
 
 Quellen:
@@ -313,6 +312,7 @@ Quellen:
 sudo rpm --import https://zoom.us/linux/download/pubkey?version=5-12-6
 sudo dnf install https://zoom.us/client/5.14.5.2430/zoom_x86_64.rpm
 ```
+
 ```shell
 flatpak install flathub us.zoom.Zoom
 ```
@@ -320,3 +320,15 @@ flatpak install flathub us.zoom.Zoom
 Quellen:
 
 - <https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux>
+
+### Microsoft Edge Browser
+
+Quellen:
+
+- <https://www.linuxcapable.com/install-microsoft-edge-on-fedora-linux/>
+
+### Logitech Receiver 
+
+```shell
+sudo dnf install solaar solaar-udev
+```
