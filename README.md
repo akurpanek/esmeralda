@@ -310,18 +310,6 @@ Quellen:
 
 ### Microsoft Edge Browser
 
-```shell
-# Install repository configuration
-curl -sSL https://packages.microsoft.com/config/fedora/38//prod.repo | sudo tee /etc/yum.repos.d/microsoft-prod.repo
-
-# Install Microsoft's GPG public key
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc > ./microsoft.asc
-sudo rpm --import ./microsoft.asc
-
-# Install Microsoft Edge Stable
-sudo dnf install microsoft-edge-stable
-```
-
 Quellen:
 
 - <https://learn.microsoft.com/de-de/windows-server/administration/linux-package-repository-for-microsoft-software>
