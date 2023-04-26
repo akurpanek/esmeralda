@@ -215,8 +215,8 @@ Quellen:
 sudo dnf install -y neofetch \
                     inxi \
                     backintime-qt \
-                    grub-customizer \
-                    digikam
+                    vim \
+
 ```
 
 ### Nextcloud Desktop Client
