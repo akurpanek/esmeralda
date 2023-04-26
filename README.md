@@ -111,8 +111,8 @@ Quellen:
 ### H/W Video-Beschleunigung
 
 ```shell
-sudo dnf install ffmpeg ffmpeg-libs libva libva-utils
-#sudo dnf install --allowerasing ffmpeg ffmpeg-libs libva libva-utils
+#sudo dnf install ffmpeg ffmpeg-libs libva libva-utils
+sudo dnf install --allowerasing ffmpeg ffmpeg-libs libva libva-utils
 ```
 
 ```shell
