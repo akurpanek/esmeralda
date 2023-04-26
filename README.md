@@ -296,8 +296,8 @@ Quellen:
 ### Zoom Desktop Client für Linux
 
 ```shell
-sudo rpm --import https://zoom.us/linux/download/pubkey?version=5-12-6
-sudo dnf install https://zoom.us/client/5.14.5.2430/zoom_x86_64.rpm
+#sudo rpm --import https://zoom.us/linux/download/pubkey?version=5-12-6
+#sudo dnf install https://zoom.us/client/5.14.5.2430/zoom_x86_64.rpm
 ```
 
 ```shell
