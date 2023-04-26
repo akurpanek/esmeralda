@@ -75,7 +75,7 @@ sudo dnf groupupdate core
 ### System aktualisieren
 
 ```shell
-`sudo dnf update --refresh`  
+sudo dnf update --refresh
 ```
 
 ### Flathub Repository aktivieren
