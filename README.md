@@ -185,13 +185,13 @@ Quellen:
 
 ```shell
 # Benutzerordner umbenennen
-if [ ! -d ~/Pictures ]; then mv ~/Bilder Pictures; fi
-if [ ! -d ~/Music ]; then mv ~/Musik Music; fi
-if [ ! -d ~/Videos ]; then mv ~/Videos Videos; fi
-if [ ! -d ~/Documents ]; then mv ~/Dokumente Documents; fi
-if [ ! -d ~/Public ]; then mv ~/Öffentlich Public; fi
-if [ ! -d ~/Desktop ]; then mv ~/Schreibtisch Desktop; fi
-if [ ! -d ~/Templates ]; then mv ~/Vorlagen Templates; fi
+if [ ! -d ~/Pictures ]; then mv ~/Bilder ~/Pictures; fi
+if [ ! -d ~/Music ]; then mv ~/Musik ~/Music; fi
+if [ ! -d ~/Videos ]; then mv ~/Videos ~/Videos; fi
+if [ ! -d ~/Documents ]; then mv ~/Dokumente ~/Documents; fi
+if [ ! -d ~/Public ]; then mv ~/Öffentlich ~/Public; fi
+if [ ! -d ~/Desktop ]; then mv ~/Schreibtisch ~/Desktop; fi
+if [ ! -d ~/Templates ]; then mv ~/Vorlagen ~/Templates; fi
 ```
 
 ```shell
