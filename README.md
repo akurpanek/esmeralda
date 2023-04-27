@@ -319,3 +319,9 @@ Quellen:
 ```shell
 sudo dnf install solaar solaar-udev
 ```
+
+### Podman
+
+```shell
+sudo dnf -y install podman
+```
