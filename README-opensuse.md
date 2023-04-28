@@ -157,22 +157,26 @@ Quellen:
 ### AnyDesk Remote-Desktop
 
 ```shell
-sudo rpm --import https://keys.anydesk.com/repos/RPM-GPG-KEY
-sudo sh -c 'echo -e "[anydesk]\nname=AnyDesk Fedora - stable\nbaseurl=http://rpm.anydesk.com/fedora/\$basearch/\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY" > /etc/yum.repos.d/AnyDesk-Fedora.repo'
+cat > AnyDesk-OpenSUSE.repo << "EOF" 
+[anydesk]
+name=AnyDesk OpenSUSE - stable
+baseurl=http://rpm.anydesk.com/opensuse/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
+EOF
+
+zypper addrepo --repo AnyDesk-OpenSUSE.repo
 ```
 
 ```shell
-sudo dnf check-update
-#sudo dnf install anydesk
+sudo zypper refresh
+sudo zypper install anydesk
 ```
-```shell
-sudo dnf install https://download.anydesk.com/linux/anydesk-6.2.1-1.el8.x86_64.rpm
-```
-
 
 Quellen:
 
-- <https://forums.fedoraforum.org/showthread.php?328899-anydesk-6-2-on-Fedora-(missing-libgtkglext-x11-1_0-0)&p=1867513#post1867513>
+- <http://rpm.anydesk.com/howto.html>
 
 ### Zoom Desktop Client für Linux
 
