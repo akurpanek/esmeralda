@@ -118,6 +118,12 @@ Quellen:
 
 - <https://wiki.archlinux.org/title/XDG_user_directories>
 
+### Packman Repository einbinden
+
+```shell
+sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
+```
+
 ## Software
 
 
