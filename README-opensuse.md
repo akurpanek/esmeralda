@@ -123,9 +123,15 @@ Quellen:
 
 ### 1Password
 
+```shell
+sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
+sudo zypper ar https://downloads.1password.com/linux/rpm/stable/x86_64 1password
+sudo zypper install 1password
+```
+
 Quellen:
 
-- <https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux>
+- <[https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux](https://1password.community/discussion/comment/624348/#Comment_624348)>
 
 ### Visual Studio Code
 
