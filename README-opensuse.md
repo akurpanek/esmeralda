@@ -126,7 +126,7 @@ Quellen:
 ```shell
 sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
 sudo zypper ar https://downloads.1password.com/linux/rpm/stable/x86_64 1password
-sudo zypper install 1password
+sudo zypper install 1password 1password-cli
 ```
 
 Quellen:
@@ -209,11 +209,11 @@ Quellen:
 ### Logitech Receiver 
 
 ```shell
-sudo dnf install solaar solaar-udev
+sudo zypper install solaar solaar-udev
 ```
 
 ### Podman
 
 ```shell
-sudo dnf -y install podman
+sudo zypper install podman
 ```
