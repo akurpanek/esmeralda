@@ -122,6 +122,7 @@ Quellen:
 
 ```shell
 sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
+sudo zypper dup --from packman --allow-vendor-change
 ```
 
 ## Software
