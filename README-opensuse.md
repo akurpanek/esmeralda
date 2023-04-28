@@ -60,6 +60,20 @@ Quellen:
 
 - <https://www.omglinux.com/how-to-enable-fractional-scaling-fedora/>  
 
+### System aktualisieren
+
+```shell
+sudo zypper ref && sudo zypper up
+```
+
+### Snapshot erstellen
+
+```shell
+sudo snapper create --description "Vor den Änderungen nach der Installation" --print-number
+```
+```shell
+> 3
+```
 
 ### Intel Alder Lake PCH-P High Definition Audio konfigurieren
 
