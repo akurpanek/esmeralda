@@ -195,9 +195,16 @@ Quellen:
 
 ### Microsoft Edge Browser
 
+```shell
+sudo zypper ar https://packages.microsoft.com/yumrepos/edge edge
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo zypper refresh
+sudo zypper install microsoft-edge-stable
+```
+
 Quellen:
 
-- <https://learn.microsoft.com/de-de/windows-server/administration/linux-package-repository-for-microsoft-software>
+- <https://lanbugs.de/howtos/linux/opensuse-microsoft-edge-installieren/>
 
 ### Logitech Receiver 
 
