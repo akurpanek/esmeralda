@@ -118,6 +118,8 @@ Quellen:
 
 - <https://wiki.archlinux.org/title/XDG_user_directories>
 
+## Software
+
 ### Packman Repository einbinden
 
 ```shell
@@ -125,8 +127,14 @@ sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE
 sudo zypper dup --from packman --allow-vendor-change
 ```
 
-## Software
+### Nützliche Pakete
 
+```shell
+sudo zypper install neofetch \
+                    backintime-qt backintime-lang\
+                    vim \
+
+```
 
 ### 1Password
 
