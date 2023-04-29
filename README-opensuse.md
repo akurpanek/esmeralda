@@ -148,6 +148,13 @@ Quellen:
 
 - <https://software.opensuse.org/download/package?package=nextcloud-desktop&project=network>
 
+### Tor Browser
+
+```shell
+sudo zypper install torbrowser-launcher
+torbrowser-launcher
+```
+
 ### 1Password
 
 ```shell
