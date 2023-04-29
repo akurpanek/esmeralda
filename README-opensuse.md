@@ -136,6 +136,18 @@ sudo zypper install neofetch \
 
 ```
 
+### Nextcloud Desktop
+
+```shell
+#zypper addrepo https://download.opensuse.org/repositories/network/15.5/network.repo
+#zypper refresh
+zypper install nextcloud-desktop
+```
+
+Quellen:
+
+- <https://software.opensuse.org/download/package?package=nextcloud-desktop&project=network>
+
 ### 1Password
 
 ```shell
