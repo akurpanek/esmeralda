@@ -251,3 +251,9 @@ sudo zypper install solaar solaar-udev
 ```shell
 sudo zypper install podman
 ```
+
+### Gnome Boxes
+
+```shell
+sudo zypper install gnome-boxes
+```
