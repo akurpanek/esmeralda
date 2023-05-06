@@ -132,7 +132,7 @@ sudo powertop --auto-tune
 
 ### Intel Alder Lake PCH-P High Definition Audio konfigurieren
 
-Folgende Modulparameter durch erstellen der Datei `/etc/modprobe.d/alsa-base.conf`konfigurieren:
+Folgende Modulparameter durch erstellen der Datei `/etc/modprobe.d/snd.conf`konfigurieren:
 
 ```shell
 options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
