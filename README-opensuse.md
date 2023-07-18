@@ -264,3 +264,8 @@ sudo zypper install gnome-boxes
 ```shell
 flatpak install flathub de.bund.ausweisapp.ausweisapp2
 ```
+
+```shell
+DefaultZone=$(firewall-cmd --get-default-zone) && firewall-cmd --zone=$DefaultZone --add-port=24727/udp --permanent
+DefaultZone=$(firewall-cmd --get-default-zone) && firewall-cmd --zone=$DefaultZone --list-ports  --permanent
+```
