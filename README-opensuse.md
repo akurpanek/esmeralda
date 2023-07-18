@@ -257,3 +257,10 @@ sudo zypper install podman
 ```shell
 sudo zypper install gnome-boxes
 ```
+
+
+### Ausweis App 2
+
+```shell
+flatpak install flathub de.bund.ausweisapp.ausweisapp2
+```
