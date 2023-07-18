@@ -155,6 +155,12 @@ sudo zypper install torbrowser-launcher
 torbrowser-launcher
 ```
 
+### Proton VPN
+
+```shell
+flatpak install flathub com.protonvpn.www
+```
+
 ### 1Password
 
 ```shell
