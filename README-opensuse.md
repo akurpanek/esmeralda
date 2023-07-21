@@ -321,6 +321,6 @@ sudo flatpak install flathub com.hamrick.VueScan
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=5353/udp --permanent #MDNS
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8610/udp --permanent #Canon
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8612/udp --permanent #Canon
-DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-ports  --permanent
+DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-source-ports  --permanent
 sudo firewall-cmd --reload
 ```
