@@ -246,6 +246,20 @@ Quellen:
 
 - <https://lanbugs.de/howtos/linux/opensuse-microsoft-edge-installieren/>
 
+### Google Chrome
+
+```shell
+sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
+sudo zypper ref
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub
+sudo zypper in google-chrome-stable
+```
+
+Quellen:
+
+- <https://www.heiko-evermann.com/so-installierst-du-google-chrome-auf-suse-leap/?utm_content=cmp-true>
+
 ### Logitech Receiver 
 
 ```shell
