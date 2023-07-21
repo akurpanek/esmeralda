@@ -301,7 +301,6 @@ DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=
 ### Master PDF Editor
 
 ```shell
-
 sudo zypper ar http://repo.code-industry.net/rpm/master-pdf-editor.repo
 sudo rpm --import http://repo.code-industry.net/deb/pubmpekey.asc
 sudo zypper refresh
@@ -311,3 +310,9 @@ sudo zypper install master-pdf-editor
 Quellen: 
 
 - <https://code-industry.net/masterpdfeditor-help/package-installation-from-remote-repository/>
+
+### VueScan
+
+```shell
+sudo flatpak install flathub com.hamrick.VueScan
+```
