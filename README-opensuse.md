@@ -312,7 +312,7 @@ Quellen:
 
 - <https://code-industry.net/masterpdfeditor-help/package-installation-from-remote-repository/>
 
-### VueScan
+### VueScan Scanner Software
 
 ```shell
 sudo flatpak install flathub com.hamrick.VueScan
