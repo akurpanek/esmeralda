@@ -302,10 +302,11 @@ sudo firewall-cmd --reload
 ### Master PDF Editor
 
 ```shell
-sudo zypper ar http://repo.code-industry.net/rpm/master-pdf-editor.repo
-sudo rpm --import http://repo.code-industry.net/deb/pubmpekey.asc
-sudo zypper refresh
-sudo zypper install master-pdf-editor
+#sudo zypper ar http://repo.code-industry.net/rpm/master-pdf-editor.repo
+#sudo rpm --import http://repo.code-industry.net/deb/pubmpekey.asc
+#sudo zypper refresh
+#sudo zypper install master-pdf-editor
+sudo flatpak install flathub net.codeindustry.MasterPDFEditor
 ```
 
 Quellen: 
