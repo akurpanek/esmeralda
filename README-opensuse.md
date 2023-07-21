@@ -252,7 +252,7 @@ Quellen:
 sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
 sudo rpm --import https://dl.google.com/linux/linux_signing_key.pub
 sudo zypper refresh
-sudo zypper in google-chrome-stable
+sudo zypper install google-chrome-stable
 ```
 
 Quellen:
