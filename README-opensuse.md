@@ -296,6 +296,7 @@ flatpak install flathub de.bund.ausweisapp.ausweisapp2
 ```shell
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-port=24727/udp --permanent
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-ports  --permanent
+sudo firewall-cmd --reload
 ```
 
 ### Master PDF Editor
@@ -315,4 +316,11 @@ Quellen:
 
 ```shell
 sudo flatpak install flathub com.hamrick.VueScan
+```
+```shell
+DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=5353/udp --permanent #MDNS
+DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8610/udp --permanent #Canon
+DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8612/udp --permanent #Canon
+DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-ports  --permanent
+sudo firewall-cmd --reload
 ```
