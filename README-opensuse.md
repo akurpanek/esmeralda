@@ -287,7 +287,6 @@ sudo zypper install podman
 sudo zypper install gnome-boxes
 ```
 
-
 ### Ausweis App 2
 
 ```shell
@@ -298,3 +297,14 @@ flatpak install flathub de.bund.ausweisapp.ausweisapp2
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-port=24727/udp --permanent
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-ports  --permanent
 ```
+
+### Master PDF Editor
+
+```shell
+sudo yum config-manager --add-repo http://repo.code-industry.net/rpm/master-pdf-editor.repo
+sudo yum upgrade
+```
+
+Quellen: 
+
+- <https://code-industry.net/masterpdfeditor-help/package-installation-from-remote-repository/>
