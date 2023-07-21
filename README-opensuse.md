@@ -303,7 +303,7 @@ DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=
 ```shell
 
 sudo zypper ar http://repo.code-industry.net/rpm/master-pdf-editor.repo
-#sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo rpm --import http://repo.code-industry.net/deb/pubmpekey.asc
 sudo zypper refresh
 sudo zypper install master-pdf-editor
 ```
