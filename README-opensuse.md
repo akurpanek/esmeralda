@@ -325,3 +325,15 @@ DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=
 DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-source-ports  --permanent
 sudo firewall-cmd --reload
 ```
+
+### Signal Messenger
+
+```shell
+sudo flatpak install flathub org.signal.Signal
+```
+
+### Mullvad Browser
+
+```shell
+sudo flatpak install flathub net.mullvad.MullvadBrowser
+```
