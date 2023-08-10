@@ -130,10 +130,11 @@ sudo zypper dup --from packman --allow-vendor-change
 ### Nützliche Pakete
 
 ```shell
-sudo zypper install neofetch \
-                    backintime-qt backintime-lang\
-                    vim \
-                    git 
+sudo zypper install \
+  neofetch \
+  backintime-qt backintime-lang\
+  vim \
+  git 
 ```
 
 ### Nextcloud Desktop
@@ -186,6 +187,7 @@ Quellen:
 ### Visual Studio Code
 
 ```shell
+# Install Visual Studio Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
 sudo zypper refresh
@@ -193,10 +195,12 @@ sudo zypper install code
 ```
 
 ```shell
+# Set default text editor
 xdg-mime default code.desktop text/plain
 ```
 
 ```shell
+# Install extensions
 code --install-extension GitHub.vscode-github-actions
 code --install-extension GitHub.vscode-pull-request-github
 code --install-extension MS-CEINTL.vscode-language-pack-de
@@ -205,6 +209,25 @@ code --install-extension MS-CEINTL.vscode-language-pack-de
 Quellen:
 
 - <https://code.visualstudio.com/docs/editor/extension-marketplace>
+
+### PowerShell
+
+```shell
+# Install Dependencies
+sudo zypper update && \
+sudo zypper install libicu60_2 libopenssl1_0_0
+```
+
+```shell
+# Install PowerShell
+sudo zypper install \
+  --allow-unsigned-rpm \
+  https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-lts-7.2.3-1.rh.x86_64.rpm
+```
+
+Quellen:
+
+- <https://en.opensuse.org/PowerShell>
 
 ### AnyDesk Remote-Desktop
 
