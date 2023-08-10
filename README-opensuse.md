@@ -201,6 +201,9 @@ xdg-mime default code.desktop text/plain
 
 ```shell
 # Install extensions
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension ms-vscode.PowerShell
+code --install-extension mhutchie.git-graph
 code --install-extension GitHub.vscode-github-actions
 code --install-extension GitHub.vscode-pull-request-github
 code --install-extension MS-CEINTL.vscode-language-pack-de
