@@ -197,6 +197,8 @@ xdg-mime default code.desktop text/plain
 ```
 
 ```shell
+code --install-extension GitHub.vscode-github-actions
+code --install-extension GitHub.vscode-pull-request-github
 code --install-extension MS-CEINTL.vscode-language-pack-de
 ```
 
