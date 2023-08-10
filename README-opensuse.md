@@ -133,7 +133,7 @@ sudo zypper dup --from packman --allow-vendor-change
 sudo zypper install neofetch \
                     backintime-qt backintime-lang\
                     vim \
-
+                    git 
 ```
 
 ### Nextcloud Desktop
