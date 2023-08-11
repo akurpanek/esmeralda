@@ -69,6 +69,8 @@ sudo snap install snap-store
 
 ### Snapshot erstellen
 
+___Noch an Ubuntu anzupassen!___
+
 ```shell
 sudo snapper create --description "Vor den Änderungen nach der Installation" --print-number
 ```
@@ -81,6 +83,7 @@ sudo snapper create --description "Vor den Änderungen nach der Installation" --
 Folgende Modulparameter durch erstellen der Datei `/etc/modprobe.d/alsa-base.conf`konfigurieren:
 
 ```shell
+# Fix tinny and quiet sound on new Lenovo 7i
 options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin
 ```
 
