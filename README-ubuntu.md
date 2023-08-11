@@ -169,7 +169,17 @@ Quellen:
 ### Tor Browser
 
 ```shell
-sudo zypper install torbrowser-launcher
+sudo apt-get install -y torbrowser-launcher
+
+sudo cp /usr/lib/python3/dist-packages/torbrowser_launcher/common.py /usr/lib/python3/dist-packages/torbrowser_launcher/common.py.backup
+sudo sed -i 's|self.language =.*|self.language = "ALL"|g' /usr/lib/python3/dist-packages/torbrowser_launcher/common.py
+rm -rf ~/{cache,.local/share,.config}/torbrowser
+ln -s ~/.local/share/torbrowser/tbb/x86_64/tor-browser ~/.local/share/torbrowser/tbb/x86_64/tor-browser_ALL
+
+torbrowser-launcher
+```
+
+```shell
 torbrowser-launcher
 ```
 
