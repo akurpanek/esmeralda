@@ -189,6 +189,19 @@ Quellen:
 
 - <https://software.opensuse.org/download/package?package=nextcloud-desktop&project=network>
 
+### Cryptomator
+
+```shell
+sudo add-apt-repository -y ppa:sebastian-stenzel/cryptomator
+sudo apt update -y
+sudo apt install -y cryptomator
+```
+
+Quellen:
+
+- <https://cryptomator.org/de/downloads/linux/>
+- <https://launchpad.net/~sebastian-stenzel/+archive/ubuntu/cryptomator>
+
 ### Tor Browser
 
 ```shell
