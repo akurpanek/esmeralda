@@ -67,6 +67,20 @@ sudo snap remove snap-store && \
 sudo snap install snap-store
 ```
 
+### Ubuntu Full Desktop installieren
+
+```shell
+# Move from minimal desktop to full desktop
+sudo apt remove --auto-remove -y ubuntu-desktop-minimal
+sudo apt install -y ubuntu-desktop
+```
+
+```shell
+# Move from full desktop to minimal desktop
+sudo apt remove --auto-remove -y ubuntu-desktop
+sudo apt install -y ubuntu-desktop-minimal
+```
+
 ### Snapshot erstellen
 
 ___Noch an Ubuntu anzupassen!___
@@ -134,6 +148,14 @@ sudo apt install -y \
   git 
 ```
 
+### Gnome Evolution
+
+```shell
+# Replace thunderbird with gnome evolution
+sudo apt remove --auto-remove -y thunderbird
+sudo apt install -y evolution
+```
+
 ### Nextcloud Desktop
 
 ```shell
@@ -170,18 +192,29 @@ Quellen:
 
 ```shell
 sudo apt-get install -y torbrowser-launcher
+```
 
-sudo cp /usr/lib/python3/dist-packages/torbrowser_launcher/common.py /usr/lib/python3/dist-packages/torbrowser_launcher/common.py.backup
+```shell
+# Hotfix "Download Error: 404"
+# <https://askubuntu.com/questions/1445050/updating-tor-screwed-up-my-client-download-error-404>
+if [ ! -f /usr/lib/python3/dist-packages/torbrowser_launcher/common.py.backup ]; then \
+sudo cp /usr/lib/python3/dist-packages/torbrowser_launcher/{common.py,common.py.backup}
+fi
+
 sudo sed -i 's|self.language =.*|self.language = "ALL"|g' /usr/lib/python3/dist-packages/torbrowser_launcher/common.py
-rm -rf ~/{cache,.local/share,.config}/torbrowser
-ln -s ~/.local/share/torbrowser/tbb/x86_64/tor-browser ~/.local/share/torbrowser/tbb/x86_64/tor-browser_ALL
+sudo sed -i 's|"/tor-browser_"|"/tor-browser"|g' /usr/lib/python3/dist-packages/torbrowser_launcher/common.py
 
-torbrowser-launcher
+"/tor-browser_"
+
+rm -rf ~/{cache,.local/share,.config}/torbrowser
+ln -s ~/.local/share/torbrowser/tbb/x86_64{tor-browser,tor-browser_ALL}
 ```
 
 ```shell
 torbrowser-launcher
 ```
+
+
 
 ### Proton VPN
 
