@@ -145,7 +145,8 @@ sudo apt install -y \
   neofetch \
   backintime-qt \
   vim \
-  git 
+  git \
+  curl
 ```
 
 ### Gnome Evolution
@@ -204,7 +205,7 @@ fi
 sudo sed -i 's|self.language =.*|self.language = "ALL"|g' /usr/lib/python3/dist-packages/torbrowser_launcher/common.py
 sudo sed -i 's|"/tor-browser_"|"/tor-browser"|g' /usr/lib/python3/dist-packages/torbrowser_launcher/common.py
 
-"/tor-browser_"
+# Uncomment 'language' in the file manualy
 
 rm -rf ~/{cache,.local/share,.config}/torbrowser
 ln -s ~/.local/share/torbrowser/tbb/x86_64{tor-browser,tor-browser_ALL}
@@ -214,34 +215,45 @@ ln -s ~/.local/share/torbrowser/tbb/x86_64{tor-browser,tor-browser_ALL}
 torbrowser-launcher
 ```
 
-
-
-### Proton VPN
+### Mullvad VPN
 
 ```shell
-flatpak install flathub com.protonvpn.www
+wget -O MullvadVPN-latest.deb https://mullvad.net/de/download/app/deb/latest
+sudo apt install -y ./MullvadVPN-latest.deb
 ```
 
 ### 1Password
 
 ```shell
-sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
-sudo zypper ar https://downloads.1password.com/linux/rpm/stable/x86_64 1password
-sudo zypper install 1password 1password-cli
+curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
+
+sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+
+sudo apt update -y && sudo apt install -y 1password 1password-cli
 ```
 
 Quellen:
 
-- <[https://support.1password.com/install-linux/#centos-fedora-or-red-hat-enterprise-linux](https://1password.community/discussion/comment/624348/#Comment_624348)>
+- <https://support.1password.com/install-linux/#debian-or-ubuntu>
 
 ### Visual Studio Code
 
 ```shell
 # Install Visual Studio Code
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
-sudo zypper refresh
-sudo zypper install code
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code # or code-insiders
 ```
 
 ```shell
@@ -251,36 +263,44 @@ xdg-mime default code.desktop text/plain
 
 ```shell
 # Install extensions
-code --install-extension VisualStudioExptTeam.vscodeintellicode
-code --install-extension ms-vscode.PowerShell
-code --install-extension mhutchie.git-graph
-code --install-extension GitHub.vscode-github-actions
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension MS-CEINTL.vscode-language-pack-de
+code \
+  --install-extension VisualStudioExptTeam.vscodeintellicode \
+  --install-extension ms-vscode.PowerShell \
+  --install-extension mhutchie.git-graph \
+  --install-extension GitHub.vscode-github-actions \
+  --install-extension GitHub.vscode-pull-request-github \
+  --install-extension MS-CEINTL.vscode-language-pack-de
 ```
 
 Quellen:
 
+- <https://code.visualstudio.com/docs/setup/linux>
 - <https://code.visualstudio.com/docs/editor/extension-marketplace>
 
 ### PowerShell
 
 ```shell
-# Install Dependencies
-sudo zypper update && \
-sudo zypper install libicu60_2 libopenssl1_0_0
-```
-
-```shell
+## Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https software-properties-common
+# Download the Microsoft repository GPG keys
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+# Delete the the Microsoft repository GPG keys file
+rm packages-microsoft-prod.deb
+# Update the list of packages after we added packages.microsoft.com
+sudo apt-get update
 # Install PowerShell
-sudo zypper install \
-  --allow-unsigned-rpm \
-  https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-lts-7.2.3-1.rh.x86_64.rpm
+sudo apt-get install -y powershell
+# Start PowerShell
+pwsh
 ```
 
 Quellen:
 
-- <https://en.opensuse.org/PowerShell>
+- <https://learn.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.3>
 
 ### AnyDesk Remote-Desktop
 
