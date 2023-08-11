@@ -137,8 +137,20 @@ sudo apt install -y \
 ### Nextcloud Desktop
 
 ```shell
-sudo apt-get install -y nextcloud-desktop nextcloud-desktop-cmd 
+sudo apt-get install -y nextcloud-desktop nextcloud-desktop-cmd nautilus-nextcloud
 ```
+
+```shell
+mkdir -p ~/Nextcloud/Pictures
+mkdir -p ~/Nextcloud/Music
+mkdir -p ~/Nextcloud/Videos
+mkdir -p ~/Nextcloud/Documents
+mkdir -p ~/Nextcloud/Public
+mkdir -p ~/Nextcloud/Desktop
+mkdir -p ~/Nextcloud/Templates
+mkdir -p ~/Nextcloud/Desktop
+```
+
 ```shell
 # lokale Benutzerordner in Nextcloud Benutzerordner verlinken
 if [ -d ~/Pictures ]; then if rmdir ~/Pictures; then ln -s ~/Nextcloud/Pictures ~/Pictures; fi; fi
