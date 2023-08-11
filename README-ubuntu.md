@@ -124,19 +124,12 @@ Quellen:
 
 ## Software
 
-### Packman Repository einbinden
-
-```shell
-sudo zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_$releasever/' packman
-sudo zypper dup --from packman --allow-vendor-change
-```
-
 ### Nützliche Pakete
 
 ```shell
-sudo zypper install \
+sudo apt install -y \
   neofetch \
-  backintime-qt backintime-lang\
+  backintime-qt \
   vim \
   git 
 ```
@@ -144,9 +137,7 @@ sudo zypper install \
 ### Nextcloud Desktop
 
 ```shell
-#zypper addrepo https://download.opensuse.org/repositories/network/15.5/network.repo
-#zypper refresh
-zypper install nextcloud-desktop
+sudo apt-get install -y nextcloud-desktop nextcloud-desktop-cmd 
 ```
 ```shell
 # lokale Benutzerordner in Nextcloud Benutzerordner verlinken
