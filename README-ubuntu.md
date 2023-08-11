@@ -1,4 +1,4 @@
-# Opensuse Leap 15.5 auf dem Lenovo Yoga 7 16IAH7
+# Ubuntu 22.04 LTS auf dem Lenovo Yoga 7 16IAH7
 
 ## Hinweise
 
