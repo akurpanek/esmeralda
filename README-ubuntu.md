@@ -357,6 +357,24 @@ Quellen:
 
 - <http://deb.anydesk.com/howto.html>
 
+### Spotify for Linux
+
+```shell
+# snap package
+sudo snap install spotify
+```
+
+```shell
+# deb package
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update -y && sudo apt-get install -y spotify-client
+```
+
+Quellen:
+
+- <https://www.spotify.com/de/download/linux/>
+
 ### Zoom Desktop Client für Linux
 
 ```shell
