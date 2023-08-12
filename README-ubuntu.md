@@ -149,6 +149,21 @@ sudo apt install -y \
   curl
 ```
 
+### ZSH and OhMyZsh
+
+```shell
+sudo apt-get -y install zsh
+chsh -s $(which zsh)
+touch ~/.zshrc # Suppress configuration dialog
+rm ~/.zshrc # force configuration dialog
+
+```
+
+Quellen:
+
+- <https://www.heise.de/ratgeber/Einfuehrung-in-die-Z-Shell-Maximaler-Komfort-im-Terminal-4690876.html>
+- <https://www.heise.de/select/ct/2016/16/1470382401977334>
+
 ### Gnome Evolution
 
 ```shell
