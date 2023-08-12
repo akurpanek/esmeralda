@@ -318,26 +318,19 @@ Quellen:
 ### AnyDesk Remote-Desktop
 
 ```shell
-cat > AnyDesk-OpenSUSE.repo << "EOF" 
-[anydesk]
-name=AnyDesk OpenSUSE - stable
-baseurl=http://rpm.anydesk.com/opensuse/$basearch/
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
-EOF
-
-zypper addrepo --repo AnyDesk-OpenSUSE.repo
-```
-
-```shell
-sudo zypper refresh
-sudo zypper install anydesk
+# Add repository key to Trusted software providers list
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+# Add the repository:
+sudo echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+# Update apt cache:
+sudo apt update
+# Install anydesk:
+sudo apt install anydesk
 ```
 
 Quellen:
 
-- <http://rpm.anydesk.com/howto.html>
+- <http://deb.anydesk.com/howto.html>
 
 ### Zoom Desktop Client für Linux
 
