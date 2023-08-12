@@ -315,6 +315,12 @@ Quellen:
 
 - <https://learn.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.3>
 
+### Steam
+
+```shell
+sudo apt install -y steam-installer
+```
+
 ### AnyDesk Remote-Desktop
 
 ```shell
