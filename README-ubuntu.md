@@ -472,13 +472,6 @@ Quellen:
 ```shell
 sudo flatpak install flathub com.hamrick.VueScan
 ```
-```shell
-DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=5353/udp --permanent #MDNS
-DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8610/udp --permanent #Canon
-DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --add-source-port=8612/udp --permanent #Canon
-DefaultZone=$(sudo firewall-cmd --get-default-zone) && sudo firewall-cmd --zone=$DefaultZone --list-source-ports  --permanent
-sudo firewall-cmd --reload
-```
 
 ### Signal Messenger
 
@@ -493,11 +486,5 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 
 # 3. Update your package database and install Signal:
 sudo apt update -y && sudo apt install -y signal-desktop
-```
-
-### Mullvad Browser
-
-```shell
-sudo flatpak install flathub net.mullvad.MullvadBrowser
 ```
 
