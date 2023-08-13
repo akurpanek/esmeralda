@@ -309,10 +309,11 @@ xdg-mime default code.desktop text/plain
 code \
   --install-extension VisualStudioExptTeam.vscodeintellicode \
   --install-extension ms-vscode.PowerShell \
+  --install-extension ms-vscode.azure-repos \
+  --install-extension MS-CEINTL.vscode-language-pack-de
   --install-extension mhutchie.git-graph \
   --install-extension GitHub.vscode-github-actions \
   --install-extension GitHub.vscode-pull-request-github \
-  --install-extension MS-CEINTL.vscode-language-pack-de
 ```
 
 Quellen:
