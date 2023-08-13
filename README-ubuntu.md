@@ -390,12 +390,7 @@ Quellen:
 ### Zoom Desktop Client für Linux
 
 ```shell
-#sudo rpm --import https://zoom.us/linux/download/pubkey?version=5-12-6
-#sudo dnf install https://zoom.us/client/5.14.5.2430/zoom_x86_64.rpm
-```
-
-```shell
-flatpak install flathub us.zoom.Zoom
+sudo apt install -y ./zoom_amd64.deb
 ```
 
 Quellen:
@@ -488,7 +483,16 @@ sudo firewall-cmd --reload
 ### Signal Messenger
 
 ```shell
-sudo flatpak install flathub org.signal.Signal
+# 1. Install our official public software signing key:
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+
+# 2. Add our repository to your list of repositories:
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+  sudo tee /etc/apt/sources.list.d/signal-xenial.list
+
+# 3. Update your package database and install Signal:
+sudo apt update -y && sudo apt install -y signal-desktop
 ```
 
 ### Mullvad Browser
