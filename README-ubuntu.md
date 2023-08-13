@@ -373,14 +373,7 @@ Quellen:
 
 ```shell
 # snap package
-sudo snap install spotify
-```
-
-```shell
-# deb package
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update -y && sudo apt-get install -y spotify-client
+sudo snap install --stable spotify
 ```
 
 Quellen:
@@ -476,15 +469,6 @@ sudo flatpak install flathub com.hamrick.VueScan
 ### Signal Messenger
 
 ```shell
-# 1. Install our official public software signing key:
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-
-# 2. Add our repository to your list of repositories:
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-  sudo tee /etc/apt/sources.list.d/signal-xenial.list
-
-# 3. Update your package database and install Signal:
-sudo apt update -y && sudo apt install -y signal-desktop
+sudo snap install --stable signal-desktop
 ```
 
