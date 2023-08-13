@@ -448,11 +448,9 @@ sudo firewall-cmd --reload
 ### Master PDF Editor
 
 ```shell
-#sudo zypper ar http://repo.code-industry.net/rpm/master-pdf-editor.repo
-#sudo rpm --import http://repo.code-industry.net/deb/pubmpekey.asc
-#sudo zypper refresh
-#sudo zypper install master-pdf-editor
-sudo flatpak install flathub net.codeindustry.MasterPDFEditor
+wget --quiet -O - http://repo.code-industry.net/deb/pubmpekey.asc | sudo tee /etc/apt/keyrings/pubmpekey.asc
+echo "deb [signed-by=/etc/apt/keyrings/pubmpekey.asc arch=$( dpkg --print-architecture )] http://repo.code-industry.net/deb stable main" | sudo tee /etc/apt/sources.list.d/master-pdf-editor.list
+sudo apt install -y master-pdf-editor-5
 ```
 
 Quellen: 
