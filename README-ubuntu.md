@@ -208,6 +208,17 @@ Quellen:
 
 - <https://software.opensuse.org/download/package?package=nextcloud-desktop&project=network>
 
+### Wine 
+
+```shell
+sudo apt-get install -y wine-stable
+sudo dpkg --add-architecture i386 && sudo apt update -y && sudo apt install -y wine32 
+```
+
+Quellen:
+
+- <https://wiki.ubuntuusers.de/Wine/>
+
 ### Cryptomator
 
 ```shell
