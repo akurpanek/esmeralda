@@ -372,7 +372,6 @@ Quellen:
 ### Spotify for Linux
 
 ```shell
-# snap package
 sudo snap install --stable spotify
 ```
 
