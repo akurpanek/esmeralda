@@ -469,3 +469,9 @@ sudo flatpak install flathub com.hamrick.VueScan
 sudo snap install --stable signal-desktop
 ```
 
+### WhatsApp Messenger
+
+```shell
+sudo snap install --stable whatsapp-for-linux
+```
+
