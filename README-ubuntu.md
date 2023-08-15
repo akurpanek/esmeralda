@@ -108,6 +108,13 @@ Quellen:
 
 ---
 
+### Intel i915 and Kernel 6.2
+
+Quellen:
+
+- <https://askubuntu.com/questions/1480917/i915-missing-firmware-error-message-during-kernel-6-2-0-26-installation-on-xubun>
+- <https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/dg2_huc_gsc.bin>
+
 ### Englische Benutzerordner xdg-user-dir einrichten
 
 ```shell
@@ -287,7 +294,7 @@ Quellen:
 ### Gnome Boxes and KVM
 
 ```shell
-sudo apt install -y boxes virt-manager qemu-user qemu-system qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo apt install -y gnome-boxes virt-manager
 sudo ln -s /usr/bin/qemu-system-x86_64 /usr/bin/qemu
 sudo adduser `id -un` libvirt
 sudo adduser `id -un` kvm
