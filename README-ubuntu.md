@@ -59,14 +59,6 @@ sudo apt autoremove -y && \
 sudo snap refresh
 ```
 
-### Ubuntu Software reparieren
-
-```shell
-sudo killall snap-store && \
-sudo snap remove snap-store && \
-sudo snap install snap-store
-```
-
 ### Ubuntu Full Desktop installieren
 
 ```shell
@@ -79,6 +71,14 @@ sudo apt install -y ubuntu-desktop
 # Move from full desktop to minimal desktop
 sudo apt remove --auto-remove -y ubuntu-desktop
 sudo apt install -y ubuntu-desktop-minimal
+```
+
+### Ubuntu Software reparieren
+
+```shell
+sudo killall snap-store && \
+sudo snap remove snap-store && \
+sudo snap install snap-store
 ```
 
 ### Snapshot erstellen
@@ -284,6 +284,18 @@ Quellen:
 
 - <https://support.1password.com/install-linux/#debian-or-ubuntu>
 
+### Gnome Boxes and KVM
+
+```shell
+sudo apt install -y boxes virt-manager qemu-user qemu-system qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo ln -s /usr/bin/qemu-system-x86_64 /usr/bin/qemu
+sudo adduser `id -un` libvirt
+sudo adduser `id -un` kvm
+sudo setfacl -m user:`id -un`:rw /var/run/libvirt/libvirt-sock
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+```
+
 ### Visual Studio Code
 
 ```shell
@@ -388,6 +400,10 @@ sudo apt install -y ./zoom_amd64.deb
 Quellen:
 
 - <https://support.zoom.us/hc/en-us/articles/204206269-Installing-or-updating-Zoom-on-Linux>
+
+### Firefox Browser
+
+
 
 ### Microsoft Edge Browser
 
