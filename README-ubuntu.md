@@ -186,6 +186,8 @@ sudo apt install -y evolution
 ### Nextcloud Desktop
 
 ```shell
+sudo add-apt-repository ppa:nextcloud-devs/client
+sudo apt update
 sudo apt-get install -y nextcloud-desktop nextcloud-desktop-cmd nautilus-nextcloud
 ```
 
