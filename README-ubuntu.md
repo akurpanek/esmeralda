@@ -178,9 +178,13 @@ Quellen:
 ### Gnome Evolution
 
 ```shell
-# Replace thunderbird with gnome evolution
+# Fix GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod in Ubuntu 22.04 and Firefox
 sudo apt remove --auto-remove -y thunderbird
 sudo apt install -y evolution
+```
+```shell
+# Replace thunderbird with gnome evolution
+sudo apt install -y xdg-desktop-portal-gnome
 ```
 
 ### Nextcloud Desktop
