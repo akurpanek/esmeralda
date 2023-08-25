@@ -68,9 +68,9 @@ sudo apt install -y ubuntu-desktop
 ```
 
 ```shell
-# Move from full desktop to minimal desktop
-sudo apt remove --auto-remove -y ubuntu-desktop
-sudo apt install -y ubuntu-desktop-minimal
+## Move from full desktop to minimal desktop
+#sudo apt remove --auto-remove -y ubuntu-desktop
+#sudo apt install -y ubuntu-desktop-minimal
 ```
 
 ### Ubuntu Software reparieren
@@ -182,6 +182,7 @@ Quellen:
 sudo apt remove --auto-remove -y thunderbird
 sudo apt install -y evolution
 ```
+
 ```shell
 # Replace thunderbird with gnome evolution
 sudo apt install -y xdg-desktop-portal-gnome
@@ -504,3 +505,37 @@ sudo snap install --stable signal-desktop
 sudo snap install --stable whatsapp-for-linux
 ```
 
+
+### Inkscape, GIMP, Scribus
+```shell
+sudo apt install -y inkscape
+sudo apt install -y gimp gimp-help-de
+sudo apt install -y scribus scribus-template scribus-doc texlive-latex-recommended
+```
+
+### GDM Background and Resolution
+```shell
+sudo apt-get install libglib2.0-dev-bin
+
+wget -q https://raw.githubusercontent.com/PRATAP-KUMAR/ubuntu-gdm-set-background/main/ubuntu-gdm-set-background && chmod +x ubuntu-gdm-set-background
+
+sudo ./ubuntu-gdm-set-background --image /home/akurpanek/.local/share/backgrounds/LenovoWallPaper.jpg
+#sudo update-alternatives --quiet --set gdm-theme.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
+```
+
+```shell
+sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config/monitors.xml
+```
+
+Quellen:
+
+- <https://github.com/PRATAP-KUMAR/ubuntu-gdm-set-background>
+
+
+### Media
+
+```shell
+flatpak install flathub org.gnome.World.PikaBackup
+sudo apt install libavcodec-extra ffmpeg
+sudo apt install seahorse-nautilus
+```
