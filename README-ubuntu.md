@@ -539,3 +539,30 @@ flatpak install flathub org.gnome.World.PikaBackup
 sudo apt install libavcodec-extra ffmpeg
 sudo apt install seahorse-nautilus
 ```
+
+
+### Double Commander
+
+```shell
+echo 'deb http://download.opensuse.org/repositories/home:/Alexx2000:/doublecmd-svn/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:Alexx2000:doublecmd-svn.list
+curl -fsSL https://download.opensuse.org/repositories/home:Alexx2000:doublecmd-svn/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_Alexx2000_doublecmd-svn.gpg > /dev/null
+sudo apt update
+sudo apt install doublecmd-gtk
+```
+
+
+### Swap File
+
+```shell
+sudo truncate -s 0 /swapfile
+sudo chattr +C /swapfile
+sudo btrfs property set /swapfile compression none
+sudo fallocate -l 512M /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
+Quellen:
+
+- <https://btrfs.readthedocs.io/en/latest/Swapfile.html>
