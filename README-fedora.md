@@ -7,6 +7,8 @@ Quellen:
 - <https://www.markdownguide.org/basic-syntax/>
 - <https://www.heise.de/ratgeber/Wie-Sie-Debian-und-Ubuntu-verschluesselt-neben-Windows-installieren-7207059.html>
 
+- <https://haominnn.medium.com/fixing-fedora-38-screen-flicking-issue-on-intel-integrated-graphics-620-thinkpad-x270-74020871dfb0>
+
 ---
 
 ## Hardware Informationen
