@@ -232,4 +232,12 @@ sudo apt install qt5-style-plugins
 echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile 
 
 
+##
+## https://linrunner.de/tlp/index.html
+##
+
+sudo systemctl enable tlp.service
+sudo systemctl enable tlp.service
+
+
 ```
