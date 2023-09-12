@@ -204,6 +204,8 @@ cd ~
 rm -rf grub-btrfs
 
 
+sudo apt install neofetch vim 
+
 
 
 ##
