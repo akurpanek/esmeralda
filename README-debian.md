@@ -206,4 +206,30 @@ rm -rf grub-btrfs
 
 
 
+##
+## https://www.reddit.com/r/debian/comments/158l8sm/debian_12_postinstallation_notes/
+## https://www.debugpoint.com/things-to-do-debian-12/
+##
+
+
+# Enable 32bit packages (this is required for some packages like Steam if you want to install Steam from the Debian repositories instead of the Flatpak version)
+
+sudo dpkg --add-architecture i386 ; sudo apt update
+
+
+
+# Enable Flatpak support
+
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+# Fix broken QT application theming in Gnome
+
+sudo apt install qt5-style-plugins
+
+echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile 
+
+
 ```
