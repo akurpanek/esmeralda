@@ -223,7 +223,16 @@ sudo apt install -f -t bookworm-backports linux-image-amd64 firmware-linux linux
 
 sudo dpkg --add-architecture i386 ; sudo apt update
 
+
+
+
 sudo apt install steam-devices
+sudo flatpak install flathub com.valvesoftware.Steam.CompatibilityTool.Proton com.valvesoftware.Steam.CompatibilityTool.Proton-Exp com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+flatpak install flathub io.github.Foldex.AdwSteamGtk
+
+
+
+
 
 # Enable Flatpak support
 
