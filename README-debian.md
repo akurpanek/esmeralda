@@ -223,7 +223,7 @@ sudo apt install -f -t bookworm-backports linux-image-amd64 firmware-linux linux
 
 sudo dpkg --add-architecture i386 ; sudo apt update
 
-
+sudo apt install steam-devices
 
 # Enable Flatpak support
 
