@@ -208,6 +208,11 @@ sudo apt install neofetch vim
 
 
 
+# Update Kernel from backports
+sudo apt install -f -t bookworm-backports linux-image-amd64 firmware-linux linux-headers-amd64
+
+
+
 ##
 ## https://www.reddit.com/r/debian/comments/158l8sm/debian_12_postinstallation_notes/
 ## https://www.debugpoint.com/things-to-do-debian-12/
