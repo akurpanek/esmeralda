@@ -270,3 +270,18 @@ sudo systemctl enable tlp.service
 
 
 ```
+
+
+
+
+# AnyDesk
+
+
+```
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | gpg --dearmor | sudo tee /usr/share/keyrings/anydesk-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/anydesk-archive-keyring.gpg] http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
+
+```
+
