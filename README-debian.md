@@ -277,6 +277,10 @@ sudo systemctl enable tlp.service
 # AnyDesk
 
 
+Quellen:
+
+- <https://linuxnews.de/debian-11-repositories-aus-3-hand-ohne-apt-key-einbinden/>
+
 ```
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | gpg --dearmor | sudo tee /usr/share/keyrings/anydesk-archive-keyring.gpg
 
