@@ -233,6 +233,19 @@ flatpak install flathub io.github.Foldex.AdwSteamGtk
 
 
 
+#
+apt install python3.11-venv
+
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+ln -s /usr/local/bin/yt-dlp usr/local/bin/youtube-dl
+
+sudo apt-get install rtmpdump
+
+
+
+
+
 
 # Enable Flatpak support
 
