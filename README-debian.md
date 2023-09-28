@@ -2,6 +2,7 @@ Quellen:
 
 - <https://www.youtube.com/watch?v=b4vTKg-qW_0>
 - <https://rootco.de/2018-01-19-opensuse-btrfs-subvolumes/>
+- <https://gist.github.com/meeas/b574e4bede396783b1898c90afa20a30>
 
 
 
