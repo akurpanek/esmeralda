@@ -24,6 +24,8 @@ Execute commands between partitioning and installing
 
 ```shell
 
+mount
+
 umount /target/boot/efi
 umount /target/boot
 umount /target
