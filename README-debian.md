@@ -9,12 +9,13 @@ Quellen:
 
 ## Partitionierung
 
-Nr | Size | Type | Mount Point
-
-1.0 MB | | FREIER SPEICHER
-ESP | 
-512 MB | ext2 | /boot
-
+| Nr | Size | Type | Mount Point |
+| -: | ---: | :--- | :---------- |
+| 1  | 1 MB | | FREIER SPEICHER |
+| 2  | 536 MB | ESP | |
+| 3  | 512 MB | ext2 | /boot |
+| 3  | REST | crypto | (disk_crypt) |
+|    | 1 MB |    |FREIER SPEICHER | 
 
 ## Command line
 
