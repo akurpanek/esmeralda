@@ -4,7 +4,17 @@ Quellen:
 - <https://rootco.de/2018-01-19-opensuse-btrfs-subvolumes/>
 
 
+
 # Installation
+
+## Partitionierung
+
+Nr | Size | Type | Mount Point
+
+1.0 MB | | FREIER SPEICHER
+ESP | 
+512 MB | ext2 | /boot
+
 
 ## Command line
 
