@@ -70,14 +70,13 @@ nano /mnt/@/.snapshots/1/info.xml
 #-------------------------------------------------
 
 #btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
-btrfs subvolume list /mnt
 btrfs subvolume set-default 258 /mnt
 unmount /mnt
 
-mount -o subvol
-mount /dev/sda1 /mnt
-
 mount -o subvol=@,noatime,compress=zstd:1 /dev/mapper/<dmcrypt_partition> /target
+
+# Validate if /mnt ist empty
+ls /mnt
 
 mkdir -p /target/.snapshots
 #mkdir -p /target/boot/grub2/i386-pc
