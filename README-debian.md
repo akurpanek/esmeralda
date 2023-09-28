@@ -62,7 +62,7 @@ nano /mnt/@/.snapshots/1/info.xml
 <snapshot>
   <type>single</type>
   <num>1</num>
-  <date>$DATE</date>
+  <date>YYYY-MM-DD hh:mm:ss</date>
   <description>first root filesystem</description>
 </snapshot>
 #-------------------------------------------------
