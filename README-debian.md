@@ -256,6 +256,12 @@ flatpak install flathub io.github.Foldex.AdwSteamGtk
 
 
 
+#qt application theming
+
+- <https://gnulinux.ch/qt-anwendungen-in-gtk-desktops-integrieren>
+
+sudo apt install adwaita-qt adwaita-qt6 adwaita-icon-theme
+nano /etc/environment
 
 #
 apt install python3.11-venv
