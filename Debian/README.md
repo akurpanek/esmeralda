@@ -36,7 +36,7 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 # Fractional Scaling deaktiviern
 gsettings reset org.gnome.mutter experimental-features
 ```
-##### Flatpak und Flathub konfigurieren
+##### Flatpak und Flathub einrichten
 
 Quellen:
 
@@ -56,9 +56,12 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 
 **Quellen:**
 
+- <https://wiki.debian.org/SystemVirtualization>
 - <https://wiki.debian.org/KVM>
 - <https://wiki.debian.org/LXC>
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
+
+##### KVM und XLC installieren
 
 ```shell
 # QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
