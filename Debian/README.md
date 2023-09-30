@@ -31,9 +31,9 @@ gsettings set org.gnome.mutter experimental-features "[]"
 ```
 
 
-# Base Installation
+## Base Installation
 
-## KVM Virtualization
+### KVM Virtualization
 
 **Quellen:**
 
