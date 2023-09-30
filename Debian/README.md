@@ -2,7 +2,7 @@
 
 ## Pre-Installation
 
-## Installation
+## OS-Installation
 
 ## Post-Installation
 
@@ -29,7 +29,7 @@ gsettings set org.gnome.mutter experimental-features "[]"
 ```
 
 
-# Software Installation
+# Base Installation
 
 ## KVM Virtualization
 
