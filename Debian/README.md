@@ -26,7 +26,7 @@ sudo apt install -y qemu-system libvirt-daemon-system
 cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
-sudo echo "options kvm_intel nested=1" > /etc/modprobe.d/kvm.conf
+echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
 
 # Aktuellem Benutzer zur Gruppe libvirt hnzufügen und
 # das Verwalten von VMs erlauben 
