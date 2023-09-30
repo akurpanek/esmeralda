@@ -31,7 +31,6 @@ Quellen:
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer','x11-randr-fractional-scaling']"
 ```
 ```shell
 # Fractional Scaling deaktiviern
