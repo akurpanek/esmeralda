@@ -1,10 +1,12 @@
-# Debian Installation
+# Debian 12 GNOME
 
-## Pre-Installation
+## Installation
 
-## OS-Installation
+### Pre-Installation
 
-## Post-Installation
+### OS-Installation
+
+### Post-Installation
 
 ##### CDROM als Installationsqelle deaktiveren
 
