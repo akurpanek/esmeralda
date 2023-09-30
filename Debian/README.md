@@ -13,7 +13,7 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 sudo hostnamectl set-hostname "esmeralda"
 ```
 
-##### Fractional Scaling aktivieren
+##### Fractional Scaling konfigurieren
 
 ```shell
 # Fractional Scaling aktivieren
@@ -21,7 +21,7 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 ```
 ```shell
 # Fractional Scaling deaktiviern
-#gsettings set org.gnome.mutter experimental-features "[]"
+gsettings set org.gnome.mutter experimental-features "[]"
 ```
 
 
