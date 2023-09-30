@@ -1,5 +1,9 @@
 # Debian Installation
 
+## Pre-Installation
+
+## Installation
+
 ## Post-Installation
 
 ##### CDROM als Installationsqelle deaktiveren
