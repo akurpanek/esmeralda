@@ -60,21 +60,17 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 - <https://wiki.debian.org/LXC>
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
 
-##### QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
 ```shell
+# QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
 sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
-```
 
-##### Nested Virtualization aktivieren
-```shell
+# Nested Virtualization aktivieren
 cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
-```
 
-##### Aktuellen Benutzer zur Gruppe libvirt hnzufügen
-```shell
+# Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
 ```
 
