@@ -10,10 +10,14 @@
 
 ##### CDROM als Installationsqelle deaktiveren
 
+Befehle:
+ 
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
 ##### Hostname konfigurieren
+
+Befehle:
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
@@ -27,6 +31,8 @@ Quellen:
 
 - <https://wiki.archlinux.org/title/HiDPI#Wayland>
 
+Befehle:
+ 
 ```shell
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
@@ -41,6 +47,8 @@ gsettings reset org.gnome.mutter experimental-features
 Quellen:
 
 - <https://wiki.debian.org/Flatpak>
+
+Befehle:
 
 ```shell
 # Flatpkak und GNOME Software Plugin
@@ -62,6 +70,8 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 - <https://wiki.debian.org/KVM>
 - <https://wiki.debian.org/LXC>
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
+
+Befehle:
 
 ```shell
 # QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
