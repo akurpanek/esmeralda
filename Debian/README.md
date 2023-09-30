@@ -13,7 +13,7 @@
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
-##### Hostnamen anpassen
+##### Hostname konfigurieren
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
@@ -36,11 +36,19 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 # Fractional Scaling deaktiviern
 gsettings reset org.gnome.mutter experimental-features
 ```
-
+##### Flatpak und Flathub konfigurieren
 
 Quellen:
 
 - <https://wiki.debian.org/Flatpak>
+
+```shell
+# Flatpkak und GNOME Software Plugin
+sudo apt install flatpak gnome-software-plugin-flatpak
+
+# Flathub Repository
+sudo latpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
 
 ## Software Installation
 
