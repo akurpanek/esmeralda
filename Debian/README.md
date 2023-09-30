@@ -21,7 +21,7 @@ sudo hostnamectl set-hostname "esmeralda"
 
 ## GNOME Konfiguration
 
-###### Fractional Scaling konfigurieren
+##### Fractional Scaling konfigurieren
 
 Quellen:
 
