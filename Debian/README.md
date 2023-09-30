@@ -92,3 +92,13 @@ sudo flatpak install -y flathub org.gnome.World.PikaBackup
 ```
 
 
+### Instant Messaging
+
+##### Messenger einrichten
+
+```shell
+# WhatsApp Desktop installieren
+sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
+
+```
+
