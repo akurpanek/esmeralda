@@ -34,7 +34,7 @@ gsettings set org.gnome.mutter experimental-features "[]"
 
 ## Software Installation
 
-### KVM Virtualization
+### Container- und Virtualisierung
 
 **Quellen:**
 
