@@ -47,7 +47,7 @@ Quellen:
 sudo apt install flatpak gnome-software-plugin-flatpak
 
 # Flathub Repository
-sudo latpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
 ## Software Installation
