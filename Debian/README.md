@@ -8,18 +8,19 @@
 
 ### Post-Installation
 
-#### System aktualisieren
-
-```shell
-sudo apt update -y && \
-    sudo apt upgrade -y && \
-    sudo apt autoremove  --purge -y
-```
-
 #### CDROM als Installationsqelle deaktiveren
  
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
+```
+
+#### System aktualisieren
+
+```shell
+# Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
+sudo apt update -y && \
+    sudo apt upgrade -y && \
+    sudo apt autoremove  --purge -y
 ```
 
 #### Hostname konfigurieren
