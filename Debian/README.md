@@ -99,6 +99,10 @@ sudo flatpak install -y flathub org.gnome.World.PikaBackup
 ```shell
 # WhatsApp Desktop installieren
 sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
+```
 
+```shell
+# Signal Desktop installieren
+sudo flatpak install -y flathub org.signal.Signal
 ```
 
