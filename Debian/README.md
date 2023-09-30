@@ -49,6 +49,13 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 # Fractional Scaling deaktiviern
 gsettings reset org.gnome.mutter experimental-features
 ```
+
+#### GNOME Shell Extension installieren
+
+Quellen:
+
+- <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
+
 #### Flatpak einrichten
 
 Quellen:
