@@ -8,6 +8,12 @@
 
 ### Post-Installation
 
+#### Hostname konfigurieren
+
+```shell
+sudo hostnamectl set-hostname "esmeralda"
+```
+
 #### CDROM als Installationsqelle deaktiveren
  
 ```shell
@@ -21,12 +27,6 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 sudo apt update -y && \
     sudo apt upgrade -y && \
     sudo apt autoremove  --purge -y
-```
-
-#### Hostname konfigurieren
-
-```shell
-sudo hostnamectl set-hostname "esmeralda"
 ```
 
 ## GNOME Konfiguration
