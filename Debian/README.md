@@ -50,13 +50,6 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 gsettings reset org.gnome.mutter experimental-features
 ```
 
-#### GNOME Shell Extension installieren
-
-Quellen:
-
-- <https://extensions.gnome.org/>
-- <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
-
 #### Flatpak einrichten
 
 Quellen:
@@ -78,6 +71,23 @@ rm -rf ~/.cache/gnome-software
 
 # Flatseal installieren
 sudo flatpak install -y flathub com.github.tchx84.Flatseal
+```
+
+#### GNOME Shell Extension installieren
+
+Quellen:
+
+- <https://extensions.gnome.org/>
+- <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
+
+#### GNOME Themes Qt und GTK
+
+Quellen:
+
+- <https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications>
+
+```shell
+sudo apt install -y adwaita-qt
 ```
 
 ## Software Installation
