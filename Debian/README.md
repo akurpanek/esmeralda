@@ -54,6 +54,7 @@ gsettings reset org.gnome.mutter experimental-features
 
 Quellen:
 
+- <https://extensions.gnome.org/>
 - <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
 
 #### Flatpak einrichten
