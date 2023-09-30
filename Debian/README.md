@@ -120,6 +120,7 @@ sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
 ```shell
 # Signal Desktop installieren
 sudo flatpak install -y flathub org.signal.Signal
+flatpak override --user org.signal.Signal --reset
 flatpak override --user org.signal.Signal --filesystem=host
 
 ```
