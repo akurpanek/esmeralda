@@ -7,7 +7,7 @@
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
 
-# Application Installation
+# Software Installation
 
 ## KVM Virtualization
 
