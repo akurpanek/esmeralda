@@ -44,7 +44,7 @@ Quellen:
 
 ```shell
 # Flatpkak und GNOME Software Plugin installieren
-sudo apt install flatpak gnome-software-plugin-flatpak
+sudo apt install -y flatpak gnome-software-plugin-flatpak
 
 # Flathub Repository hinzufügen
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -88,7 +88,7 @@ sudo adduser $USERNAME libvirt
 
 ```shell
 # PIKA Backup installieren
-sudo flatpak install flathub org.gnome.World.PikaBackup
+sudo flatpak install -y flathub org.gnome.World.PikaBackup
 ```
 
 
