@@ -32,7 +32,6 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 gsettings set org.gnome.mutter experimental-features "[]"
 ```
 
-
 ## Software Installation
 
 ### KVM Virtualization
@@ -42,8 +41,6 @@ gsettings set org.gnome.mutter experimental-features "[]"
 - <https://wiki.debian.org/KVM>
 - <https://wiki.debian.org/LXC>
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
-
-#### Installation und Setup
 
 ###### QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
 ```shell
@@ -56,9 +53,11 @@ cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
+```
 
-##### Aktuellem Benutzer zur Gruppe libvirt hnzufügen
-##### und das Verwalten von VMs erlauben 
+###### Aktuellem Benutzer zur Gruppe libvirt hnzufügen
+###### und das Verwalten von VMs erlauben 
+```shell
 sudo adduser $USERNAME libvirt
 ```
 
