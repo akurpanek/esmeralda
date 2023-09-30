@@ -36,7 +36,7 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 # Fractional Scaling deaktiviern
 gsettings reset org.gnome.mutter experimental-features
 ```
-##### Flatpak und Flathub einrichten
+##### Flatpak einrichten
 
 Quellen:
 
