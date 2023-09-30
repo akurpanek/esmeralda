@@ -13,7 +13,8 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 
 **Quellen:**
 
-- <https://wiki.debian.org/KVM#Installation>
+- <https://wiki.debian.org/KVM>
+- <https://wiki.debian.org/LXC>
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
 
 **Installation und Setup:**
