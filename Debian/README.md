@@ -123,14 +123,28 @@ sudo flatpak install -y flathub org.gnome.World.PikaBackup
 ```shell
 # WhatsApp Desktop installieren
 sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
+
+# WhatsApp Desktop konfigurieren
+
+# WhatsApp Desktop Alias setzen
+alias signal='io.github.mimbrero.WhatsAppDesktop'
+echo "alias signal='io.github.mimbrero.WhatsAppDesktop'" |  tee -a ~/.bash_aliases
 ```
 
 ```shell
 # Signal Desktop installieren
 sudo flatpak install -y flathub org.signal.Signal
+
+# Signal Desktop konfigurieren
 flatpak override --user org.signal.Signal --reset
 flatpak override --user org.signal.Signal --filesystem=host
 flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
+
+# Signal Desktop Alias setzen
+alias signal='flatpak run org.signal.Signal'
+echo "alias signal='flatpak run org.signal.Signal'" |  tee -a ~/.bash_aliases
+
+~/.bash_aliases
 
 ```
 
