@@ -8,7 +8,7 @@
 
 ### Post-Installation
 
-##### System aktualisieren
+#### System aktualisieren
 
 ```shell
 sudo apt update -y && \
@@ -16,13 +16,13 @@ sudo apt update -y && \
     sudo apt autoremove  --purge -y
 ```
 
-##### CDROM als Installationsqelle deaktiveren
+#### CDROM als Installationsqelle deaktiveren
  
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
 
-##### Hostname konfigurieren
+#### Hostname konfigurieren
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
@@ -30,7 +30,7 @@ sudo hostnamectl set-hostname "esmeralda"
 
 ## GNOME Konfiguration
 
-##### Fractional Scaling konfigurieren
+#### Fractional Scaling konfigurieren
 
 Quellen:
 
@@ -48,7 +48,7 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 # Fractional Scaling deaktiviern
 gsettings reset org.gnome.mutter experimental-features
 ```
-##### Flatpak einrichten
+#### Flatpak einrichten
 
 Quellen:
 
@@ -72,7 +72,7 @@ rm -rf ~/.cache/gnome-software
 
 ### Container- und Virtualisierung
 
-##### KVM und XLC installieren
+#### KVM und XLC installieren
 
 **Quellen:**
 
@@ -96,7 +96,7 @@ sudo adduser $USERNAME libvirt
 ```
 ### Datensicherung
 
-##### PIKA Backup einrichten
+#### PIKA Backup einrichten
 
 ```shell
 # PIKA Backup installieren
@@ -106,7 +106,7 @@ sudo flatpak install -y flathub org.gnome.World.PikaBackup
 
 ### Instant Messaging
 
-##### Messenger einrichten
+#### Messenger einrichten
 
 ```shell
 # WhatsApp Desktop installieren
