@@ -1,10 +1,10 @@
 # Debian 12 GNOME
 
-## Installation
+## OS-Installation
 
 ### Pre-Installation
 
-### OS-Installation
+### Installation
 
 ### Post-Installation
 
@@ -18,6 +18,8 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
 ```
+
+## GNOME Konfiguration
 
 ##### Fractional Scaling konfigurieren
 
