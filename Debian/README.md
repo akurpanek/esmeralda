@@ -12,8 +12,8 @@
 
 ```shell
 sudo apt update -y && \
-sudo apt upgrade -y && \
-sudo apt --purge autoremve
+    sudo apt upgrade -y && \
+    sudo apt autoremove  --purge -y
 ```
 
 ##### CDROM als Installationsqelle deaktiveren
