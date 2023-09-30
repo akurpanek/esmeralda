@@ -143,8 +143,5 @@ flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
 # Signal Desktop Alias setzen
 alias signal='flatpak run org.signal.Signal'
 echo "alias signal='flatpak run org.signal.Signal'" |  tee -a ~/.bash_aliases
-
-~/.bash_aliases
-
 ```
 
