@@ -23,14 +23,26 @@ sudo hostnamectl set-hostname "esmeralda"
 
 ###### Fractional Scaling konfigurieren
 
+Quellen:
+
+- <https://wiki.archlinux.org/title/HiDPI#Wayland>
+
 ```shell
 # Fractional Scaling aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer','x11-randr-fractional-scaling']"
 ```
 ```shell
 # Fractional Scaling deaktiviern
 gsettings set org.gnome.mutter experimental-features "[]"
+gsettings reset org.gnome.mutter experimental-features
 ```
+
+
+Quellen:
+
+- <https://wiki.debian.org/Flatpak>
 
 ## Software Installation
 
