@@ -127,8 +127,10 @@ sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
 # WhatsApp Desktop konfigurieren
 
 # WhatsApp Desktop Alias setzen
-alias signal='io.github.mimbrero.WhatsAppDesktop'
-echo "alias signal='io.github.mimbrero.WhatsAppDesktop'" |  tee -a ~/.bash_aliases
+alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'
+grep -i '^alias whatsapp=' ~/.bash_aliases || \
+    echo "alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'" | \
+    tee -a ~/.bash_aliases
 ```
 
 ```shell
@@ -142,6 +144,11 @@ flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
 
 # Signal Desktop Alias setzen
 alias signal='flatpak run org.signal.Signal'
-echo "alias signal='flatpak run org.signal.Signal'" |  tee -a ~/.bash_aliases
+grep -i '^alias signal=' ~/.bash_aliases || \
+    echo "alias signal='flatpak run org.signal.Signal'" | \
+    tee -a ~/.bash_aliases
 ```
+
+
+
 
