@@ -53,6 +53,8 @@ gsettings reset org.gnome.mutter experimental-features
 
 Quellen:
 
+- <https://docs.flatpak.org/en/latest/sandbox-permissions.html>
+- <https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html>
 - <https://wiki.debian.org/Flatpak>
 
 ```shell
@@ -65,9 +67,10 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 # GNOME Software zurrücksetzen
 killall gnome-software
 rm -rf ~/.cache/gnome-software
+
+# Flatseal installieren
+sudo flatpak install -y flathub com.github.tchx84.Flatseal
 ```
-
-
 
 ## Software Installation
 
