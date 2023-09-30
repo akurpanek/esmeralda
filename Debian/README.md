@@ -2,7 +2,7 @@
 
 ## Post-Installation
 
-###### CDROM als Installationsqelle deaktiveren
+##### CDROM als Installationsqelle deaktiveren
 
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
