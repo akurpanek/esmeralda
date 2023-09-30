@@ -122,6 +122,9 @@ sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
 sudo flatpak install -y flathub org.signal.Signal
 flatpak override --user org.signal.Signal --reset
 flatpak override --user org.signal.Signal --filesystem=host
+flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
+flatpak override --user org.signal.Signal --env=SIGNAL_USE_WAYLAND=0
+flatpak override --user org.signal.Signal --env=SIGNAL_START_IN_TRAY=0
 
 ```
 
