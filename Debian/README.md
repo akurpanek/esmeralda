@@ -106,7 +106,7 @@ echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
 ```
-### Datensicherung
+### Datensicherung und Replikation
 
 #### PIKA Backup einrichten
 
@@ -115,6 +115,17 @@ sudo adduser $USERNAME libvirt
 sudo flatpak install -y flathub org.gnome.World.PikaBackup
 ```
 
+#### Nextcloud Desktop einrichten
+
+Quellen:
+
+- <https://wiki.debian.org/Nextcloud#Nextcloud_desktop_clients>
+- <https://nextcloud.com/de/install/>
+
+```shell
+# Nextcloud Desktop und Plugins installieren
+sudo apt install -y nautilus-nextcloud
+```
 
 ### Instant Messaging
 
