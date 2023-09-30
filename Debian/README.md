@@ -19,7 +19,7 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 **Installation und Setup:**
 
 ```shell
-# QEMU, KVM, QEUMU and libvirt installieren
+# QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
 sudo apt install -y qemu-system libvirt-daemon-system virt-manager
 
 # Nested Virtualization aktivieren
