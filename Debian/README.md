@@ -8,12 +8,12 @@
 
 ### Post-Installation
 
-##### CDROM als Installationsqelle deaktiveren
+###### CDROM als Installationsqelle deaktiveren
 
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
-##### Hostnamen anpassen
+###### Hostnamen anpassen
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
@@ -45,12 +45,12 @@ gsettings set org.gnome.mutter experimental-features "[]"
 
 #### Installation und Setup
 
-##### QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
+###### QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
 ```shell
 sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
 ```
 
-##### Nested Virtualization aktivieren
+###### Nested Virtualization aktivieren
 ```shell
 cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
