@@ -2,10 +2,28 @@
 
 ## Post-Installation
 
+### CDROM als Installationsqelle in der 'sources.list' deaktiveren
+
 ```shell
-# CDROM als Installationsqelle in der 'sources.list' deaktiveren
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
+### Hostnamen anpassen
+
+```shell
+sudo hostnamectl set-hostname "esmeralda"
+```
+
+### Fractional Scaling aktivieren
+
+```shell
+# Fractional Scaling aktivieren
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
+```shell
+# Fractional Scaling deaktiviern
+#gsettings set org.gnome.mutter experimental-features "[]"
+```
+
 
 # Software Installation
 
