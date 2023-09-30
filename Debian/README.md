@@ -55,8 +55,7 @@ sudo modprobe kvm_intel nested=1
 echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
 ```
 
-###### Aktuellem Benutzer zur Gruppe libvirt hnzufügen
-###### und das Verwalten von VMs erlauben 
+###### Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 ```shell
 sudo adduser $USERNAME libvirt
 ```
