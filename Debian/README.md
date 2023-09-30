@@ -7,7 +7,7 @@
 ```shell
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
-### Hostnamen anpassen
+##### Hostnamen anpassen
 
 ```shell
 sudo hostnamectl set-hostname "esmeralda"
