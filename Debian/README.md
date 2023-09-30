@@ -20,7 +20,7 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 
 ```shell
 # QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
-sudo apt install -y qemu-system libvirt-daemon-system virt-manager
+sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
 
 # Nested Virtualization aktivieren
 cat /sys/module/kvm_intel/parameters/nested
