@@ -43,12 +43,18 @@ Quellen:
 - <https://wiki.debian.org/Flatpak>
 
 ```shell
-# Flatpkak und GNOME Software Plugin
+# Flatpkak und GNOME Software Plugin installieren
 sudo apt install flatpak gnome-software-plugin-flatpak
 
-# Flathub Repository
+# Flathub Repository hinzufügen
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# GNOME Software zurrücksetzen
+killall gnome-software
+rm -rf ~/.cache/gnome-software
 ```
+
+
 
 ## Software Installation
 
