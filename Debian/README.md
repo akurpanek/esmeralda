@@ -13,7 +13,7 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 sudo hostnamectl set-hostname "esmeralda"
 ```
 
-### Fractional Scaling aktivieren
+##### Fractional Scaling aktivieren
 
 ```shell
 # Fractional Scaling aktivieren
