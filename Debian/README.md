@@ -37,9 +37,12 @@ Quellen:
 - <https://wiki.archlinux.org/title/HiDPI#Wayland>
  
 ```shell
-# Fractional Scaling aktivieren
+# Fractional Scaling Wayland aktivieren
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-#gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+```
+```shell
+# Fractional Scaling X11 aktivieren
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 ```
 ```shell
 # Fractional Scaling deaktiviern
