@@ -82,6 +82,13 @@ echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
 ```
+### Datensicherung
 
+##### PIKA Backup einrichten
+
+```shell
+# PIKA Backup installieren
+sudo flatpak install flathub org.gnome.World.PikaBackup
+```
 
 
