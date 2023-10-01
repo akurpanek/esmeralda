@@ -24,15 +24,15 @@ read -p 'Press [Enter] key to continue...'
 #umount $devboot
 #umount $devroot
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #mount $devroot /mnt
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #mv /mnt/@rootfs /mnt/@
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 ##btrfs subvolume create /mnt/@
 #btrfs subvolume create /mnt/@/.snapshots
@@ -50,7 +50,7 @@ read -p 'Press [Enter] key to continue...'
 #btrfs subvolume create /mnt/@/usr/local
 #btrfs subvolume create /mnt/@/var
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 ##chattr +C /mnt/@/var
 
@@ -64,17 +64,17 @@ read -p 'Press [Enter] key to continue...'
 #echo '  <description>first root filesystem</description>' >> $infoxml
 #echo '</snapshot>' >> $infoxml
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 ##unmount /mnt
 ##mount $devroot /mnt -o noatime,compress=zstd:1,subvol=@
 #mount $devroot /target -o noatime,compress=zstd:1 
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #mkdir -p /target/.snapshots
 ##mkdir -p /target/boot/grub2/i386-pc
@@ -88,7 +88,7 @@ read -p 'Press [Enter] key to continue...'
 #mkdir -p /target/usr/local
 #mkdir -p /target/var
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #mount $devroot /target/.snapshots -o noatime,compress=zstd:1,subvol=@/.snapshots
 ##mount $devroot /target/boot/grub2/i386-pc    -o noatime,compress=zstd:1,subvol=@/boot/grub2/i386-pc
@@ -103,12 +103,12 @@ read -p 'Press [Enter] key to continue...'
 #mount $devboot /target/boot
 #mount $devuefi /target/boot/efi
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #mv /mnt/etc /target/
 #mv mnt/media /target/
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #fstab=/target/etc/fstab
 #echo '# /etc/fstab: static file system information.' >> $fstab
@@ -137,8 +137,6 @@ read -p 'Press [Enter] key to continue...'
 #echo '# /boot/efi was on '$devuefi' during installation' >> $fstab
 #echo 'UUID='$iduefi'  /boot/efi       vfat    umask=0077      0       1' >> $fstab
 
-read -p 'Press [Enter] key to continue...'
+#read -p 'Press [Enter] key to continue...'
 
 #unmount /mnt
-
-read -p 'Press [Enter] key to continue...'
