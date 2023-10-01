@@ -112,4 +112,4 @@ echo '' >> $fstab
 echo '# /boot/efi was on '$devuefi' during installation' >> $fstab
 echo 'UUID='$iduefi'  /boot/efi       vfat    umask=0077      0       1' >> $fstab
 
-#unmount /mnt
+unmount /mnt
