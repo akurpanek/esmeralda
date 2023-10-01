@@ -53,7 +53,7 @@ echo '</snapshot>' >> $infoxml
 #btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
 btrfs subvolume set-default $(btrfs subvolume list /mnt | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /mnt
 
-#unmount /mnt
+#umount /mnt
 #mount $devroot /mnt -o noatime,compress=zstd:1,subvol=@
 mount $devroot /target -o noatime,compress=zstd:1 
 
@@ -112,4 +112,4 @@ echo '' >> $fstab
 echo '# /boot/efi was on '$devuefi' during installation' >> $fstab
 echo 'UUID='$iduefi'  /boot/efi       vfat    umask=0077      0       1' >> $fstab
 
-unmount /mnt
+umount /mnt
