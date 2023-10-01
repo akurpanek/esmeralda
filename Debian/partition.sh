@@ -50,7 +50,10 @@ echo '  <date>'$datetime'</date>' >> $infoxml
 echo '  <description>first root filesystem</description>' >> $infoxml
 echo '</snapshot>' >> $infoxml
 
-btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
+#btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
+btrfs subvolume set-default $(btrfs subvolume list /mnt | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /mnt
+
+devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
 
 #unmount /mnt
 #mount $devroot /mnt -o noatime,compress=zstd:1,subvol=@
