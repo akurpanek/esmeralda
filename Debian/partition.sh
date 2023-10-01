@@ -31,7 +31,7 @@ btrfs subvolume create /mnt/@/.snapshots/1/snapshot
 #btrfs subvolume create /mnt/@/boot/grub2/x86_64-efi
 btrfs subvolume create /mnt/@/home
 btrfs subvolume create /mnt/@/opt
-btrfs subvoulme create /mnt/@/root
+btrfs subvolume create /mnt/@/root
 btrfs subvolume create /mnt/@/srv
 btrfs subvolume create /mnt/@/tmp
 mkdir /mnt/@/usr/
