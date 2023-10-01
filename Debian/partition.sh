@@ -14,9 +14,9 @@ echo 'root='$devroot' ('$idroot')'
 echo 'boot='$devboot' ('$idboot')'
 echo 'ueif='$devuefi' ('$iduefi')'
 
-umount $devuefi
-umount $devboot
-umount $devroot
+umount /target/boot/efi
+umount /target/boot
+umount /target
 
 #mount $devroot /mnt
 
