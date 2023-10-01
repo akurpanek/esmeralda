@@ -86,7 +86,7 @@ mv /mnt/@/etc /target/
 mv mnt/@/media /target/
 
 fstab=/target/etc/fstab
-echo '# /etc/fstab: static file system information.' >> $fstab
+echo '# /etc/fstab: static file system information.' > $fstab
 echo '#' >> $fstab
 echo '# Use 'blkid' to print the universally unique identifier for a' >> $fstab
 echo '# device; this may be used with UUID= as a more robust way to name devices' >> $fstab
