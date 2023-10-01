@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
+
 devroot=$(awk '$2 == "/target" {print $1}' /proc/mounts)
 devboot=$(awk '$2 == "/target/boot" {print $1}' /proc/mounts)
 devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
