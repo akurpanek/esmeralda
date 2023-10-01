@@ -53,8 +53,6 @@ echo '</snapshot>' >> $infoxml
 #btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
 btrfs subvolume set-default $(btrfs subvolume list /mnt | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /mnt
 
-devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
-
 #unmount /mnt
 #mount $devroot /mnt -o noatime,compress=zstd:1,subvol=@
 mount $devroot /target -o noatime,compress=zstd:1 
@@ -78,14 +76,14 @@ mount $devroot /target/home       -o noatime,compress=zstd:1,subvol=@/home
 mount $devroot /target/opt        -o noatime,compress=zstd:1,subvol=@/opt
 mount $devroot /target/root       -o noatime,compress=zstd:1,subvol=@/root
 mount $devroot /target/srv        -o noatime,compress=zstd:1,subvol=@/srv
-mount $devroot /target/tmp        -o noatime,compress=zstd:1subvol=@/tmp
+mount $devroot /target/tmp        -o noatime,compress=zstd:1,subvol=@/tmp
 mount $devroot /target/usr/local  -o noatime,compress=zstd:1,subvol=@/usr/local
-mount $devroot /target/var        -o compress=zstd:1,subvol=@/var,noatime
+mount $devroot /target/var        -o noatime,compress=zstd:1,subvol=@/var
 mount $devboot /target/boot
 mount $devuefi /target/boot/efi
 
-mv /mnt/etc /target/
-mv mnt/media /target/
+mv /mnt/@/etc /target/
+mv mnt/@/media /target/
 
 fstab=/target/etc/fstab
 echo '# /etc/fstab: static file system information.' >> $fstab
