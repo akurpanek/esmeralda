@@ -14,9 +14,9 @@ read -p 'Press [Enter] key to continue...'
 
 read -p 'Press [Enter] key to continue...'
 
-#echo root=$devroot ($idroot)
-#echo boot=$devboot ($idboot)
-#echo ueif=$devuefi ($iduefi)
+#echo 'root='$devroot' ('$idroot')'
+#echo 'boot='$devboot' ('$idboot')'
+#echo 'ueif='$devuefi' ('$iduefi')'
 
 read -p 'Press [Enter] key to continue...'
 
