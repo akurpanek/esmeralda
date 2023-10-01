@@ -60,7 +60,8 @@ mount $devroot /target -o noatime,compress=zstd:1
 mkdir -p /target/.snapshots
 #mkdir -p /target/boot/grub2/i386-pc
 #mkdir -p /target/boot/grub2/x86_64-efi
-mkdir -p /target/boot/efi
+#mkdir -p /target/boot/efi
+mkdir -p /target/boot
 mkdir -p /target/home
 mkdir -p /target/opt
 mkdir -p /target/root
@@ -88,12 +89,12 @@ mv mnt/@/media /target/
 fstab=/target/etc/fstab
 echo '# /etc/fstab: static file system information.' > $fstab
 echo '#' >> $fstab
-echo '# Use 'blkid' to print the universally unique identifier for a' >> $fstab
+echo '# Use '"'"'blkid'"'"' to print the universally unique identifier for a' >> $fstab
 echo '# device; this may be used with UUID= as a more robust way to name devices' >> $fstab
 echo '# that works even if disks are added and removed. See fstab(5).' >> $fstab
 echo '#' >> $fstab
 echo '# systemd generates mount units based on this file, see systemd.mount(5).' >> $fstab
-echo '# Please run 'systemctl daemon-reload' after making changes here.' >> $fstab
+echo '# Please run '"'"'systemctl daemon-reload'"'"' after making changes here.' >> $fstab
 echo '#' >> $fstab
 echo '# <file system> <mount point>   <type>  <options>       <dump>  <pass>' >> $fstab
 echo $devroot' /             btrfs   noatime,compress=zstd:1  0       0' >> $fstab
