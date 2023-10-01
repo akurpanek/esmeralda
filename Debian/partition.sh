@@ -2,21 +2,21 @@
 
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
 
-#devroot=$(awk '$2 == "/target" {print $1}' /proc/mounts)
-#devboot=$(awk '$2 == "/target/boot" {print $1}' /proc/mounts)
-#devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
+devroot=$(awk '$2 == "/target" {print $1}' /proc/mounts)
+devboot=$(awk '$2 == "/target/boot" {print $1}' /proc/mounts)
+devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
 
 read -p 'Press [Enter] key to continue...'
 
-#idroot=$(blkid -o value -s UUID $devroot)
-#idboot=$(blkid -o value -s UUID $devboot)
-#iduefi=$(blkid -o value -s UUID $devuefi)
+idroot=$(blkid -o value -s UUID $devroot)
+idboot=$(blkid -o value -s UUID $devboot)
+iduefi=$(blkid -o value -s UUID $devuefi)
 
 read -p 'Press [Enter] key to continue...'
 
-#echo 'root='$devroot' ('$idroot')'
-#echo 'boot='$devboot' ('$idboot')'
-#echo 'ueif='$devuefi' ('$iduefi')'
+echo 'root='$devroot' ('$idroot')'
+echo 'boot='$devboot' ('$idboot')'
+echo 'ueif='$devuefi' ('$iduefi')'
 
 read -p 'Press [Enter] key to continue...'
 
@@ -28,7 +28,7 @@ read -p 'Press [Enter] key to continue...'
 
 #mount $devroot /mnt
 
-#read -p 'Press [Enter] key to continue...'
+read -p 'Press [Enter] key to continue...'
 
 #mv /mnt/@rootfs /mnt/@
 
