@@ -144,6 +144,6 @@ while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" = "/media/cdrom"
     sleep 1s
     while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" != "/media/cdrom" ]; do
         echo "Mounting..."
-        mount /dev/sdb1 /media/cdrom
+        mount $devdisk /target/media/cdrom0
     done
 done
