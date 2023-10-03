@@ -53,7 +53,7 @@ cat >$infoxml <<EOL
     <num>1</num>
     <date>${datetime}</date>
     <description>first root filesystem</description>
-    </snapshot>
+</snapshot>
 EOL
 
 
