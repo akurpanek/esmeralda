@@ -10,15 +10,11 @@ idroot=$(blkid -o value -s UUID $devroot)
 idboot=$(blkid -o value -s UUID $devboot)
 iduefi=$(blkid -o value -s UUID $devuefi)
 
-echo 'root='$devroot' ('$idroot')'
-echo 'boot='$devboot' ('$idboot')'
-echo 'ueif='$devuefi' ('$iduefi')'
-
 umount /target/boot/efi
 umount /target/boot
 umount /target
 
-mount $devroot /target
+mount $devroot /target -o subvolid=5
 
 mv /target/@rootfs /target/@
 
