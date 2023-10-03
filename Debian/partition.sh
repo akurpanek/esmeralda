@@ -140,11 +140,9 @@ EOL
 
 
 
-while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" = "/media/cdrom" ]
-do
+while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" = "/media/cdrom" ]; do
     sleep 1s
-    while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" != "/media/cdrom" ]
-    do
+    while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" != "/media/cdrom" ]; do
         echo "Mounting..."
         mount /dev/sdb1 /media/cdrom
     done
