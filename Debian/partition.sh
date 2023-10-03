@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Version 2
+# Version 3
 #
 
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
@@ -49,7 +49,7 @@ for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs sub
 #mv /target/@/boot /target/@/.snapshots/1/snapshot/
 #mv /target/@/etc /target/@/.snapshots/1/snapshot/
 #mv /target/@/media /target/@/.snapshots/1/snapshot/
-for i in boot etc media; do mv /target/@/$i /target/@/.snapshots/1/snapshot/; done
+for i in boot etc media; do mv /target/@/$i /target/@/.snapshots/1/snapshot  /; done
 
 
 datetime=$(date +"%Y-%m-%d %T")
