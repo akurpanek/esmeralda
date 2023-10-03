@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Version 8
+# Version 9
 #
 
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
@@ -94,9 +94,9 @@ UUID=${iduefi}  /boot/efi       vfat    umask=0077      0       1
 EOL
 #---------------------------------------------------------------------------
 
-while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" = "/media/cdrom" ]; do
+while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" = "/target/media/cdrom0" ]; do
     sleep 1s
-    while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" != "/media/cdrom" ]; do
+    while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" != "/target/media/cdrom0" ]; do
         echo "Mounting..."
         mount $devdisk /target/media/cdrom0
     done
