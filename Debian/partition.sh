@@ -18,30 +18,36 @@ umount /target/boot/efi
 umount /target/boot
 umount /target
 
-mount $devroot /mnt
+mount $devroot /target
 
-mv /mnt/@rootfs /mnt/@
+mv /target/@rootfs /target/@
 
-#btrfs subvolume create /mnt/@
-btrfs subvolume create /mnt/@/.snapshots
-mkdir /mnt/@/.snapshots/1
-btrfs subvolume create /mnt/@/.snapshots/1/snapshot
+#btrfs subvolume create /target/@
+btrfs subvolume create /target/@/.snapshots
+mkdir /target/@/.snapshots/1
+btrfs subvolume create /target/@/.snapshots/1/snapshot
 #mkdir -p /mnt/@/boot/grub2/
-#btrfs subvolume create /mnt/@/boot/grub2/i386-pc
-#btrfs subvolume create /mnt/@/boot/grub2/x86_64-efi
-btrfs subvolume create /mnt/@/home
-btrfs subvolume create /mnt/@/opt
-btrfs subvolume create /mnt/@/root
-btrfs subvolume create /mnt/@/srv
-btrfs subvolume create /mnt/@/tmp
-mkdir /mnt/@/usr/
-btrfs subvolume create /mnt/@/usr/local
-btrfs subvolume create /mnt/@/var
 
-#chattr +C /mnt/@/var
+
+#btrfs subvolume create /target/@/boot/grub2/i386-pc
+#btrfs subvolume create /target/@/boot/grub2/x86_64-efi
+btrfs subvolume create /target/@/home
+btrfs subvolume create /target/@/opt
+btrfs subvolume create /target/@/root
+btrfs subvolume create /target/@/srv
+btrfs subvolume create /target/@/tmp
+mkdir /target/@/usr/
+btrfs subvolume create /target/@/usr/local
+btrfs subvolume create /target/@/var
+
+#chattr +C /target/@/var
+mv /target/@/boot /target/@/.snapshots/1/snapshot/
+mv /target/@/etc /target/@/.snapshots/1/snapshot/
+mv target/@/media /target/@/.snapshots/1/snapshot/
+
 
 datetime=$(date +"%Y-%m-%d %T")
-infoxml=/mnt/@/.snapshots/1/info.xml
+infoxml=/target/@/.snapshots/1/info.xml
 echo '<?xml version="1.0"?>' > $infoxml
 echo '<snapshot>' >> $infoxml
 echo '  <type>single</type>' >> $infoxml
@@ -50,18 +56,16 @@ echo '  <date>'$datetime'</date>' >> $infoxml
 echo '  <description>first root filesystem</description>' >> $infoxml
 echo '</snapshot>' >> $infoxml
 
-#btrfs subvolume set-default $(btrfs subvolume list /mnt | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /mnt
-btrfs subvolume set-default $(btrfs subvolume list /mnt | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /mnt
+#btrfs subvolume set-default $(btrfs subvolume list /target | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /target
+btrfs subvolume set-default $(btrfs subvolume list /target | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /target
 
-#umount /mnt
-#mount $devroot /mnt -o noatime,compress=zstd:1,subvol=@
+#umount /target
 mount $devroot /target -o noatime,compress=zstd:1 
 
 mkdir -p /target/.snapshots
 #mkdir -p /target/boot/grub2/i386-pc
 #mkdir -p /target/boot/grub2/x86_64-efi
 #mkdir -p /target/boot/efi
-mkdir -p /target/boot
 mkdir -p /target/home
 mkdir -p /target/opt
 mkdir -p /target/root
@@ -83,8 +87,7 @@ mount $devroot /target/var        -o noatime,compress=zstd:1,subvol=@/var
 mount $devboot /target/boot
 mount $devuefi /target/boot/efi
 
-mv /mnt/@/etc /target/
-mv mnt/@/media /target/
+
 
 fstab=/target/etc/fstab
 echo '# /etc/fstab: static file system information.' > $fstab
@@ -112,5 +115,3 @@ echo 'UUID='$idboot' /boot           ext4    noatime         0       2' >> $fsta
 echo '' >> $fstab
 echo '# /boot/efi was on '$devuefi' during installation' >> $fstab
 echo 'UUID='$iduefi'  /boot/efi       vfat    umask=0077      0       1' >> $fstab
-
-umount /mnt
