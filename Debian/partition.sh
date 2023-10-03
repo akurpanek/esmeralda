@@ -6,15 +6,16 @@
 devroot=$(awk '$2 == "/target" {print $1}' /proc/mounts)
 devboot=$(awk '$2 == "/target/boot" {print $1}' /proc/mounts)
 devuefi=$(awk '$2 == "/target/boot/efi" {print $1}' /proc/mounts)
+devdisk=$(awk '$2 == "/cdrom" {print $1}' /proc/mounts)
 
 idroot=$(blkid -o value -s UUID $devroot)
 idboot=$(blkid -o value -s UUID $devboot)
 iduefi=$(blkid -o value -s UUID $devuefi)
 
-umount /target/boot/efi
-umount /target/boot
-umount /target
-#for i in /target/boot/efi target/boot /target; do umount $i; done
+#umount /target/boot/efi
+#umount /target/boot
+#umount /target
+for i in target/boot/efi target/boot target/media/cdrom target/media/cdrom0 target; do umount /$i; done
 
 mount $devroot /target -o subvolid=5
 mv /target/@rootfs /target/@
@@ -22,28 +23,29 @@ mv /target/@rootfs /target/@
 #btrfs subvolume create /target/@
 btrfs subvolume create /target/@/.snapshots
 
-#mkdir -p /mnt/@/boot/grub2/
-mkdir /target/@/usr/
-mkdir /target/@/.snapshots/1
+##mkdir -p /mnt/@/boot/grub2/
+#mkdir /target/@/usr/
+#mkdir /target/@/.snapshots/1
+for i in usr .snapshots/1; do mkdir -p /target/@/$i; done
 
-btrfs subvolume create /target/@/.snapshots/1/snapshot
-#btrfs subvolume create /target/@/boot/grub2/i386-pc
-#btrfs subvolume create /target/@/boot/grub2/x86_64-efi
-btrfs subvolume create /target/@/home
-btrfs subvolume create /target/@/opt
-btrfs subvolume create /target/@/root
-btrfs subvolume create /target/@/srv
-btrfs subvolume create /target/@/tmp
-btrfs subvolume create /target/@/usr/local
-btrfs subvolume create /target/@/var
-#for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs subvolume create /target/$1; done
+#btrfs subvolume create /target/@/.snapshots/1/snapshot
+##btrfs subvolume create /target/@/boot/grub2/i386-pc
+##btrfs subvolume create /target/@/boot/grub2/x86_64-efi
+#btrfs subvolume create /target/@/home
+#btrfs subvolume create /target/@/opt
+#btrfs subvolume create /target/@/root
+#btrfs subvolume create /target/@/srv
+#btrfs subvolume create /target/@/tmp
+#btrfs subvolume create /target/@/usr/local
+#btrfs subvolume create /target/@/var
+for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs subvolume create /target/@/$1; done
 
 
 #chattr +C /target/@/var
-mv /target/@/boot /target/@/.snapshots/1/snapshot/
-mv /target/@/etc /target/@/.snapshots/1/snapshot/
-mv /target/@/media /target/@/.snapshots/1/snapshot/
-#mv /target/@/boot /target/@/etc /target/@/media /target/@/.snapshots/1/snapshot/
+#mv /target/@/boot /target/@/.snapshots/1/snapshot/
+#mv /target/@/etc /target/@/.snapshots/1/snapshot/
+#mv /target/@/media /target/@/.snapshots/1/snapshot/
+for i in boot etc media; do mv /target/@/$i /target/@/.snapshots/1/snapshot/; done
 
 
 datetime=$(date +"%Y-%m-%d %T")
@@ -62,36 +64,36 @@ btrfs subvolume set-default $(btrfs subvolume list /target | awk '$9 == "@/.snap
 umount /target
 mount $devroot /target -o noatime,compress=zstd:1 
 
-mkdir -p /target/.snapshots
-#mkdir -p /target/boot/grub2/i386-pc
-#mkdir -p /target/boot/grub2/x86_64-efi
-#mkdir -p /target/boot/efi
-mkdir -p /target/home
-mkdir -p /target/opt
-mkdir -p /target/root
-mkdir -p /target/srv
-mkdir -p /target/tmp
-mkdir -p /target/usr/local
-mkdir -p /target/var
-#for i in .snapshots boot/efi home opt root srv tmp usr/local var; do mkdir -p /target/$1; done
+#mkdir -p /target/.snapshots
+##mkdir -p /target/boot/grub2/i386-pc
+##mkdir -p /target/boot/grub2/x86_64-efi
+##mkdir -p /target/boot/efi
+#mkdir -p /target/home
+#mkdir -p /target/opt
+#mkdir -p /target/root
+#mkdir -p /target/srv
+#mkdir -p /target/tmp
+#mkdir -p /target/usr/local
+#mkdir -p /target/var
+for i in .snapshots home opt root srv tmp usr/local var; do mkdir -p /target/$1; done
 
-mount $devroot /target/.snapshots -o noatime,compress=zstd:1,subvol=@/.snapshots
-#mount $devroot /target/boot/grub2/i386-pc    -o noatime,compress=zstd:1,subvol=@/boot/grub2/i386-pc
-#mount $devroot /target/boot/grub2/x86_64-efi -o noatime,compress=zstd:1,subvol=@/boot/grub2/x86_64-efi
-mount $devroot /target/home       -o noatime,compress=zstd:1,subvol=@/home
-mount $devroot /target/opt        -o noatime,compress=zstd:1,subvol=@/opt
-mount $devroot /target/root       -o noatime,compress=zstd:1,subvol=@/root
-mount $devroot /target/srv        -o noatime,compress=zstd:1,subvol=@/srv
-mount $devroot /target/tmp        -o noatime,compress=zstd:1,subvol=@/tmp
-mount $devroot /target/usr/local  -o noatime,compress=zstd:1,subvol=@/usr/local
-mount $devroot /target/var        -o noatime,compress=zstd:1,subvol=@/var
-mount $devboot /target/boot
-mount $devuefi /target/boot/efi
-#for i in .snapshots home opt root srv tmp usr/local var; do mount $devroot /target/$1 -o noatime,compress=zstd:1,subvol=@/$1; done
+#mount $devroot /target/.snapshots -o noatime,compress=zstd:1,subvol=@/.snapshots
+##mount $devroot /target/boot/grub2/i386-pc    -o noatime,compress=zstd:1,subvol=@/boot/grub2/i386-pc
+##mount $devroot /target/boot/grub2/x86_64-efi -o noatime,compress=zstd:1,subvol=@/boot/grub2/x86_64-efi
+#mount $devroot /target/home       -o noatime,compress=zstd:1,subvol=@/home
+#mount $devroot /target/opt        -o noatime,compress=zstd:1,subvol=@/opt
+#mount $devroot /target/root       -o noatime,compress=zstd:1,subvol=@/root
+#mount $devroot /target/srv        -o noatime,compress=zstd:1,subvol=@/srv
+#mount $devroot /target/tmp        -o noatime,compress=zstd:1,subvol=@/tmp
+#mount $devroot /target/usr/local  -o noatime,compress=zstd:1,subvol=@/usr/local
+#mount $devroot /target/var        -o noatime,compress=zstd:1,subvol=@/var
 #mount $devboot /target/boot
 #mount $devuefi /target/boot/efi
-
-
+#mount $devdisk /target/media/cdrom0
+for i in .snapshots home opt root srv tmp usr/local var; do mount $devroot /target/$1 -o noatime,compress=zstd:1,subvol=@/$1; done
+mount $devboot /target/boot
+mount $devuefi /target/boot/efi
+mount $devdisk /target/media/cdrom0
 
 fstab=/target/etc/fstab
 echo '# /etc/fstab: static file system information.' > $fstab
