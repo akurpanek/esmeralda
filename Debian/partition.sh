@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Version 2
+#
+
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
 # https://blog.cscholz.io/debian-einsatz-snapper/
 
@@ -38,7 +42,7 @@ for i in usr .snapshots/1; do mkdir -p /target/@/$i; done
 #btrfs subvolume create /target/@/tmp
 #btrfs subvolume create /target/@/usr/local
 #btrfs subvolume create /target/@/var
-for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs subvolume create /target/@/$1; done
+for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs subvolume create /target/@/$i; done
 
 
 #chattr +C /target/@/var
@@ -75,7 +79,7 @@ mount $devroot /target -o noatime,compress=zstd:1
 #mkdir -p /target/tmp
 #mkdir -p /target/usr/local
 #mkdir -p /target/var
-for i in .snapshots home opt root srv tmp usr/local var; do mkdir -p /target/$1; done
+for i in .snapshots home opt root srv tmp usr/local var; do mkdir -p /target/$i; done
 
 #mount $devroot /target/.snapshots -o noatime,compress=zstd:1,subvol=@/.snapshots
 ##mount $devroot /target/boot/grub2/i386-pc    -o noatime,compress=zstd:1,subvol=@/boot/grub2/i386-pc
@@ -90,7 +94,7 @@ for i in .snapshots home opt root srv tmp usr/local var; do mkdir -p /target/$1;
 #mount $devboot /target/boot
 #mount $devuefi /target/boot/efi
 #mount $devdisk /target/media/cdrom0
-for i in .snapshots home opt root srv tmp usr/local var; do mount $devroot /target/$1 -o noatime,compress=zstd:1,subvol=@/$1; done
+for i in .snapshots home opt root srv tmp usr/local var; do mount $devroot /target/$i -o noatime,compress=zstd:1,subvol=@/$i; done
 mount $devboot /target/boot
 mount $devuefi /target/boot/efi
 mount $devdisk /target/media/cdrom0
