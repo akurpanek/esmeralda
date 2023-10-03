@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Version 7
+# Version 8
 #
 
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
