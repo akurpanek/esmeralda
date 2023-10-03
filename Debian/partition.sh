@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Version 5
+# Version 7
 #
 
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
@@ -30,22 +30,12 @@ for i in usr .snapshots/1; do mkdir -p /target/@/$i; done
 #for i in .snapshots/1/snapshot home boot/grub2/i386-pc boot/grub2/x86_64-efi opt root srv tmp usr/local var; do btrfs subvolume create /target/@/$i; done
 for i in .snapshots/1/snapshot home opt root srv tmp usr/local var; do btrfs subvolume create /target/@/$i; done
 
-
 #chattr +C /target/@/var
 for i in boot etc media; do mv /target/@/$i /target/@/.snapshots/1/snapshot/; done
 
-
 datetime=$(date +"%Y-%m-%d %T")
 infoxml=/target/@/.snapshots/1/info.xml
-
-#echo '<?xml version="1.0"?>' > $infoxml
-#echo '<snapshot>' >> $infoxml
-#echo '  <type>single</type>' >> $infoxml
-#echo '  <num>1</num>' >> $infoxml
-#echo '  <date>'$datetime'</date>' >> $infoxml
-#echo '  <description>first root filesystem</description>' >> $infoxml
-#echo '</snapshot>' >> $infoxml
-
+#---------------------------------------------------------------------------
 cat >$infoxml <<EOL
 <?xml version="1.0"?>
 <snapshot>
@@ -55,9 +45,7 @@ cat >$infoxml <<EOL
     <description>first root filesystem</description>
 </snapshot>
 EOL
-
-
-
+#---------------------------------------------------------------------------
 
 #btrfs subvolume set-default $(btrfs subvolume list /target | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') /target
 btrfs subvolume set-default $(btrfs subvolume list /target | awk '$9 == "@/.snapshots/1/snapshot" {print $2}') /target
@@ -76,36 +64,7 @@ mount $devuefi /target/boot/efi
 mount $devdisk /target/media/cdrom0
 
 fstab=/target/etc/fstab
-#echo '# /etc/fstab: static file system information.' > $fstab
-#echo '#' >> $fstab
-#echo '# Use '"'"'blkid'"'"' to print the universally unique identifier for a' >> $fstab
-#echo '# device; this may be used with UUID= as a more robust way to name devices' >> $fstab
-#echo '# that works even if disks are added and removed. See fstab(5).' >> $fstab
-#echo '#' >> $fstab
-#echo '# systemd generates mount units based on this file, see systemd.mount(5).' >> $fstab
-#echo '# Please run '"'"'systemctl daemon-reload'"'"' after making changes here.' >> $fstab
-#echo '#' >> $fstab
-#echo '# <file system> <mount point>   <type>  <options>       <dump>  <pass>' >> $fstab
-#echo $devroot' /             btrfs   noatime,compress=zstd:1  0       0' >> $fstab
-#echo '#'$devroot' /.snapshots   btrfs   noatime,compress=zstd:1,subvol=@/.snapshots  0       0' >> $fstab
-#echo $devroot' /home         btrfs   noatime,compress=zstd:1,subvol=@/home  0       0' >> $fstab
-#echo $devroot' /opt          btrfs   noatime,compress=zstd:1,subvol=@/opt   0       0' >> $fstab
-#echo $devroot' /root         btrfs   noatime,compress=zstd:1,subvol=@/root  0       0' >> $fstab
-#echo $devroot' /srv          btrfs   noatime,compress=zstd:1,subvol=@/srv   0       0' >> $fstab
-#echo $devroot' /tmp          btrfs   noatime,compress=zstd:1,subvol=@/tmp   0       0' >> $fstab
-#echo $devroot' /usr/local    btrfs   noatime,compress=zstd:1,subvol=@/usr/local  0       0' >> $fstab
-#echo $devroot' /var          btrfs   noatime,compress=zstd:1,subvol=@/var  0       0' >> $fstab
-#echo '' >> $fstab
-#echo '# /boot was on '$devboot' during installation' >> $fstab
-#echo 'UUID='$idboot' /boot           ext4    noatime         0       2' >> $fstab
-#echo '' >> $fstab
-#echo '# /boot/efi was on '$devuefi' during installation' >> $fstab
-#echo 'UUID='$iduefi'  /boot/efi       vfat    umask=0077      0       1' >> $fstab
-
-
-
-
-
+#---------------------------------------------------------------------------
 cat >$fstab <<EOL
 # /etc/fstab: static file system information.
 #
@@ -133,12 +92,7 @@ UUID=${idboot} /boot           ext4    noatime         0       2
 # /boot/efi was on ${devuefi} during installation
 UUID=${iduefi}  /boot/efi       vfat    umask=0077      0       1
 EOL
-
-
-
-
-
-
+#---------------------------------------------------------------------------
 
 while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" = "/media/cdrom" ]; do
     sleep 1s
