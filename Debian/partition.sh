@@ -94,9 +94,9 @@ UUID=${iduefi}  /boot/efi       vfat    umask=0077      0       1
 EOL
 #---------------------------------------------------------------------------
 
-while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" = "/media/cdrom" ]; do
+while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" = "/media/cdrom" ]; do
     sleep 1s
-    while [ "$(awk '$2 == "/media/cdrom" {print $2}' /proc/mounts)" != "/media/cdrom" ]; do
+    while [ "$(awk '$2 == "/target/media/cdrom0" {print $2}' /proc/mounts)" != "/media/cdrom" ]; do
         echo "Mounting..."
         mount $devdisk /target/media/cdrom0
     done
