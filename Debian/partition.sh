@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version 9
+
 # https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
 # https://blog.cscholz.io/debian-einsatz-snapper/
 
