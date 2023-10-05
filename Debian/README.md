@@ -113,7 +113,7 @@ sudo apt install -y adwaita-qt
 
 ### Container- und Virtualisierung
 
-#### KVM und XLC installieren
+#### KVM/QEMU und XLC installieren
 
 **Quellen:**
 
@@ -123,7 +123,7 @@ sudo apt install -y adwaita-qt
 - <https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/>
 
 ```shell
-# QEMU, KVM, LXC, libvirt und GUI virt-manager installieren
+# QEMU, KVM, LXC, libvirt, spice und GUI virt-manager installieren
 sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
 
 # Nested Virtualization aktivieren
@@ -139,6 +139,15 @@ grep -i '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf || \
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
 ```
+
+#### KVM/QEMU Guest Tools installieren
+
+```shell
+sudo apt install spice-vdagent
+sudo systemctl enable spice-vdagentd.service
+sudo systemctl start spice-vdagentd.service
+```
+
 ### Datensicherung und Replikation
 
 #### PIKA Backup einrichten
