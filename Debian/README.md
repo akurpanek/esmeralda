@@ -41,7 +41,7 @@ sudo apt update -y && \
 #### Basissoftware installieren
 
 ```shell
-sudo apt install -y build-essential lshw
+sudo apt install -y build-essential lshw neofetch vim
 ```
 
 #### BTRFS Snapshots einrichten
@@ -94,12 +94,30 @@ sudo apt-get install -y build-essential
 cd ~
 sudo git clone https://github.com/Antynea/grub-btrfs.git
 cd grub-btrfs
-make install
+sudo make install
 sudo systemctl enable --now grub-btrfsd
 sudo systemctl status grub-btrfsd
 cd ~
-rm -rf grub-btrfs
+sudo rm -rf grub-btrfs
 ```
+
+#### Kernel aus Backports aktualisieren
+
+Quellen:
+
+- <https://wiki.debian.org/Firmware#Debian_12_.28bookworm.29_and_later>
+
+```shell
+# Kernel aus Backports installieren
+sudo apt install -y -f -t bookworm-backports linux-image-amd64 firmware-linux #linux-headers-amd64
+
+# Firmwware-Dateien von git.kernel.org herunterladen
+mkdir ~/firmware
+cd ~/firmware
+wget -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
+sudo mv *.bin /lib/firmware/i915/
+sudo update-initramfs -c -k all
+
 
 
 ## GNOME Konfiguration
