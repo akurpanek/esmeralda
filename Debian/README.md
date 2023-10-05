@@ -29,6 +29,21 @@ grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin'
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
 
+#### System aktualisieren
+
+```shell
+# Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
+sudo apt update -y && \
+    sudo apt upgrade -y && \
+    sudo apt autoremove  --purge -y
+```
+
+#### Basissoftware installieren
+
+```shell
+sudo apt install -y build-essential lshw
+```
+
 #### BTRFS Snapshots einrichten
 
 ```shell
@@ -73,21 +88,19 @@ sudo snapper -c home set-config 'TIMELINE_LIMIT_WEEKLY="0"'
 sudo snapper -c home set-config 'TIMELINE_LIMIT_MONTHLY="0"'
 sudo snapper -c home set-config 'TIMELINE_LIMIT_YEARLY="0"'
 ```
-
-#### System aktualisieren
-
 ```shell
-# Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
-sudo apt update -y && \
-    sudo apt upgrade -y && \
-    sudo apt autoremove  --purge -y
+# GRUB-BTRFS einrichten
+sudo apt-get install -y build-essential
+cd ~
+sudo git clone https://github.com/Antynea/grub-btrfs.git
+cd grub-btrfs
+make install
+sudo systemctl enable --now grub-btrfsd
+sudo systemctl status grub-btrfsd
+cd ~
+rm -rf grub-btrfs
 ```
 
-#### Basissoftware installieren
-
-```shell
-sudo apt install lshw
-```
 
 ## GNOME Konfiguration
 
