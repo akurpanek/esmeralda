@@ -118,9 +118,9 @@ mkdir ~/firmware
 cd ~/firmware
 wget -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
 sudo mv *.bin /lib/firmware/i915/
+cd  ~
 sudo update-initramfs -c -k all
-
-
+```
 
 ## GNOME Konfiguration
 
