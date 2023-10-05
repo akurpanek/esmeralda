@@ -34,11 +34,13 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```shell
 # Copy-on-Write-Verfahren deaktivieren
 sudo chattr -fR +C /var
-
+```
+```shell
 # Snapper einrichten
 sudo apt install -y snapper-gui git inotify-tools
 sudo systemctl disable snapper-boot.timer
-
+```
+```shell
 # Snapper für root-Volume konfigurieren
 if [ -d "/.snapshots" ]; then sudo mv /.snapshots /.snapshots.snapper_config; fi
 sudo snapper -c root create-config /
@@ -55,7 +57,8 @@ sudo snapper -c root set-config 'TIMELINE_LIMIT_DAILY="7"'
 sudo snapper -c root set-config 'TIMELINE_LIMIT_WEEKLY="0"'
 sudo snapper -c root set-config 'TIMELINE_LIMIT_MONTHLY="0"'
 sudo snapper -c root set-config 'TIMELINE_LIMIT_YEARLY="0"'
-
+```
+```shell
 # Snapper für home-Volume konfigurieren
 sudo snapper -c home create-config /home
 
@@ -69,7 +72,6 @@ sudo snapper -c home set-config 'TIMELINE_LIMIT_DAILY="7"'
 sudo snapper -c home set-config 'TIMELINE_LIMIT_WEEKLY="0"'
 sudo snapper -c home set-config 'TIMELINE_LIMIT_MONTHLY="0"'
 sudo snapper -c home set-config 'TIMELINE_LIMIT_YEARLY="0"'
-
 ```
 
 #### System aktualisieren
