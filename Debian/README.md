@@ -117,6 +117,8 @@ sudo apt install -y -f -t bookworm-backports linux-image-amd64 firmware-linux #l
 mkdir ~/firmware
 wget -P ~/firmware/ -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
 sudo mv ~/firmware/*.bin /lib/firmware/i915/
+
+# Initramfs aktualisieren
 sudo update-initramfs -c -k all
 ```
 
