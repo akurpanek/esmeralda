@@ -302,6 +302,12 @@ sudo flatpak install -y flathub org.cryptomator.Cryptomator
 # Cryptomator konfigurieren
 flatpak override --user org.cryptomator.Cryptomator --reset
 flatpak override --user org.cryptomator.Cryptomator --filesystem=host
+
+# Cryptomator Alias setzen
+alias signal='flatpak run org.cryptomator.Cryptomator'
+grep -iq '^alias cryptomator=' ~/.bash_aliases || \
+    echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" | \
+    tee -a ~/.bash_aliases
 ```
 
 
