@@ -122,6 +122,26 @@ sudo mv ~/firmware/*.bin /lib/firmware/i915/
 sudo update-initramfs -c -k all
 ```
 
+#### Boot Theme aktivieren
+
+```shell
+sudo apt install -y plymouth-themes
+grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub || \
+    sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
+grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub || \
+    sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 loglevel=0"#' /etc/default/grub
+sudo update-grub
+```
+
+#### ZRam SWAP aktivieren
+
+```shell
+sudo apt install -y zram-tools
+sudo sed -i "s/^#PERCENT=.*/PERCENT=50/g" /etc/default/zramswap
+sudo sed -i "s/^PERCENT=.*/PERCENT=50/g" /etc/default/zramswap
+sudo systemctl restart zramswap.service
+```
+
 ## GNOME Konfiguration
 
 #### Fractional Scaling konfigurieren
