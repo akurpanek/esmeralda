@@ -151,7 +151,12 @@ grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub || \
 sudo update-grub
 ```
 
-#### ZSWAP aktivieren
+#### (Z)SWAP aktivieren
+
+Quellen:
+
+- <https://wiki.archlinux.org/title/zswap>
+- <https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation>
 
 ```shell
 sudo apt install -y zram-tools
