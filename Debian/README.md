@@ -57,6 +57,7 @@ sudo systemctl disable snapper-boot.timer
 ```
 ```shell
 # Snapper für root-Volume konfigurieren
+sudo umount /.snapshots
 if [ -d "/.snapshots" ]; then sudo mv /.snapshots /.snapshots.snapper_config; fi
 sudo snapper -c root create-config /
 if [ -d "/.snapshots" ]; then sudo rmdir /.snapshots; fi
