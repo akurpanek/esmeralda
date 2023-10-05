@@ -133,7 +133,7 @@ grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub || \
 sudo update-grub
 ```
 
-#### ZRam SWAP aktivieren
+#### ZSWAP aktivieren
 
 ```shell
 sudo apt install -y zram-tools
