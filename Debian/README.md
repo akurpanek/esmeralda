@@ -29,6 +29,22 @@ grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin'
 sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```
 
+#### BTRFS Snapshots einrichten
+
+```shell
+# Copy-on-Write-Verfahren deaktivieren
+sudo chattr +C /var
+
+# Snapper installieren
+sudo apt install -y snapper-gui git inotify-tools
+
+# Snapper für root-Volume konfigurieren
+sudo snapper -c root create-config /
+
+
+
+```
+
 #### System aktualisieren
 
 ```shell
