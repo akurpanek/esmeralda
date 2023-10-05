@@ -268,7 +268,7 @@ if $(sudo dmesg | grep -iq 'Hypervisor detected.*KVM'); then
 fi
 ```
 
-### Datensicherung und Replikation
+### Datenverschlüsselung, Datensicherung und Replikation
 
 #### PIKA Backup einrichten
 
@@ -288,6 +288,22 @@ Quellen:
 # Nextcloud Desktop und Plugins installieren
 sudo apt install -y nautilus-nextcloud
 ```
+
+#### Cryptomator einrichten
+
+Quellen:
+
+- <https://cryptomator.org/downloads/linux/>
+
+```shell
+# Cryptomator installieren
+sudo flatpak install -y flathub org.cryptomator.Cryptomator
+
+# Cryptomator konfigurieren
+flatpak override --user org.cryptomator.Cryptomator --reset
+flatpak override --user org.cryptomator.Cryptomator --filesystem=host
+```
+
 
 ### Instant Messaging
 
