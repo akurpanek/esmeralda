@@ -35,13 +35,40 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 # Copy-on-Write-Verfahren deaktivieren
 sudo chattr -fR +C /var
 
-# Snapper installieren
+# Snapper einrichten
 sudo apt install -y snapper-gui git inotify-tools
+sudo systemctl disable snapper-boot.timer
 
 # Snapper für root-Volume konfigurieren
+if [ -d "/.snapshots" ]; then sudo mv /.snapshots /.snapshots.snapper_config; fi
 sudo snapper -c root create-config /
+if [ -d "/.snapshots" ]; then sudo rmdir /.snapshots; fi
+if [ -d "/.snapshots.snapper_config" ]; then sudo mv /.snapshots.snapper_config /.snapshots; fi
 
+sudo snapper -c root set-config 'TIMELINE_CREATE=no'
+sudo snapper -c root set-config 'ALLOW_GROUPS=sudo'
+sudo snapper -c root set-config 'SYNC_ACL=yes'
 
+sudo snapper -c root set-config 'TIMELINE_MIN_AGE="1800"'
+sudo snapper -c root set-config 'TIMELINE_LIMIT_HOURLY="5"'
+sudo snapper -c root set-config 'TIMELINE_LIMIT_DAILY="7"'
+sudo snapper -c root set-config 'TIMELINE_LIMIT_WEEKLY="0"'
+sudo snapper -c root set-config 'TIMELINE_LIMIT_MONTHLY="0"'
+sudo snapper -c root set-config 'TIMELINE_LIMIT_YEARLY="0"'
+
+# Snapper für home-Volume konfigurieren
+sudo snapper -c home create-config /home
+
+sudo snapper -c home set-config 'TIMELINE_CREATE=no'
+sudo snapper -c home set-config 'ALLOW_GROUPS=sudo'
+sudo snapper -c home set-config 'SYNC_ACL=yes'
+
+sudo snapper -c home set-config 'TIMELINE_MIN_AGE="1800"'
+sudo snapper -c home set-config 'TIMELINE_LIMIT_HOURLY="5"'
+sudo snapper -c home set-config 'TIMELINE_LIMIT_DAILY="7"'
+sudo snapper -c home set-config 'TIMELINE_LIMIT_WEEKLY="0"'
+sudo snapper -c home set-config 'TIMELINE_LIMIT_MONTHLY="0"'
+sudo snapper -c home set-config 'TIMELINE_LIMIT_YEARLY="0"'
 
 ```
 
