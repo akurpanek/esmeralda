@@ -44,10 +44,6 @@ sudo apt update -y && \
 sudo apt install lshw
 ```
 
-
-
-
-
 ## GNOME Konfiguration
 
 #### Fractional Scaling konfigurieren
@@ -143,9 +139,12 @@ sudo adduser $USERNAME libvirt
 #### KVM/QEMU Guest Tools installieren
 
 ```shell
-sudo apt install spice-vdagent
-sudo systemctl enable spice-vdagentd.service
-sudo systemctl start spice-vdagentd.service
+# Spice Client installieren und starten
+if $(sudo dmesg | grep -iq 'Hypervisor detected.*KVM'); then
+    sudo apt install spice-vdagent
+    sudo systemctl enable spice-vdagentd.service
+    sudo systemctl start spice-vdagentd.service
+fi
 ```
 
 ### Datensicherung und Replikation
