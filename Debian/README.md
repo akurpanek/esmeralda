@@ -33,7 +33,7 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 
 ```shell
 # Copy-on-Write-Verfahren deaktivieren
-sudo chattr +C /var
+sudo chattr -fR +C /var
 
 # Snapper installieren
 sudo apt install -y snapper-gui git inotify-tools
