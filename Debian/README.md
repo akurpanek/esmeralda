@@ -14,6 +14,15 @@
 sudo hostnamectl set-hostname "esmeralda"
 ```
 
+#### Hardware konfigurieren
+
+```shell
+# Apply tinny and quiet sound fix on Lenovo 7i
+grep -i '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf || \
+    echo "options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin" | \
+    sudo tee -a /etc/modprobe.d/snd.conf
+```
+
 #### CDROM als Installationsqelle deaktiveren
  
 ```shell
@@ -28,6 +37,16 @@ sudo apt update -y && \
     sudo apt upgrade -y && \
     sudo apt autoremove  --purge -y
 ```
+
+#### Basissoftware installieren
+
+```shell
+sudo apt install lshw
+```
+
+
+
+
 
 ## GNOME Konfiguration
 
@@ -111,7 +130,11 @@ sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
 cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
-echo "options kvm_intel nested=1" | sudo tee /etc/modprobe.d/kvm.conf
+
+# Nested Virtualization permanent aktivieren
+grep -i '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf || \
+    echo "options kvm_intel nested=1" | \
+    sudo tee -a /etc/modprobe.d/kvm.conf
 
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
