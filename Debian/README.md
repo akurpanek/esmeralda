@@ -136,9 +136,9 @@ sudo apt install -y plymouth-themes
 # Plymouth Konfigurtion anpassen
 if $(cat /etc/plymouth/plymouthd.conf | grep -iq '^DeviceScale')
 then
-    sudo sed -i 's/^DeviceScale.*/DeviceScale=1.5/' /etc/plymouth/plymouthd.conf
+    sudo sed -i 's/^DeviceScale.*/DeviceScale=2/' /etc/plymouth/plymouthd.conf
 else
-    echo "DeviceScale=1.5" | sudo tee -a /etc/plymouth/plymouthd.conf
+    echo "DeviceScale=2" | sudo tee -a /etc/plymouth/plymouthd.conf
 fi
 
 # Grub Konfiguration anpassen
