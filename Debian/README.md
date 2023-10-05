@@ -17,7 +17,7 @@ sudo hostnamectl set-hostname "esmeralda"
 #### Hardware konfigurieren
 
 ```shell
-# Apply tinny and quiet sound fix on Lenovo 7i
+# Apply tinny and quiet sound fix for bass speakers and internal microphone on Lenovo 7i
 grep -i '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf || \
     echo "options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin" | \
     sudo tee -a /etc/modprobe.d/snd.conf
