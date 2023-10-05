@@ -62,6 +62,7 @@ if [ -d "/.snapshots" ]; then sudo mv /.snapshots /.snapshots.snapper_config; fi
 sudo snapper -c root create-config /
 if [ -d "/.snapshots" ]; then sudo rmdir /.snapshots; fi
 if [ -d "/.snapshots.snapper_config" ]; then sudo mv /.snapshots.snapper_config /.snapshots; fi
+sudo mount /.snapshots
 
 sudo snapper -c root set-config 'TIMELINE_CREATE=no'
 sudo snapper -c root set-config 'ALLOW_GROUPS=sudo'
