@@ -18,7 +18,7 @@ sudo hostnamectl set-hostname "esmeralda"
 
 ```shell
 # Apply tinny and quiet sound fix for bass speakers and internal microphone on Lenovo 7i
-grep -i '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf || \
+grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf || \
     echo "options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin" | \
     sudo tee -a /etc/modprobe.d/snd.conf
 ```
@@ -128,7 +128,7 @@ sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 
 # Nested Virtualization permanent aktivieren
-grep -i '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf || \
+grep -iq '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf || \
     echo "options kvm_intel nested=1" | \
     sudo tee -a /etc/modprobe.d/kvm.conf
 
@@ -180,7 +180,7 @@ sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
 
 # WhatsApp Desktop Alias setzen
 alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'
-grep -i '^alias whatsapp=' ~/.bash_aliases || \
+grep -iq '^alias whatsapp=' ~/.bash_aliases || \
     echo "alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'" | \
     tee -a ~/.bash_aliases
 ```
@@ -196,7 +196,7 @@ flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
 
 # Signal Desktop Alias setzen
 alias signal='flatpak run org.signal.Signal'
-grep -i '^alias signal=' ~/.bash_aliases || \
+grep -iq '^alias signal=' ~/.bash_aliases || \
     echo "alias signal='flatpak run org.signal.Signal'" | \
     tee -a ~/.bash_aliases
 ```
