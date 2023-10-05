@@ -124,12 +124,30 @@ sudo update-initramfs -c -k all
 
 #### Boot Theme aktivieren
 
+Quellen:
+
+- <https://wiki.debian.org/plymouth>
+- <https://wiki.archlinux.org/title/plymouth>
+
 ```shell
+# Plymouth installieren
 sudo apt install -y plymouth-themes
+
+# Plymouth Konfigurtion anpassen
+if $(cat /etc/plymouth/plymouthd.conf | grep -iq '^DeviceScale')
+then
+    sudo sed -i 's/^DeviceScale.*/DeviceScale=1.5/' /etc/plymouth/plymouthd.conf
+else
+    echo "DeviceScale=1.5" | sudo tee -a /etc/plymouth/plymouthd.conf
+fi
+
+# Grub Konfiguration anpassen
 grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub || \
     sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
 grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub || \
     sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 loglevel=0"#' /etc/default/grub
+
+# Grub aktualisieren
 sudo update-grub
 ```
 
