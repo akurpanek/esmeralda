@@ -122,7 +122,7 @@ sudo mv ~/firmware/*.bin /lib/firmware/i915/
 sudo update-initramfs -c -k all
 ```
 
-#### Boot Theme aktivieren
+#### Plymouth Theme einrichten
 
 Quellen:
 
