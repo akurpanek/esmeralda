@@ -105,10 +105,6 @@ sudo apt install -y build-essential lshw neofetch vim needrestart wget gpg git a
 
 #### Kernel aus Backports aktualisieren
 
-Quellen:
-
-- <https://wiki.debian.org/Firmware#Debian_12_.28bookworm.29_and_later>
-
 ```shell
 # Kernel aus Backports installieren
 sudo apt install -y -f -t bookworm-backports linux-image-amd64 firmware-linux #linux-headers-amd64
@@ -121,6 +117,10 @@ sudo mv ~/firmware/*.bin /lib/firmware/i915/
 # Initramfs aktualisieren
 sudo update-initramfs -c -k all
 ```
+
+Quellen:
+
+- <https://wiki.debian.org/Firmware#Debian_12_.28bookworm.29_and_later>
 
 #### Plymouth Theme einrichten
 
