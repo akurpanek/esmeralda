@@ -313,7 +313,7 @@ grep -iq '^alias cryptomator=' ~/.bash_aliases || \
     echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" | \
     tee -a ~/.bash_aliases
 ```
-### Code Editoren
+### Development
 
 #### Visual Studio Code einrichten
 
@@ -339,6 +339,12 @@ sudo apt install code # or code-insiders
 #xdg-mime default code.desktop text/plain
 #sudo update-alternatives --set editor /usr/bin/code
 sudo update-alternatives --install /usr/bin/editor editor $(which code) 10
+```
+
+#### Entwicklungstools einrichten
+
+```shell
+sudo apt install -y meld
 ```
 
 ### Instant Messaging
