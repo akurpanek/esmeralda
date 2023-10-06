@@ -134,6 +134,7 @@ Quellen:
 sudo apt install -y plymouth-themes
 
 # Plymouth Konfigurtion anpassen
+sudo sed -i 's/^#[Daemon].*/[Daemon]/' /etc/plymouth/plymouthd.conf
 if $(cat /etc/plymouth/plymouthd.conf | grep -iq '^DeviceScale')
 then
     sudo sed -i 's/^DeviceScale.*/DeviceScale=2/' /etc/plymouth/plymouthd.conf
