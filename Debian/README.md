@@ -1,5 +1,10 @@
 # Debian 12 GNOME
 
+Quellen:
+
+- <https://docs.github.com/de/get-started/writing-on-github>
+- <https://google.github.io/styleguide/shellguide.html#s4-comments>
+
 ## OS-Installation
 
 ### Pre-Installation
@@ -18,9 +23,9 @@ sudo hostnamectl set-hostname "esmeralda"
 
 ```shell
 # Apply tinny and quiet sound fix for bass speakers and internal microphone on Lenovo 7i
-grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf || \
-    echo "options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin" | \
-    sudo tee -a /etc/modprobe.d/snd.conf
+grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin' /etc/modprobe.d/snd.conf \
+  || echo "options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin" \
+  | sudo tee -a /etc/modprobe.d/snd.conf
 ```
 
 #### BTRFS Snapshots einrichten
@@ -93,14 +98,14 @@ sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
 ```shell
 # Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
 sudo apt update -y && \
-    sudo apt upgrade -y && \
-    sudo apt autoremove  --purge -y
+  sudo apt upgrade -y && \
+  sudo apt autoremove  --purge -y
 ```
 
 #### Basissoftware installieren
 
 ```shell
-sudo apt install -y build-essential lshw neofetch vim needrestart wget gpg git apt-transport-https
+sudo apt install -y build-essential lshw neofetch vim needrestart wget curl gpg git apt-transport-https
 ```
 
 #### Kernel aus Backports aktualisieren
@@ -137,19 +142,19 @@ sudo apt install -y plymouth-themes
 sudo sed -i 's/^#\[Daemon\].*/[Daemon]/' /etc/plymouth/plymouthd.conf
 if $(cat /etc/plymouth/plymouthd.conf | grep -iq '^DeviceScale')
 then
-    sudo sed -i 's/^DeviceScale.*/DeviceScale=2/' /etc/plymouth/plymouthd.conf
+  sudo sed -i 's/^DeviceScale.*/DeviceScale=2/' /etc/plymouth/plymouthd.conf
 else
-    echo "DeviceScale=2" | sudo tee -a /etc/plymouth/plymouthd.conf
+  echo "DeviceScale=2" | sudo tee -a /etc/plymouth/plymouthd.conf
 fi
 
 # Initramfs aktualisieren
 sudo update-initramfs -c -k all
 
 # Grub Konfiguration anpassen
-grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub || \
-    sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
-grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub || \
-    sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 loglevel=0"#' /etc/default/grub
+grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub \
+  || sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
+grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub \
+  || sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 loglevel=0"#' /etc/default/grub
 
 # Grub aktualisieren
 sudo update-grub
@@ -236,13 +241,37 @@ sudo apt install -y adwaita-qt
 
 #### 1Password installieren
 
+Quellen:
+
+- <https://support.1password.com/install-linux/#debian-or-ubuntu>
+
+```shell
+# GPG Schlüssel für 1Password Repository hinzufügen
+wget -qO- https://downloads.1password.com/linux/keys/1password.asc \
+  | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+
+# 1Password Repository hinzufügen
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' \
+  | sudo tee /etc/apt/sources.list.d/1password.list
+
+# Debsig-Überprüfungsrichtlinie hinzufügen
+sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | \
+  sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+curl -sS https://downloads.1password.com/linux/keys/1password.asc \
+  | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+
+# 1Password GUI und CLI installieren
+sudo apt update && sudo apt install -y 1password 1password-cli
+```
 
 
 ### Container- und Virtualisierung
 
 #### KVM/QEMU und XLC installieren
 
-**Quellen:**
+Quellen:
 
 - <https://wiki.debian.org/SystemVirtualization>
 - <https://wiki.debian.org/KVM>
@@ -259,9 +288,9 @@ sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 
 # Nested Virtualization permanent aktivieren
-grep -iq '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf || \
-    echo "options kvm_intel nested=1" | \
-    sudo tee -a /etc/modprobe.d/kvm.conf
+grep -iq '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf \
+  || echo "options kvm_intel nested=1" \
+  | sudo tee -a /etc/modprobe.d/kvm.conf
 
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
