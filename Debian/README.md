@@ -142,6 +142,9 @@ else
     echo "DeviceScale=2" | sudo tee -a /etc/plymouth/plymouthd.conf
 fi
 
+# Initramfs aktualisieren
+sudo update-initramfs -c -k all
+
 # Grub Konfiguration anpassen
 grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub || \
     sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
