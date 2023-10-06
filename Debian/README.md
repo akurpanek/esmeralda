@@ -105,7 +105,9 @@ sudo apt update -y && \
 #### Basissoftware installieren
 
 ```shell
-sudo apt install -y build-essential lshw neofetch vim needrestart wget curl gpg git apt-transport-https
+sudo apt install -y \
+  build-essential lshw neofetch vim needrestart \
+  wget curl gpg git apt-transport-https
 ```
 
 #### Kernel aus Backports aktualisieren
@@ -120,8 +122,10 @@ sudo apt install -y -f -t bookworm-backports linux-image-amd64 firmware-linux #l
 
 # Firmwware-Dateien von git.kernel.org herunterladen
 mkdir ~/firmware
-wget -P ~/firmware/ -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
+wget -P ~/firmware/ -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' \
+  https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
 sudo mv ~/firmware/*.bin /lib/firmware/i915/
+rmdir ~/firmware
 
 # Initramfs aktualisieren
 sudo update-initramfs -c -k all
@@ -256,8 +260,8 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gp
 
 # Debsig-Überprüfungsrichtlinie hinzufügen
 sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
-curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | \
-  sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol \
+  | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
 sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc \
   | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
@@ -301,9 +305,9 @@ sudo adduser $USERNAME libvirt
 ```shell
 # Spice Client installieren und starten
 if $(sudo dmesg | grep -iq 'Hypervisor detected.*KVM'); then
-    sudo apt install spice-vdagent
-    sudo systemctl enable spice-vdagentd.service
-    sudo systemctl start spice-vdagentd.service
+  sudo apt install spice-vdagent
+  sudo systemctl enable spice-vdagentd.service
+  sudo systemctl start spice-vdagentd.service
 fi
 ```
 
@@ -344,9 +348,9 @@ flatpak override --user org.cryptomator.Cryptomator --filesystem=host
 
 # Cryptomator Alias setzen
 alias signal='flatpak run org.cryptomator.Cryptomator'
-grep -iq '^alias cryptomator=' ~/.bash_aliases || \
-    echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" | \
-    tee -a ~/.bash_aliases
+grep -iq '^alias cryptomator=' ~/.bash_aliases \
+  || echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" \
+  | tee -a ~/.bash_aliases
 ```
 ### Development
 
@@ -360,9 +364,11 @@ Quellen:
 ```shell
 # Repository und GPG-Key installieren
 sudo apt-get install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc \
+  | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
+  | sudo tee -a /etc/apt/sources.list.d/vscode.list
 rm -f packages.microsoft.gpg
 
 # VSCode und Voraussetzungen installieren
@@ -391,12 +397,13 @@ sudo apt install -y meld
 sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
 
 # WhatsApp Desktop konfigurieren
+flatpak override --user io.github.mimbrero.WhatsAppDesktop --reset
 
 # WhatsApp Desktop Alias setzen
 alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'
-grep -iq '^alias whatsapp=' ~/.bash_aliases || \
-    echo "alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'" | \
-    tee -a ~/.bash_aliases
+grep -iq '^alias whatsapp=' ~/.bash_aliases \
+  || echo "alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'" \
+  | tee -a ~/.bash_aliases
 ```
 
 ```shell
@@ -410,11 +417,7 @@ flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
 
 # Signal Desktop Alias setzen
 alias signal='flatpak run org.signal.Signal'
-grep -iq '^alias signal=' ~/.bash_aliases || \
-    echo "alias signal='flatpak run org.signal.Signal'" | \
-    tee -a ~/.bash_aliases
+grep -iq '^alias signal=' ~/.bash_aliases \
+  || echo "alias signal='flatpak run org.signal.Signal'" \
+  | tee -a ~/.bash_aliases
 ```
-
-
-
-
