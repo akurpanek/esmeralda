@@ -267,8 +267,29 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc \
   | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
 # 1Password GUI und CLI installieren
-sudo apt update && sudo apt install -y 1password 1password-cli
+sudo apt update -y && \
+  sudo apt install -y 1password 1password-cli
 ```
+
+### Office und Texteditoren
+
+#### Typora installieren
+
+```shell
+# GPG Schlüssel für Typora Repository hinzufügen
+wget -qO-  https://typora.io/linux/public-key.asc \
+  | sudo gpg --dearmor --output /usr/share/keyrings/typora.gpg
+
+# Typora Repository hinzufügen
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/typora.gpg] https://typora.io/linux ./' \
+  | sudo tee /etc/apt/sources.list.d/typora.list
+
+# Typora installieren
+sudo apt-get update -y && \
+  sudo apt-get install -y typora
+```
+
+### Grafik und DTP
 
 
 ### Container- und Virtualisierung
