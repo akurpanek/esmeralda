@@ -58,7 +58,7 @@ sudo snapper -c root set-config 'TIMELINE_LIMIT_YEARLY="0"'
 # Snapper für home-Volume konfigurieren
 sudo snapper -c home create-config /home
 
-sudo snapper -c home set-config 'TIMELINE_CREATE=no'
+sudo snapper -c home set-config 'TIMELINE_CREATE=yes'
 sudo snapper -c home set-config 'ALLOW_GROUPS=sudo'
 sudo snapper -c home set-config 'SYNC_ACL=yes'
 
