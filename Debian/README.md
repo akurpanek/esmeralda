@@ -41,7 +41,7 @@ sudo apt update -y && \
 #### Basissoftware installieren
 
 ```shell
-sudo apt install -y build-essential lshw neofetch vim
+sudo apt install -y build-essential lshw neofetch vim needrestart
 ```
 
 #### BTRFS Snapshots einrichten
