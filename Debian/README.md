@@ -23,27 +23,6 @@ grep -iq '^options snd-sof-intel-hda-common hda_model=alc287-yoga9-bass-spk-pin'
     sudo tee -a /etc/modprobe.d/snd.conf
 ```
 
-#### CDROM als Installationsqelle deaktiveren
- 
-```shell
-sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
-```
-
-#### System aktualisieren
-
-```shell
-# Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
-sudo apt update -y && \
-    sudo apt upgrade -y && \
-    sudo apt autoremove  --purge -y
-```
-
-#### Basissoftware installieren
-
-```shell
-sudo apt install -y build-essential lshw neofetch vim needrestart
-```
-
 #### BTRFS Snapshots einrichten
 
 ```shell
@@ -101,6 +80,27 @@ sudo systemctl enable --now grub-btrfsd
 sudo systemctl status grub-btrfsd
 cd ~
 sudo rm -rf grub-btrfs
+```
+
+#### CDROM als Installationsqelle deaktiveren
+ 
+```shell
+sudo sed -i 's/^deb cdrom/#deb cdrom/' /etc/apt/sources.list
+```
+
+#### System aktualisieren
+
+```shell
+# Cache aktualisieren, Updates installieren und verwaiste Pakete entfernen
+sudo apt update -y && \
+    sudo apt upgrade -y && \
+    sudo apt autoremove  --purge -y
+```
+
+#### Basissoftware installieren
+
+```shell
+sudo apt install -y build-essential lshw neofetch vim needrestart wget gpg git apt-transport-https
 ```
 
 #### Kernel aus Backports aktualisieren
