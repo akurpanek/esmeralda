@@ -317,9 +317,10 @@ grep -iq '^alias cryptomator=' ~/.bash_aliases || \
 
 #### Visual Studio Code einrichten
 
-Quelle:
+Quellen:
 
 - <https://code.visualstudio.com/docs/setup/linux>
+- <https://wiki.debian.org/VisualStudioCode>
 
 ```shell
 # Repository und GPG-Key installieren
