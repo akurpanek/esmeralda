@@ -232,6 +232,12 @@ sudo apt install -y adwaita-qt
 
 ## Software Installation
 
+### Passwortmanager
+
+#### 1Password installieren
+
+
+
 ### Container- und Virtualisierung
 
 #### KVM/QEMU und XLC installieren
