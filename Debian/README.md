@@ -198,8 +198,8 @@ Quellen:
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 ```shell
-# Fractional Scaling X11 aktivieren
-gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+## Fractional Scaling X11 aktivieren
+#gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 ```
 ```shell
 # Fractional Scaling deaktiviern
@@ -217,14 +217,17 @@ Quellen:
 ```shell
 # Flatpkak und GNOME Software Plugin installieren
 sudo apt install -y flatpak gnome-software-plugin-flatpak
-
+```
+```shell
 # Flathub Repository hinzufügen
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
+```
+```shell
 # GNOME Software zurrücksetzen
 killall gnome-software
 rm -rf ~/.cache/gnome-software
-
+```
+```shell
 # Flatseal installieren
 sudo flatpak install -y flathub com.github.tchx84.Flatseal
 ```
