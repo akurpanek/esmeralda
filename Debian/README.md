@@ -247,8 +247,6 @@ Quellen:
 - <https://pypa.github.io/pipx/installation/>
 - <https://itsfoss.com/gnome-shell-extensions/>
 
-# Shell Extension CLI installieren
-
 ```shell
 # pipx installieren und zu $PATH hinzufügen
 sudo apt install -y pipx
@@ -257,9 +255,21 @@ pipx ensurepath
 # Gnome Extensions CLI installieren
 pipx install gnome-extensions-cli --system-site-packages
 
-# Gnome Shell Extensions installieren und aktivieren
-gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com appindicatorsupport@rgcjonas.gmail.com
-gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com appindicatorsupport@rgcjonas.gmail.com
+# Gnome Shell Extensions installieren
+gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com \
+  appindicatorsupport@rgcjonas.gmail.com \
+  eye-extended@als.kz \
+  lockkeys@vaina.lt \
+  tiling-assistant@leleat-on-github \
+  launch-new-instance@gnome-shell-extensions.gcampax.github.com
+
+# Gnome Shell Extensions aktivieren
+gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com \
+  appindicatorsupport@rgcjonas.gmail.com \
+  eye-extended@als.kz \
+  lockkeys@vaina.lt \
+  tiling-assistant@leleat-on-github \
+  launch-new-instance@gnome-shell-extensions.gcampax.github.com
 ```
 
 ## Software Installation
