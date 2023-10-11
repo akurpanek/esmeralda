@@ -126,14 +126,16 @@ Quellen:
 ```shell
 # Kernel aus Backports installieren
 sudo apt install -y -f -t bookworm-backports linux-image-amd64 firmware-linux #linux-headers-amd64
-
+```
+```shell
 # Firmwware-Dateien von git.kernel.org herunterladen
 mkdir ~/firmware
 wget -P ~/firmware/ -r -nd -e robots=no -A '*.bin' --accept-regex '/plain/' \
   https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915/
 sudo mv ~/firmware/*.bin /lib/firmware/i915/
 rmdir ~/firmware
-
+```
+```shell
 # Initramfs aktualisieren
 sudo update-initramfs -c -k all
 ```
@@ -148,7 +150,8 @@ Quellen:
 ```shell
 # Plymouth installieren
 sudo apt install -y plymouth-themes
-
+```
+```shell
 # Plymouth Konfigurtion anpassen
 sudo sed -i 's/^#\[Daemon\].*/[Daemon]/' /etc/plymouth/plymouthd.conf
 if $(cat /etc/plymouth/plymouthd.conf | grep -iq '^DeviceScale')
@@ -157,16 +160,19 @@ then
 else
   echo "DeviceScale=2" | sudo tee -a /etc/plymouth/plymouthd.conf
 fi
-
+```
+```shell
 # Initramfs aktualisieren
 sudo update-initramfs -c -k all
-
+```
+```shell
 # Grub Konfiguration anpassen
 grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*splash' /etc/default/grub \
   || sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 splash"#' /etc/default/grub
 grep -iq '^GRUB_CMDLINE_LINUX_DEFAULT.*loglevel' /etc/default/grub \
   || sudo sed -i 's#^\(GRUB_CMDLINE_LINUX_DEFAULT=".*\)"$#\1 loglevel=0"#' /etc/default/grub
-
+```
+```shell
 # Grub aktualisieren
 sudo update-grub
 ```
@@ -254,10 +260,12 @@ Quellen:
 # pipx installieren und zu $PATH hinzufügen
 sudo apt install -y pipx
 pipx ensurepath
-
+```
+```shell
 # Gnome Extensions CLI installieren
 pipx install gnome-extensions-cli --system-site-packages
-
+```
+```shell
 # Gnome Shell Extensions installieren
 gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com \
   appindicatorsupport@rgcjonas.gmail.com \
@@ -265,7 +273,8 @@ gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com \
   lockkeys@vaina.lt \
   tiling-assistant@leleat-on-github \
   launch-new-instance@gnome-shell-extensions.gcampax.github.com
-
+```
+```shell
 # Gnome Shell Extensions aktivieren
 gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com \
   appindicatorsupport@rgcjonas.gmail.com \
@@ -289,11 +298,13 @@ Quellen:
 # GPG Schlüssel für 1Password Repository hinzufügen
 wget -qO- https://downloads.1password.com/linux/keys/1password.asc \
   | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
-
+```
+```shell
 # 1Password Repository hinzufügen
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' \
   | sudo tee /etc/apt/sources.list.d/1password.list
-
+```
+```shell
 # Debsig-Überprüfungsrichtlinie hinzufügen
 sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
 curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol \
@@ -301,7 +312,8 @@ curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol \
 sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc \
   | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
-
+```
+```shell
 # 1Password GUI und CLI installieren
 sudo apt update -y && \
   sudo apt install -y 1password 1password-cli
@@ -315,11 +327,13 @@ sudo apt update -y && \
 # GPG Schlüssel für Typora Repository hinzufügen
 wget -qO-  https://typora.io/linux/public-key.asc \
   | sudo gpg --dearmor --output /usr/share/keyrings/typora.gpg
-
+```
+```shell
 # Typora Repository hinzufügen
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/typora.gpg] https://typora.io/linux ./' \
   | sudo tee /etc/apt/sources.list.d/typora.list
-
+```
+```shell
 # Typora installieren
 sudo apt-get update -y && \
   sudo apt-get install -y typora
@@ -342,17 +356,20 @@ Quellen:
 ```shell
 # QEMU, KVM, LXC, libvirt, spice und GUI virt-manager installieren
 sudo apt install -y qemu-system libvirt-daemon-system lxc virt-manager
-
+```
+```shell
 # Nested Virtualization aktivieren
 cat /sys/module/kvm_intel/parameters/nested
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
-
+```
+```shell
 # Nested Virtualization permanent aktivieren
 grep -iq '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf \
   || echo "options kvm_intel nested=1" \
   | sudo tee -a /etc/modprobe.d/kvm.conf
-
+```
+```shell
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
 ```
@@ -398,11 +415,13 @@ Quellen:
 ```shell
 # Cryptomator installieren
 sudo flatpak install -y flathub org.cryptomator.Cryptomator
-
+```
+```shell
 # Cryptomator konfigurieren
 flatpak override --user org.cryptomator.Cryptomator --reset
 flatpak override --user org.cryptomator.Cryptomator --filesystem=host
-
+```
+```shell
 # Cryptomator Alias setzen
 alias signal='flatpak run org.cryptomator.Cryptomator'
 grep -iq '^alias cryptomator=' ~/.bash_aliases \
@@ -428,12 +447,14 @@ grep -iq 'packages.microsoft.com/repos/code stable main' /etc/apt/sources.list.d
   || echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
   | sudo tee -a /etc/apt/sources.list.d/vscode.list
 rm -f packages.microsoft.gpg
-
+```
+```shell
 # VSCode und Voraussetzungen installieren
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
-
+```
+```shell
 # VSCode als Standard Editor festlegen
 #xdg-mime default code.desktop text/plain
 #sudo update-alternatives --set editor /usr/bin/code
@@ -453,10 +474,12 @@ sudo apt install -y meld
 ```shell
 # WhatsApp Desktop installieren
 sudo flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop
-
+```
+```shell
 # WhatsApp Desktop konfigurieren
 flatpak override --user io.github.mimbrero.WhatsAppDesktop --reset
-
+```
+```shell
 # WhatsApp Desktop Alias setzen
 alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'
 grep -iq '^alias whatsapp=' ~/.bash_aliases \
@@ -469,12 +492,14 @@ grep -iq '^alias whatsapp=' ~/.bash_aliases \
 ```shell
 # Signal Desktop installieren
 sudo flatpak install -y flathub org.signal.Signal
-
+```
+```shell
 # Signal Desktop konfigurieren
 flatpak override --user org.signal.Signal --reset
 flatpak override --user org.signal.Signal --filesystem=host
 flatpak override --user org.signal.Signal --env=SIGNAL_USE_TRAY_ICON=1
-
+```
+```shell
 # Signal Desktop Alias setzen
 alias signal='flatpak run org.signal.Signal'
 grep -iq '^alias signal=' ~/.bash_aliases \
