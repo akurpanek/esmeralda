@@ -258,8 +258,8 @@ pipx ensurepath
 pipx install gnome-extensions-cli --system-site-packages
 
 # Gnome Shell Extensions installieren und aktivieren
-gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com
-gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com
+gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com appindicatorsupport@rgcjonas.gmail.com
+gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com appindicatorsupport@rgcjonas.gmail.com
 ```
 
 ## Software Installation
