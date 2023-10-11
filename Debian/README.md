@@ -102,6 +102,13 @@ sudo apt update -y && \
   sudo apt autoremove  --purge -y
 ```
 
+#### Vorinstallierte Software deinstallieren
+
+```shell
+# Spiele deinstallieren
+sudo apt remove --purge gnome-games
+```
+
 #### Basissoftware installieren
 
 ```shell
