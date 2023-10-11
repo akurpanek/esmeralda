@@ -229,28 +229,6 @@ rm -rf ~/.cache/gnome-software
 sudo flatpak install -y flathub com.github.tchx84.Flatseal
 ```
 
-#### GNOME Shell Extension installieren
-
-Quellen:
-
-- <https://extensions.gnome.org/>
-- <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
-- <https://github.com/brunelli/gnome-shell-extension-installer>
-
-```shell
-# Gnome Shell Extension Installer installieren
-mkdir -p ~/src/gnome-shell-extension-installer
-git clone https://github.com/brunelli/gnome-shell-extension-installer.git \
-  ~/src/gnome-shell-extension-installer
-chmod +x ~/src/gnome-shell-extension-installer/gnome-shell-extension-installer
-ln -s ~/src/gnome-shell-extension-installer/gnome-shell-extension-installer \
-  ~/bin/gnome-shell-extension-installer
-
-# Gnome Shell Extension 307 dash-to-dock installieren
-gnome-shell-extension-installer --yes --restart-shell 307
-```
-
-
 #### GNOME Themes Qt und GTK
 
 Quellen:
@@ -259,6 +237,29 @@ Quellen:
 
 ```shell
 sudo apt install -y adwaita-qt
+```
+
+#### GNOME Shell Extension installieren
+
+Quellen:
+
+- <https://extensions.gnome.org/>
+- <https://pypa.github.io/pipx/installation/>
+- <https://itsfoss.com/gnome-shell-extensions/>
+
+# Shell Extension CLI installieren
+
+```shell
+# pipx installieren und zu $PATH hinzufügen
+sudo apt install -y pipx
+pipx ensurepath
+
+# Gnome Extensions CLI installieren
+pipx install gnome-extensions-cli --system-site-packages
+
+# Gnome Shell Extensions installieren und aktivieren
+gnome-extensions-cli --filesystem install dash-to-dock@micxgx.gmail.com
+gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com
 ```
 
 ## Software Installation
