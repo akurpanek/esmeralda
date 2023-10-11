@@ -395,7 +395,8 @@ sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc \
   | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
+grep -iq 'packages.microsoft.com/repos/code stable main' /etc/apt/sources.list.d/vscode.list \
+  || echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
   | sudo tee -a /etc/apt/sources.list.d/vscode.list
 rm -f packages.microsoft.gpg
 
@@ -418,7 +419,7 @@ sudo apt install -y meld
 
 ### Instant Messaging
 
-#### Messenger einrichten
+#### WhatsApp Messenger einrichten
 
 ```shell
 # WhatsApp Desktop installieren
@@ -433,6 +434,8 @@ grep -iq '^alias whatsapp=' ~/.bash_aliases \
   || echo "alias whatsapp='flatpak run io.github.mimbrero.WhatsAppDesktop'" \
   | tee -a ~/.bash_aliases
 ```
+
+#### Signal Messenger einrichten
 
 ```shell
 # Signal Desktop installieren
