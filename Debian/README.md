@@ -106,7 +106,7 @@ sudo apt update -y && \
 
 ```shell
 # Spiele deinstallieren
-sudo apt remove --purge gnome-games
+sudo apt remove --purge -y gnome-games
 ```
 
 #### Basissoftware installieren
