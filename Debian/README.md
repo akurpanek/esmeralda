@@ -235,6 +235,21 @@ Quellen:
 
 - <https://extensions.gnome.org/>
 - <https://unix.stackexchange.com/questions/617288/command-line-tool-to-install-gnome-shell-extensions>
+- <https://github.com/brunelli/gnome-shell-extension-installer>
+
+```shell
+# Gnome Shell Extension Installer installieren
+mkdir -p ~/src/gnome-shell-extension-installer
+git clone https://github.com/brunelli/gnome-shell-extension-installer.git \
+  ~/src/gnome-shell-extension-installer
+chmod +x ~/src/gnome-shell-extension-installer/gnome-shell-extension-installer
+ln -s ~/src/gnome-shell-extension-installer/gnome-shell-extension-installer \
+  ~/bin/gnome-shell-extension-installer
+
+# Gnome Shell Extension 307 dash-to-dock installieren
+gnome-shell-extension-installer --yes --restart-shell 307
+```
+
 
 #### GNOME Themes Qt und GTK
 
