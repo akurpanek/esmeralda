@@ -6,7 +6,8 @@ Quellen:
 - <https://google.github.io/styleguide/shellguide.html#s4-comments>
 - <https://github.com/yusuftaufiq/dotfiles/blob/main/.chezmoiscripts/run_once_before_00-install-terminal-packages.sh>
 - <https://github.com/nourkagha/dotfiles>
-- <https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3>
+- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil2/>
+- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
 
 ## OS-Installation
 
