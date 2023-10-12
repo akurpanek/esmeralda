@@ -110,7 +110,7 @@ sudo apt update -y && \
 sudo apt remove --purge --autoremove -y gnome-games
 ```
 
-#### Basissoftware installieren
+#### Terminalsoftware installieren
 
 ```shell
 sudo apt install -y \
