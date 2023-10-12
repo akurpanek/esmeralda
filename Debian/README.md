@@ -5,6 +5,7 @@ Quellen:
 - <https://docs.github.com/de/get-started/writing-on-github>
 - <https://google.github.io/styleguide/shellguide.html#s4-comments>
 - <https://github.com/yusuftaufiq/dotfiles/blob/main/.chezmoiscripts/run_once_before_00-install-terminal-packages.sh>
+- <https://github.com/nourkagha/dotfiles>
 
 ## OS-Installation
 
