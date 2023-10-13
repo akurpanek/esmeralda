@@ -222,12 +222,10 @@ gpg --export-ownertrust > ~/.gnupg/backup_akurpanek@mailbox.org/akurpanek@mailbo
 gpg --output ~/.gnupg/backup_akurpanek@mailbox.org/revoke_akurpanek@mailbox.org.asc \
   --gen-revoke akurpanek@mailbox.org
 ```
-# Schlüssel als Print-Variante und QR-Code exportieren
+# Schlüssel als Print-Variante exportieren
 ```shell
 gpg --export-secret-key akurpanek@mailbox.org | paperkey \
   --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.paper.asc
-gpg --export-secret-key akurpanek@mailbox.org | paperkey --output-type raw | qrencode --8bit \
-  --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.qr.png
 ```
 ```shell
 # SSH-Unterstützung im GPG-Agent aktivieren
