@@ -403,7 +403,19 @@ sudo apt-get update -y && \
   sudo apt-get install -y typora
 ```
 
+#### TeX Live und Texmaker installieren
+
+Qellen:
+
+- <https://wiki.debian.org/de/Latex>
+- <https://www.heise.de/select/ix/2017/3/1487528783801808>
+
+```shell
+sudo apt install -y texmaker
+```
+
 ### Grafik und DTP
+
 
 
 ### Container- und Virtualisierung
