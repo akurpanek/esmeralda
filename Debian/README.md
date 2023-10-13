@@ -231,8 +231,8 @@ grep -iqP '^[ \t]*export SSH_AUTH_SOCK=' ~/.bashrc \
 # Set environemnt to enable the Ssh Agent Support
 # <https://man.cx/gpg-agent#heading6>
 unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+if [ "\${gnupg_SSH_AUTH_SOCK_by:-0}" -ne \$\$ ]; then
+  export SSH_AUTH_SOCK="\$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 EOL
 ```
