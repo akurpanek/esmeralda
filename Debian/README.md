@@ -199,6 +199,7 @@ sudo systemctl restart zramswap.service
 
 Quellen:
 
+- <https://man.cx/gpg-agent>
 - <https://www.kuketz-blog.de/gnupg-schluesselerstellung-und-smartcard-transfer-nitrokey-teil2/>
 - <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
 - <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
@@ -212,8 +213,20 @@ gpg --export-ownertrust > akurpanek@mailbox.org.txt
 gpg --output revoke_akurpanek@mailbox.org.asc --gen-revoke akurpanek@mailbox.org
 ```
 ```shell
+# SSH-Unterstützung im GPG-Agent aktivieren
+grep -iq '^enable-ssh-support' ~/.gnupg/gpg-agent.conf \
+  || echo "enable-ssh-support" \
+  | tee -a ~/.gnupg/gpg-agent.conf
 ```
 ```shell
+# Umgebungsvariablen des SSH-Agenten anpassen
+grep -iqP '^[ \t]*export SSH_AUTH_SOCK=' ~/.bashrc \
+  || cat >> ~/.bashrc <<EOL
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+EOL
 ```
 ```shell
 ```
