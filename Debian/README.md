@@ -210,7 +210,7 @@ Quellen:
 sudo apt install -y gnupg paperkey qrencode
 ```
 ```shell
-# Backup der Schlüssel und Widerufzertifiakt erstellen
+# Backup der Schlüssel erstellen
 mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
 gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.asc \
   --export-secret-key akurpanek@mailbox.org
@@ -219,11 +219,23 @@ gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/subkeys_akurpanek@mai
 gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/pubkey_akurpanek@mailbox.org.asc \
   --export akurpanek@mailbox.org
 gpg --export-ownertrust > ~/.gnupg/backup_akurpanek@mailbox.org/akurpanek@mailbox.org.txt
+```
+```shell
+# Einfaches Backup der Schlüssel erstellen
+mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
+gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.asc \
+  --export-secret-keys akurpanek@mailbox.org
+gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/pubkey_akurpanek@mailbox.org.asc \
+  --export akurpanek@mailbox.org
+gpg --export-ownertrust > ~/.gnupg/backup_akurpanek@mailbox.org/akurpanek@mailbox.org.txt
+```
+```shell
+# Widerufzertifiakt erstellen
 gpg --output ~/.gnupg/backup_akurpanek@mailbox.org/revoke_akurpanek@mailbox.org.asc \
   --gen-revoke akurpanek@mailbox.org
 ```
-# Schlüssel als Print-Variante exportieren
 ```shell
+# Schlüssel als Print-Variante exportieren
 gpg --export-secret-key akurpanek@mailbox.org | paperkey \
   --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.paper.asc
 ```
