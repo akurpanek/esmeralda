@@ -206,11 +206,16 @@ Quellen:
 
 ```shell
 # Backup der Schlüssel und Widerufzertifiakt erstellen
-gpg --armor --output privkey_akurpanek@mailbox.org.asc --export-secret-key akurpanek@mailbox.org
-gpg --armor --output subkeys_akurpanek@mailbox.org.asc --export-secret-subkeys akurpanek@mailbox.org
-gpg --armor --output pubkey_akurpanek@mailbox.org.asc --export akurpanek@mailbox.org
-gpg --export-ownertrust > akurpanek@mailbox.org.txt
-gpg --output revoke_akurpanek@mailbox.org.asc --gen-revoke akurpanek@mailbox.org
+mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
+gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.asc \
+  --export-secret-key akurpanek@mailbox.org
+gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/subkeys_akurpanek@mailbox.org.asc \
+  --export-secret-subkeys akurpanek@mailbox.org
+gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/pubkey_akurpanek@mailbox.org.asc \
+  --export akurpanek@mailbox.org
+gpg --export-ownertrust > ~/.gnupg/backup_akurpanek@mailbox.org/akurpanek@mailbox.org.txt
+gpg --output ~/.gnupg/backup_akurpanek@mailbox.org/revoke_akurpanek@mailbox.org.asc \
+  --gen-revoke akurpanek@mailbox.org
 ```
 ```shell
 # SSH-Unterstützung im GPG-Agent aktivieren
