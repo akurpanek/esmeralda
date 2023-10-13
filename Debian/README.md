@@ -1,4 +1,4 @@
-# Debian 12 Bookworm GNOME
+# Debian Bookworm GNOME
 
 Quellen:
 
