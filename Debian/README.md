@@ -203,6 +203,7 @@ Quellen:
 - <https://www.kuketz-blog.de/gnupg-schluesselerstellung-und-smartcard-transfer-nitrokey-teil2/>
 - <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
 - <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
+- <https://wiki.archlinux.org/title/Paperkey>
 
 ```shell
 # GnuPGP und Tools installieren
@@ -220,6 +221,13 @@ gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/pubkey_akurpanek@mail
 gpg --export-ownertrust > ~/.gnupg/backup_akurpanek@mailbox.org/akurpanek@mailbox.org.txt
 gpg --output ~/.gnupg/backup_akurpanek@mailbox.org/revoke_akurpanek@mailbox.org.asc \
   --gen-revoke akurpanek@mailbox.org
+```
+# Schlüssel als Print-Variante und QR-Code exportieren
+```shell
+gpg --export-secret-key akurpanek@mailbox.org | paperkey \
+  --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.paper.asc
+gpg --export-secret-key akurpanek@mailbox.org | paperkey --output-type raw | qrencode --8bit \
+  --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.qr.png
 ```
 ```shell
 # SSH-Unterstützung im GPG-Agent aktivieren
