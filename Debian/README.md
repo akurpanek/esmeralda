@@ -193,13 +193,28 @@ sudo sed -i "s/^PERCENT=.*/PERCENT=50/g" /etc/default/zramswap
 sudo systemctl restart zramswap.service
 ```
 
-#### GnuPG und SSH einrichten
+## Kryptographie
+
+#### GnuPG und SSH eirichten
 
 Quellen:
 
-- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil2/>
+- <https://www.kuketz-blog.de/gnupg-schluesselerstellung-und-smartcard-transfer-nitrokey-teil2/>
 - <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
-- <https://wiki.archlinux.org/title/GNOME/Keyring#Disable_keyring_daemon_components>
+- <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
+
+```shell
+gpg --armor --output privkey_akurpanek@mailbox.org.asc --export-secret-key akurpanek@mailbox.org
+gpg --armor --output subkeys_akurpanek@mailbox.org.asc --export-secret-subkeys akurpanek@mailbox.org
+gpg --armor --output pubkey_akurpanek@mailbox.org.asc --export akurpanek@mailbox.org
+gpg --export-ownertrust > akurpanek@mailbox.org.txt
+```
+```shell
+```
+```shell
+```
+```shell
+```
 
 
 
