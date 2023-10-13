@@ -6,8 +6,6 @@ Quellen:
 - <https://google.github.io/styleguide/shellguide.html#s4-comments>
 - <https://github.com/yusuftaufiq/dotfiles/blob/main/.chezmoiscripts/run_once_before_00-install-terminal-packages.sh>
 - <https://github.com/nourkagha/dotfiles>
-- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil2/>
-- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
 
 ## OS-Installation
 
@@ -194,6 +192,16 @@ sudo sed -i "s/^#PERCENT=.*/PERCENT=50/g" /etc/default/zramswap
 sudo sed -i "s/^PERCENT=.*/PERCENT=50/g" /etc/default/zramswap
 sudo systemctl restart zramswap.service
 ```
+
+#### GnuPG und SSH einrichten
+
+Quellen:
+
+- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil2/>
+- <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
+- <https://wiki.archlinux.org/title/GNOME/Keyring#Disable_keyring_daemon_components>
+
+
 
 ## GNOME Konfiguration
 
