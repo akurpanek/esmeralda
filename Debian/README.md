@@ -211,7 +211,6 @@ sudo apt install -y gnupg paperkey qrencode
 ```
 ```shell
 # Backup der Schlüssel erstellen
-mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
 gpg --armor --output privkey_akurpanek@mailbox.org.asc --export-secret-key akurpanek@mailbox.org
 gpg --armor --output subkeys_akurpanek@mailbox.org.asc --export-secret-subkeys akurpanek@mailbox.org
 gpg --armor --output pubkey_akurpanek@mailbox.org.asc --export akurpanek@mailbox.org
@@ -219,7 +218,6 @@ gpg --export-ownertrust > akurpanek@mailbox.org.txt
 ```
 ```shell
 # Einfaches Backup der Schlüssel erstellen
-mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
 gpg --armor --output privkey_akurpanek@mailbox.org.asc --export-secret-keys akurpanek@mailbox.org
 gpg --armor --output pubkey_akurpanek@mailbox.org.asc --export akurpanek@mailbox.org
 gpg --export-ownertrust > akurpanek@mailbox.org.txt
