@@ -411,7 +411,14 @@ Qellen:
 - <https://www.heise.de/select/ix/2017/3/1487528783801808>
 
 ```shell
+# Texmaker und Tex Live installieren
 sudo apt install -y texmaker
+```
+```shell
+# TeXdoctk-Desktopeintrag ausbenden
+grep -iq '^Hidden=true' /usr/share/applications/texdoctk.desktop \
+  || echo "Hidden=true" \
+  | sudo tee -a /usr/share/applications/texdoctk.desktop
 ```
 
 ### Grafik und DTP
