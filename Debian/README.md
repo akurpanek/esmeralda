@@ -413,8 +413,7 @@ Qellen:
 ```shell
 # Texmaker und Tex Live installieren
 sudo apt install -y texmaker
-```
-```shell
+
 # TeXdoctk-Desktopeintrag ausbenden
 grep -iq '^Hidden=true' /usr/share/applications/texdoctk.desktop \
   || echo "Hidden=true" \
