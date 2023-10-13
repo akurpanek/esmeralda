@@ -204,10 +204,12 @@ Quellen:
 - <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
 
 ```shell
+# Backup der Schlüssel und Widerufzertifiakt erstellen
 gpg --armor --output privkey_akurpanek@mailbox.org.asc --export-secret-key akurpanek@mailbox.org
 gpg --armor --output subkeys_akurpanek@mailbox.org.asc --export-secret-subkeys akurpanek@mailbox.org
 gpg --armor --output pubkey_akurpanek@mailbox.org.asc --export akurpanek@mailbox.org
 gpg --export-ownertrust > akurpanek@mailbox.org.txt
+gpg --output revoke_akurpanek@mailbox.org.asc --gen-revoke akurpanek@mailbox.org
 ```
 ```shell
 ```
