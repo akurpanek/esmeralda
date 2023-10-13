@@ -205,6 +205,10 @@ Quellen:
 - <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
 
 ```shell
+# GnuPGP und Tools installieren
+sudo apt install -y gnupg paperkey qrencode
+```
+```shell
 # Backup der Schlüssel und Widerufzertifiakt erstellen
 mkdir -p ~/.gnupg/backup_akurpanek@mailbox.org
 gpg --armor --output ~/.gnupg/backup_akurpanek@mailbox.org/privkey_akurpanek@mailbox.org.asc \
