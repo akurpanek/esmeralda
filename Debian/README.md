@@ -512,6 +512,15 @@ grep -iq '^alias cryptomator=' ~/.bash_aliases \
 ```
 ### Development
 
+#### GNOME Builder einrichten
+
+Quellen:
+
+```shell
+# GNOME Builder installieren
+sudo apt install -y gnome-builder
+```
+
 #### Visual Studio Code einrichten
 
 Quellen:
