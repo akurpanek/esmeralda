@@ -412,6 +412,14 @@ echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyof
 sudo apt-get update -y
 sudo apt-get install -y onlyoffice-desktopeditors
 ```
+```shell
+# Theme des Systems aktivieren 
+if ! $(grep -iq -- '--system-title-bar' /usr/share/applications/onlyoffice-desktopeditors.desktop)
+then
+  sudo sed -i 's/^Exec=\/usr\/bin\/onlyoffice-desktopeditors/Exec=\/usr\/bin\/onlyoffice-desktopeditors --system-title-bar/' \
+    /usr/share/applications/onlyoffice-desktopeditors.desktop
+fi
+```
 
 #### Typora bereitstellen
 
