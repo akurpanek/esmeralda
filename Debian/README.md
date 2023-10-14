@@ -413,7 +413,11 @@ sudo apt-get update -y
 sudo apt-get install -y onlyoffice-desktopeditors
 ```
 
-#### Typora installieren
+#### Typora bereitstellen
+
+Quellen:
+
+- <https://support.typora.io/Typora-on-Linux/>
 
 ```shell
 # GPG Schlüssel für Typora Repository hinzufügen
