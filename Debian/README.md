@@ -253,6 +253,28 @@ EOL
 ```shell
 ```
 
+## Terminal Software
+
+#### ZSH Shell an OhMyZSH bereitstellen
+
+Quellen:
+
+- <https://ohmyz.sh/#install>
+
+```shell
+# zsh Shell Installieren und als Standardshell setzen
+sudo apt install -y zsh
+sudo chsh -s $(which zsh)
+# zsh konfigurieren
+grep -iq '^setopt INTERACTIVE_COMMENTS' ~/.zshrc \
+  || echo "# Allow comments in interactive shells" \
+  | sudo tee -a ~/.zshrc &&
+  echo "setopt INTERACTIVE_COMMENTS" \
+  | sudo tee -a ~/.zshrc
+# Oh My Zsh installieren
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
 
 
 ## GNOME Konfiguration
