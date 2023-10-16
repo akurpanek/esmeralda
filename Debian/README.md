@@ -683,3 +683,22 @@ grep -iq '^alias signal=' ~/.bash_aliases \
   || echo "alias signal='flatpak run org.signal.Signal'" \
   | tee -a ~/.bash_aliases
 ```
+
+#### Digikam Fotoverwaltung einrichten
+
+```shell
+# Signal Desktop installieren
+sudo flatpak install -y flathub flathub org.kde.digikam
+```
+```shell
+# Signal Desktop konfigurieren
+flatpak override --user flathub org.kde.digikam --reset
+flatpak override --user flathub org.kde.digikam --filesystem=host
+```
+```shell
+# Signal Desktop Alias setzen
+alias digikam='flatpak run flathub org.kde.digikam'
+grep -iq '^alias digikam=' ~/.bash_aliases \
+  || echo "alias digikam='flatpak run flathub org.kde.digikam'" \
+  | tee -a ~/.bash_aliases
+```
