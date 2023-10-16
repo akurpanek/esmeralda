@@ -1,4 +1,6 @@
+# chezmoi
 
+## Intallation 
 Quelle:
 
 - <https://www.chezmoi.io/quick-start/#concepts>
@@ -21,5 +23,14 @@ exit
 
 # Add bash-shell files
 chezmoi add ~/.bashrc
+```
+## FAQ
 
+Sources:
+
+- <https://github.com/twpayne/chezmoi/discussions/1678>
+
+For example, to re-run run_onchange_after_post_install_yadr:
+```shell
+chezmoi cat ~/.chezmoiscripts/post_install_yadr.sh | bash
 ```
