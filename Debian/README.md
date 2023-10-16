@@ -542,7 +542,12 @@ grep -iq '^Hidden=true' /usr/share/applications/texdoctk.desktop \
   | sudo tee -a /usr/share/applications/texdoctk.desktop
 ```
 
+
 ### Graphics & Photography
+
+```shell
+sudo apt install shotwell darktable clinfo gimp gimp-help-de
+```
 
 ### Developer Tools
 
