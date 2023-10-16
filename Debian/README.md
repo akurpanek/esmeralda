@@ -591,6 +591,13 @@ sudo apt install shotwell darktable clinfo gimp gimp-help-de
 
 ### Developer Tools
 
+#### Python3 und PIP3
+
+```shell
+sudo apt install -y python3 python3-pip cmake
+pipx install face_recognition # for darktable 
+```
+
 #### KVM/QEMU und XLC installieren
 
 Quellen:
