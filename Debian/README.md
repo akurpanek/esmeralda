@@ -372,7 +372,67 @@ gnome-extensions-cli --dbus enable dash-to-dock@micxgx.gmail.com \
 
 ## Software Installation
 
-### Passwortmanager
+### Networking
+
+#### Firefox bereitstellen
+
+Quellen:
+
+- <https://devicetests.com/install-firefox-addon-command-line>
+
+```shell
+# Firefox Erweiterungen installieren
+# - Cookie AutoDelete
+# - Feedbro
+# - Proxy SwitchOmega
+# - Startpage.com
+# - uBlock Origin
+# - Web Developer
+```
+
+### Utilities
+
+#### PIKA Backup einrichten
+
+```shell
+# PIKA Backup installieren
+sudo flatpak install -y flathub org.gnome.World.PikaBackup
+```
+
+#### Nextcloud Desktop einrichten
+
+Quellen:
+
+- <https://wiki.debian.org/Nextcloud#Nextcloud_desktop_clients>
+- <https://nextcloud.com/de/install/>
+
+```shell
+# Nextcloud Desktop und Plugins installieren
+sudo apt install -y nautilus-nextcloud
+```
+
+#### Cryptomator einrichten
+
+Quellen:
+
+- <https://cryptomator.org/downloads/linux/>
+
+```shell
+# Cryptomator installieren
+sudo flatpak install -y flathub org.cryptomator.Cryptomator
+```
+```shell
+# Cryptomator konfigurieren
+flatpak override --user org.cryptomator.Cryptomator --reset
+flatpak override --user org.cryptomator.Cryptomator --filesystem=host
+```
+```shell
+# Cryptomator Alias setzen
+alias signal='flatpak run org.cryptomator.Cryptomator'
+grep -iq '^alias cryptomator=' ~/.bash_aliases \
+  || echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" \
+  | tee -a ~/.bash_aliases
+```
 
 #### 1Password installieren
 
@@ -405,7 +465,7 @@ sudo apt update -y && \
   sudo apt install -y 1password 1password-cli
 ```
 
-### Office und Texteditoren
+### Productivity
 
 #### OnlyOffice bereitstellen
 
@@ -482,11 +542,9 @@ grep -iq '^Hidden=true' /usr/share/applications/texdoctk.desktop \
   | sudo tee -a /usr/share/applications/texdoctk.desktop
 ```
 
-### Grafik und DTP
+### Graphics & Photography
 
-
-
-### Container- und Virtualisierung
+### Developer Tools
 
 #### KVM/QEMU und XLC installieren
 
@@ -528,51 +586,6 @@ if $(sudo dmesg | grep -iq 'Hypervisor detected.*KVM'); then
   sudo systemctl start spice-vdagentd.service
 fi
 ```
-
-### Datenverschlüsselung, Datensicherung und Replikation
-
-#### PIKA Backup einrichten
-
-```shell
-# PIKA Backup installieren
-sudo flatpak install -y flathub org.gnome.World.PikaBackup
-```
-
-#### Nextcloud Desktop einrichten
-
-Quellen:
-
-- <https://wiki.debian.org/Nextcloud#Nextcloud_desktop_clients>
-- <https://nextcloud.com/de/install/>
-
-```shell
-# Nextcloud Desktop und Plugins installieren
-sudo apt install -y nautilus-nextcloud
-```
-
-#### Cryptomator einrichten
-
-Quellen:
-
-- <https://cryptomator.org/downloads/linux/>
-
-```shell
-# Cryptomator installieren
-sudo flatpak install -y flathub org.cryptomator.Cryptomator
-```
-```shell
-# Cryptomator konfigurieren
-flatpak override --user org.cryptomator.Cryptomator --reset
-flatpak override --user org.cryptomator.Cryptomator --filesystem=host
-```
-```shell
-# Cryptomator Alias setzen
-alias signal='flatpak run org.cryptomator.Cryptomator'
-grep -iq '^alias cryptomator=' ~/.bash_aliases \
-  || echo "alias cryptomator='flatpak run org.cryptomator.Cryptomator'" \
-  | tee -a ~/.bash_aliases
-```
-### Development
 
 #### GNOME Builder einrichten
 
@@ -620,7 +633,7 @@ sudo update-alternatives --install /usr/bin/editor editor $(which code) 10
 sudo apt install -y meld
 ```
 
-### Instant Messaging
+### Networking
 
 #### WhatsApp Messenger einrichten
 
