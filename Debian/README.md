@@ -390,6 +390,12 @@ Quellen:
 # - Web Developer
 ```
 
+#### GNOME Web bereitstellen
+
+```shell
+sudo apt install -y epiphany-browser
+```
+
 ### Utilities
 
 #### PIKA Backup einrichten
