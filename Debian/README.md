@@ -692,8 +692,8 @@ sudo flatpak install -y flathub flathub org.kde.digikam
 ```
 ```shell
 # Signal Desktop konfigurieren
-flatpak override --user flathub org.kde.digikam --reset
-flatpak override --user flathub org.kde.digikam --filesystem=host
+flatpak override --user org.kde.digikam --reset
+flatpak override --user org.kde.digikam --filesystem=host
 ```
 ```shell
 # Signal Desktop Alias setzen
