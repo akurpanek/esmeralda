@@ -260,10 +260,11 @@ EOL
 Quellen:
 
 - <https://ohmyz.sh/#install>
+- <https://medium.com/@satriajanaka09/setup-zsh-oh-my-zsh-powerlevel10k-on-ubuntu-20-04-c4a4052508fd>
 
 ```shell
 # zsh Shell Installieren und als Standardshell setzen
-sudo apt install -y zsh
+sudo apt install -y zsh fonts-powerline
 sudo chsh -s $(which zsh)
 # zsh konfigurieren
 grep -iq '^setopt INTERACTIVE_COMMENTS' ~/.zshrc \
