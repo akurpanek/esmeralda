@@ -599,6 +599,17 @@ sudo apt install -y python3 python3-pip cmake
 pipx install face_recognition # for darktable 
 ```
 
+#### Docker.io installieren
+
+Quellen:
+
+- <https://community.hetzner.com/tutorials/howto-docker-install/de#schritt-1---docker-engine-installieren>
+
+```shell
+sudo apt install -y docker.io
+sudo usermod -aG docker $USER
+```
+
 #### KVM/QEMU und XLC installieren
 
 Quellen:
