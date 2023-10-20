@@ -638,6 +638,7 @@ grep -iq '^options kvm_intel nested=1' /etc/modprobe.d/kvm.conf \
 ```shell
 # Aktuellen Benutzer zur Gruppe libvirt hnzufügen
 sudo adduser $USERNAME libvirt
+sudo adduser $USERNAME kvm
 ```
 
 #### KVM/QEMU Guest Tools installieren
