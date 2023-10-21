@@ -271,6 +271,7 @@ Quellen:
 
 - <https://ohmyz.sh/#install>
 - <https://medium.com/@satriajanaka09/setup-zsh-oh-my-zsh-powerlevel10k-on-ubuntu-20-04-c4a4052508fd>
+- <https://www.heise.de/ratgeber/Einfuehrung-in-die-Z-Shell-Maximaler-Komfort-im-Terminal-4690876.html>
 
 ```shell
 # zsh Shell Installieren und als Standardshell setzen
