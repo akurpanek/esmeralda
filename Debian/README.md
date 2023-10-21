@@ -111,6 +111,16 @@ sudo apt update -y && \
 sudo apt remove --purge --autoremove -y gnome-games
 ```
 
+#### Network Manger konfigurieren
+
+Quellen:
+
+- <https://wiki.archlinux.org/title/NetworkManager#Captive_portals>
+
+```shell
+sudo apt install -y network-manager-config-connectivity-debian
+```
+
 #### Terminalsoftware installieren
 
 ```shell
