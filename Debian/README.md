@@ -216,6 +216,7 @@ Quellen:
 - <https://wiki.archlinux.org/title/Paperkey>
 - <https://medium.com/@chrispisano/ssh-authentication-with-gpg-411676781647>
 - <https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/>
+- <https://gist.github.com/mcattarinussi/834fc4b641ff4572018d0c665e5a94d3>
 
 ```shell
 # GnuPGP und Tools installieren
