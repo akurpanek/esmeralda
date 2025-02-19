@@ -214,6 +214,7 @@ Quellen:
 - <https://www.kuketz-blog.de/gnupg-public-key-authentifizierung-nitrokey-teil3/>
 - <https://wiki.archlinux.org/title/GNOME/Keyring#Disabling>
 - <https://wiki.archlinux.org/title/Paperkey>
+- <https://medium.com/@chrispisano/ssh-authentication-with-gpg-411676781647>
 
 ```shell
 # GnuPGP und Tools installieren
