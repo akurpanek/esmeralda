@@ -264,14 +264,18 @@ fi
 EOL
 ```
 ```shell
-gpg --list-keys --with-keygrip
-echo [Keygrip-ID-E] >> ~/.gnupg/sshcontrol
-```
-```shell
 mkdir ~/.config/autostart
 cp /etc/xdg/autostart/gnome-keyring-ssh.desktop ~/.config/autostart
 echo 'Hidden=true' >> ~/.config/autostart/gnome-keyring-ssh.desktop 
 ```
+```shell
+gpg --list-keys --with-keygrip
+echo [Keygrip-ID-E] >> ~/.gnupg/sshcontrol
+```
+```shell
+gpg --export-ssh-key akurpanek@mailbox.org
+```
+
 
 ## Terminal Software
 
