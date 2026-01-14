@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Script to configure Btrfs subvolumes and mount points for a Debian system.
-# Based on: https://raw.githubusercontent.com/akurpanek/esmeralda/main/Debian/partition.sh
-# Reference: https://blog.cscholz.io/debian-einsatz-snapper/
+# Based on: 
+# - https://www.ordinatechnic.com/distribution-specific-guides/fedora/a-fedora-installation-with-an-opensuse-style-btrfs-subvolume-layout-and-snapper-integration-for-system-snapshots-and-rollbacks
+# - https://blog.cscholz.io/debian-einsatz-snapper/
 
 # --- Get device and UUID information ---
 # Extract device paths for root, boot, efi, and cdrom from /proc/mounts
