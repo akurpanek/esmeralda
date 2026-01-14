@@ -100,6 +100,9 @@ cat >"$fstab" <<EOL
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 ${devroot} /             btrfs   noatime,compress=zstd:1  0       0
+#${devroot} /.snapshots   btrfs   noatime,compress=zstd:1,subvol=@/.snapshots  0       0
+#${devroot} /boot/grub2/i386-pc      btrfs   noatime,compress=zstd:1,subvol=@/boot/grub2/i386-pc  0       0
+#${devroot} /boot/grub2/x86_64-efi   btrfs   noatime,compress=zstd:1,subvol=@/boot/grub2/x86_64-efi  0       0
 ${devroot} /home         btrfs   noatime,compress=zstd:1,subvol=@/home  0       0
 ${devroot} /opt          btrfs   noatime,compress=zstd:1,subvol=@/opt   0       0
 ${devroot} /root         btrfs   noatime,compress=zstd:1,subvol=@/root  0       0
